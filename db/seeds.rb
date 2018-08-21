@@ -18,6 +18,8 @@ end
 
 puts "user created!"
 
+
+
 300.times do Request.create!(
   request_currency: Faker::Currency.code,
   wanted_currency: Faker::Currency.code,
