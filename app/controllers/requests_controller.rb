@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
 
- def index
+  def index
     @requests = Request.all
   end
 
@@ -16,6 +16,7 @@ class RequestsController < ApplicationController
      @request.user = current_user
     if @request.save
       redirect_to requests_path(@request), notice: "Your request is now visible to other doshers!"
+      redirect_to requests_path, notice: "Your request is now visible to other doshers!"
     else
       render :new
     end

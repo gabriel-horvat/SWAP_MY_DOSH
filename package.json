@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
+    "currency-flags": "git+https://github.com/transferwise/currency-flags.git",
     "jquery": "^3.3.1"
   },
   "devDependencies": {

@@ -16,6 +16,14 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'money-rails', '~>1'
+gem 'monetize'
+
+
+gem 'monetize'
+gem 'money-rails', '~>1'
+
+gem 'restcountry'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
