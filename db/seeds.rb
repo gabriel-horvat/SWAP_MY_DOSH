@@ -40,3 +40,31 @@ puts "user Created!"
     user: User.all.sample
   )
 
+request_2 = Request.create!(
+    request_currency: "USD",
+    wanted_currency: "EUR",
+    request_amount: 200,
+    wanted_amount: 170,
+    location: "Berlin, Germany",
+    start_date: Date.new(2018,8,29),
+    end_date: Date.new(2018,8,31),
+    status: "accepted",
+    user_id: 2,
+    user: User.all.sample
+  )
+
+request_3 = Request.create!(
+    request_currency: "USD",
+    wanted_currency: "EUR",
+    request_amount: 200,
+    wanted_amount: 170,
+    location: "Berlin, Germany",
+    start_date: Date.new(2018,8,29),
+    end_date: Date.new(2018,8,31),
+    status: "accepted",
+    user_id: 3,
+    user: User.all.sample
+  )
+
+puts "requests Created!"
+
