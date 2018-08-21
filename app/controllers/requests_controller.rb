@@ -5,6 +5,7 @@ class RequestsController < ApplicationController
   end
 
   def show
+        @request = Request.new
   end
 
   def new
