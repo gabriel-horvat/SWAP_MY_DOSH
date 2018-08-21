@@ -1,30 +1,81 @@
-<div class="container">
-
-  <div class = "Box">
-  <div class="row">
+<div class="wrapper">
+  <div class = "container">
+    <div class="row">
           <h2 class="text-center">Your matches:</h2>
-    <%@requests.each do |request|%>
-      <div class="col-xs-4 col-xs-offset-4 ">
-        <div class="card-outline">
-          <div class="card-content card-image">
-          </div>
+          <%@requests.each do |request|%>
+      <div class="col-xs-10">
+        <div class="card-content">
           <%= link_to request_path(request) do %>
-          <div class = "card-content card-body">
-            <p class="card-text"><%= request.request_currency %></p>
-            <p class="card-text"><%=request.request_amount%></p>
-            <p class="card-text"><%=request.wanted_currency%></p>
-            <p class="card-text"><%=request.wanted_amount%></p>
-            <p class="card-text"><%=request.location%></p>
-            <p class="card-text"><%=request.start_date%></p>
-            <p class="card-text"><%=request.end_date%></p>
-            <br>
+            <div class="flex-container">
+              <div class="flex item">
+                  <div class="card-avatar"><h3>AVATAR</h3>
+                </div>
+              <div class="user-name-avatar">
+                <p>Pink Panther</p>
+              </div>
+
+            </div>
+              <div class="flex item">
+                <p class="card-request_currency">
+                    <%= request.request_currency %>
+                  </p>
+                <p class="card-request_amount">
+                    <%=request.request_amount%>
+                  </p>
+                <p class="card-wanted_currency">
+                    <%=request.wanted_currency%>
+                  </p>
+                <p class="card-wanted_amount">
+                    <%=request.wanted_amount%>
+                  </p>
+                <p class="card-location">
+                    <%=request.location%>
+                  </p>
+                <p class="card-start_date">
+                    <%=request.start_date%>
+                  </p>
+                <p class="card-end_date">
+                    <%=request.end_date%>
+                  </p>
+              </div>
+
+                <div class="flex-item">
+                  <div class="status-msg-button">
+                    <p>pending</p>
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                </div>
           </div>
-          <% end %>
+              <% end %>
+                <br>
         </div>
       </div>
     <%end%>
   </div>
 
-
   </div>
 </div>
+
+
+
+
+
+<!--
+
+<div class="col-xs-10  ">
+<div class="col-xs-4 col-xs-offset-4 ">
+
+<div class="flex item">...</div>
+
+implement link to chat path(chat)
+
+
+Make entire card link out to chat (clickable)
+    vs
+message button clickable and card just text + img?
+
+––>
+
+
+
+
