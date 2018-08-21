@@ -1,6 +1,5 @@
 <div class="container">
 
-
   <div class = "Box">
   <div class="row">
           <h2 class="text-center">Your matches:</h2>
@@ -9,6 +8,7 @@
         <div class="card-outline">
           <div class="card-content card-image">
           </div>
+          <%= link_to request_path(request) do %>
           <div class = "card-content card-body">
             <p class="card-text"><%= request.request_currency %></p>
             <p class="card-text"><%=request.request_amount%></p>
@@ -19,6 +19,7 @@
             <p class="card-text"><%=request.end_date%></p>
             <br>
           </div>
+          <% end %>
         </div>
       </div>
     <%end%>
