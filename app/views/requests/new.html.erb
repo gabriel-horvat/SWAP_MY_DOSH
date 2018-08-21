@@ -1,5 +1,6 @@
 <% require "open-uri" %>
 <% require "json" %>
+<%= require 'monetize' %>
 
 
 <h2> What are you swapping ? </h2>
@@ -8,17 +9,26 @@
 <% currencies = JSON.parse(open(url).read) %>
 <% cur_array = [] %>
 <% currencies.each do |key, value|%>
-<%  cur_array << [key + ' : ' + value] %>
+<%  cur_array << [key] %>
 <% end %>
 
 <div class="col-xs-12">
   <%= simple_form_for @request do |f|  %>
     <p> Which currency do you have to offer ? </p>
     <%= f.select :request_currency, cur_array %>
-    <p> Which currency do you look for ? </p>
-    <%= f.select :wanted_currency, cur_array %>
     <p> How much do you have to offer ?</p>
     <%= f.input :request_amount %>
+    <p> Which currency do you look for ? </p>
+    <%= f.select :wanted_currency, cur_array %>
+    <p> This is the current covnersion</p>
+    <div>
+      <%= render 'requests/conversion' %>
+      <%=
+        #money = params[:request_amount].to_money(params[:request_currency])
+        #money.exchange_to(params[:wanted_currency])
+      %>
+
+    </div>
     <p> Where do you want to swap ? </p>
     <%= f.input :location %>
     <p> When do you want to swap?</p>
