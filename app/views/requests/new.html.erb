@@ -2,7 +2,6 @@
 <% require "json" %>
 
 
-  <h2> What are you swapping ? Conversion still missing</h2>
 
 
 <% url = ("https://openexchangerates.org/api/currencies.json") %>
@@ -12,26 +11,32 @@
 <%  cur_array << [key] %>
 <% end %>
 
-<div class="col-xs-12 col-lg-4 col-lg-offset-4">
-    <%= simple_form_for @request do |f|  %>
-      <p> Which currency do you have to offer ? </p>
-      <%= f.select :request_currency, cur_array %>
-      <p> How much do you have to offer ?</p>
-      <%= f.input :request_amount %>
-      <p> Which currency do you look for ? </p>
-      <%= f.select :wanted_currency, cur_array %>
-      <p> Where do you want to swap ? </p>
-      <%= f.input :location %>
-      <p> When do you want to swap?</p>
-      <%= f.label "From" %>
-      <%= f.date_field :start_date %> <br>
-      <%= f.label "Until:" %>
-      <%= f.date_field :end_date %> <br>
-      <%= f.submit "Make your offer public" %>
-    <% end %>
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-lg-4 col-lg-offset-4">
+      <h2> What are you swapping ? Conversion still missing</h2>
+      <div class="form">
+          <%= simple_form_for @request do |f|  %>
+            <p> Which currency do you have to offer ? </p>
+            <%= f.select :request_currency, cur_array %>
+            <p> How much do you have to offer ?</p>
+            <%= f.input :request_amount %>
+            <p> Which currency do you look for ? </p>
+            <%= f.select :wanted_currency, cur_array %>
+            <p> Where do you want to swap ? </p>
+            <%= f.input :location %>
+            <p> When do you want to swap?</p>
+            <%= f.label "From" %>
+            <%= f.date_field :start_date %> <br>
+            <%= f.label "Until:" %>
+            <%= f.date_field :end_date %> <br>
+            <%= f.submit "Swap my dosh" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
 </div>
-
-
 
 
 <%= javascript_pack_tag 'conversion' %>
