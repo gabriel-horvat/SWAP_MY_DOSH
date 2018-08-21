@@ -22,7 +22,7 @@ puts "user created!"
   request_currency: Faker::Currency.code,
   wanted_currency: Faker::Currency.code,
   request_amount: Faker::Number.number(3),
-  location: Faker::Address.city,
+  location: Faker::Nation.capital_city,
   start_date: Faker::Date.forward(100),
   end_date: Faker::Date.forward(100),
   status: "pending",
