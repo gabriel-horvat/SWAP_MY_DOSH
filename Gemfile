@@ -18,6 +18,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'money-rails', '~>1'
 gem 'monetize'
+gem 'faker'
+gem 'ui_faces'
 
 
 gem 'monetize'

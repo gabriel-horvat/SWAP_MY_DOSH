@@ -16,7 +16,6 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
      @request.user = current_user
     if @request.save
-      redirect_to requests_path(@request), notice: "Your request is now visible to other doshers!"
       redirect_to requests_path, notice: "Your request is now visible to other doshers!"
     else
       render :new
