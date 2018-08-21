@@ -17,6 +17,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'monetize'
+gem 'money-rails', '~>1'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
