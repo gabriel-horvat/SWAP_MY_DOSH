@@ -19,9 +19,7 @@ gem 'webpacker'
 gem 'money-rails', '~>1'
 gem 'monetize'
 
-
-gem 'monetize'
-gem 'money-rails', '~>1'
+gem 'chat'
 
 gem 'restcountry'
 
