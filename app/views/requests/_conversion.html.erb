@@ -1,4 +1,0 @@
-<p> The current conversion rate suggests your money is worth:
-  <%= money = params[:request_amount].to_money(params[:request_currency]) %>
-  <%= money.exchange_to(params[:wanted_currency]) %>
-</p>
