@@ -89,6 +89,8 @@ GEM
       railties (>= 3.2, < 6.0)
     erubi (1.7.1)
     execjs (2.7.0)
+    faker (1.9.1)
+      i18n (>= 0.7)
     faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.12.2)
@@ -261,6 +263,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.18)
       execjs (>= 0.3.0, < 3)
+    ui_faces (0.1.4)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.6.2)
@@ -286,6 +289,7 @@ DEPENDENCIES
   chat
   devise
   dotenv-rails
+  faker
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
@@ -303,6 +307,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
+  ui_faces
   web-console (>= 3.3.0)
   webpacker
 
