@@ -1,0 +1,23 @@
+<% require "open-uri" %>
+<% require "json" %>
+
+
+<h2> What are you swapping ? </h2>
+
+
+
+
+
+<% url = ("https://openexchangerates.org/api/currencies.json") %>
+<% currencies = JSON.parse(open(url).read) %>
+<% cur_array = [] %>
+<% currencies.each do |key, value|%>
+<%  cur_array << [key + ' : ' + value] %>
+<% end %>
+<%= simple_form_for @request do |f| %>
+<%= f.input :request_amount %>
+<%= f.select :request_currency, cur_array %>
+<%= f.submit %>
+<% end %>
+
+
