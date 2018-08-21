@@ -3,7 +3,7 @@ class Message < ApplicationRecord
   belongs_to :sender, class_name: 'User', foreign_key: 'sender_id'
   belongs_to :receiver, class_name: 'User', foreign_key: 'receiver_id'
 
-  validates_presence_of :body, :conversation_id, :user_id
+  validates_presence_of :body, :user_id
 
   private
 
