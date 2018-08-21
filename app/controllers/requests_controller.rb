@@ -1,6 +1,5 @@
 class RequestsController < ApplicationController
 
-
   def index
     @requests = Request.all
   end
@@ -16,6 +15,7 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
      @request.user = current_user
     if @request.save
+      redirect_to requests_path(@request), notice: "Your request is now visible to other doshers!"
       redirect_to requests_path, notice: "Your request is now visible to other doshers!"
     else
       render :new
@@ -33,6 +33,10 @@ class RequestsController < ApplicationController
 
 
   private
+
+  def set_task
+    @request = Request.find(params[:id])
+  end
 
   def request_params
     params.require(:request).permit(:request_currency, :wanted_currency, :location, :start_date, :end_date, :request_amount, :user_id)
