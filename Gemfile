@@ -21,9 +21,7 @@ gem 'monetize'
 gem 'faker'
 gem 'ui_faces'
 
-
-gem 'monetize'
-gem 'money-rails', '~>1'
+gem 'chat'
 
 gem 'restcountry'
 
