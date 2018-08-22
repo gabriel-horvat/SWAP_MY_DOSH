@@ -87,6 +87,14 @@ GEM
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
       railties (>= 3.2, < 6.0)
+    elasticsearch (6.1.0)
+      elasticsearch-api (= 6.1.0)
+      elasticsearch-transport (= 6.1.0)
+    elasticsearch-api (6.1.0)
+      multi_json
+    elasticsearch-transport (6.1.0)
+      faraday
+      multi_json
     erubi (1.7.1)
     execjs (2.7.0)
     faker (1.9.1)
@@ -109,6 +117,7 @@ GEM
       launchy (~> 2.4)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hashie (3.6.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -239,6 +248,10 @@ GEM
     sassc (1.12.1)
       ffi (~> 1.9.6)
       sass (>= 3.3.0)
+    searchkick (3.1.1)
+      activemodel (>= 4.2)
+      elasticsearch (>= 5)
+      hashie
     sidekiq (5.2.1)
       connection_pool (~> 2.2, >= 2.2.2)
       rack-protection (>= 1.5.0)
@@ -308,6 +321,7 @@ DEPENDENCIES
   redis
   restcountry
   sass-rails
+  searchkick (~> 3.0)
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
