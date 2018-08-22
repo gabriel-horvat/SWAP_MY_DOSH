@@ -4,6 +4,8 @@ class RequestsController < ApplicationController
     @requests = apply_filters(Request.all)
     session[:start_date] = params[:start_date]
     session[:end_date] = params[:end_date]
+    @user = User.all.sample
+    @requests = Request.all
   end
 
   def show

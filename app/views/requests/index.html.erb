@@ -45,7 +45,13 @@
 
         </div>
 
-
+        <nav>
+          <ul style="overflow-y:scroll">
+            <% @requests.each do |request| %>
+              <%= render 'shared/card', request: request  %>
+            <% end %>
+          </ul>
+        </nav>
 
 
 

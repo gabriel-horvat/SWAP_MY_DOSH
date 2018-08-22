@@ -1,29 +1,28 @@
-<div class="card-container">
-  <div class="card-profile">
-    <div><%= image_tag @user.photo, class:"card-photo" %></div>
-  </div>
-  <div class="request-details">
-    <div class="user-name"><%= @user.name %></div>
-    <div class="user-location">
-      <strong><%= @request.location %></strong>
+<%= link_to request_path(request) do %>
+  <div class="card-container" role="button" @click="handleClick()">
+    <div class="card-profile">
+      <% if request.user.photo.nil? %>
+        <div class="card-photo"></div>
+      <% else %>
+        <div><%= image_tag request.user.photo, class:"card-photo" %></div>
+      <% end %>
     </div>
-    <div class="swap-currencies">
-      Swapping <strong><%= @request.request_currency %></strong> for <strong><%= @request.wanted_currency %></strong>
+    <div class="request-details">
+      <div class="user-name"><%= request.user.name %></div>
+      <div class="user-location">
+        <strong><%= request.location %></strong>
+      </div>
+      <div class="swap-currencies">
+        <div>Swapping <strong><%= request.request_currency %></strong></div>
+        <div>for <strong><%= request.wanted_currency %></strong></div>   
+      </div>
+      <%# <div class="swap-dates">
+        <strong><%= request.start_date.strftime('%d.%b.%Y') %></strong>  
+        <%# - <strong>= request.end_date.strftime('%d.%b.%Y')</strong> %>
+      <%# </div>  %>
     </div>
-    <%# <div class="swap-dates">
-      <strong><%= @request.start_date.strftime('%d.%b.%Y') %></strong>  
-       <%# - <strong>= @request.end_date.strftime('%d.%b.%Y')</strong> %>
-    <%# </div>  %>
+    <div class="swap-amount">
+      <%= request.request_currency %> <%= request.request_amount %>
+    </div>
   </div>
-  <div class="swap-amount">
-    <%= @request.request_currency %> <%= @request.request_amount %>
-  </div>
-  <%# <div id="wanted-details">
-  </div> %>
-  <%# <div class="location-dates">
-  </div> %>
-  <%# <div class="to-messages"> 
-    <i class="far fa-envelope icon"></i>
-    <p>Wanna Swap some Dosh?</p>
-  </div> %>
-</div>
+<% end %>
