@@ -2,9 +2,8 @@
   <div class = "container">
     <div class="filters">
       <div class="form">
-
+           <br>
           <%= form_tag requests_path, method: :get do %>
-
           <p class="white-color">Filter by Location:</p>
           <%= text_field_tag :location,
           params[:location],
@@ -16,26 +15,22 @@
 
           </div>
           <div class="col-sm-6">
-
-            <p class="white-color">Start Date:</p>
-            <%= date_field_tag :start_date,
-            params[:start_date],
-            class: "form-control",
-              label: "Start Date",
-              placeholder: "From" %>
+            <p class="white-color">Filter by Dates:</p>
+            <%= date_field_tag(:start_date, "", as: :string, class: "datepicker",
+                    label: "Start Date",
+                    placeholder: "From") %>
               <br>
               <p class="white-color">End Date:</p>
-              <%= date_field_tag :end_date,
-              params[:end_date],
-              class: "form-control",
-                label: "End Date",
-                placeholder: "To" %>
-                <% @end_date = params[:end_date] %>
-
+              <%= date_field_tag(
+                     :end_date, "",
+                      as: :string,
+                      class: "datepicker",
+                      label: "End Date",
+                      placeholder: "To") %>
                 <br>
 
                 <div class="sf-button">
-                  <%= submit_tag "Search Board", class: "btn btn-primary" %>
+                  <%= submit_tag "Pick dates", class: "btn btn-primary" %>
                 </div>
               </div>
               <% end %>
@@ -44,6 +39,7 @@
           </div>
 
         </div>
+      </div>
 
         <nav>
           <ul style="overflow-y:scroll">
@@ -54,30 +50,6 @@
         </nav>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%# create a route /index/search %>
-<%# implement link in form   %>
-<%# search method in controller %>
-<%#  %>
-
-
-
-
-
-
-      </div>
     </div>
     <div class="row">
           <h2 class="text-center">Your matches:</h2>
@@ -134,27 +106,5 @@
 
   </div>
 </div>
-
-
-
-
-
-<!--
-
-<div class="col-xs-10  ">
-<div class="col-xs-4 col-xs-offset-4 ">
-
-<div class="flex item">...</div>
-
-implement link to chat path(chat)
-
-
-Make entire card link out to chat (clickable)
-    vs
-message button clickable and card just text + img?
-
-––>
-
-
 
 
