@@ -1,7 +1,9 @@
 class RequestsController < ApplicationController
 
   def index
-    @requests = Request.all
+    @requests = apply_filters(Request.all)
+    session[:start_date] = params[:start_date]
+    session[:end_date] = params[:end_date]
   end
 
   def show
@@ -33,6 +35,19 @@ class RequestsController < ApplicationController
 
 
   private
+
+  def apply_filters(scope)
+    starts = params[:start_date]
+    ends = params[:end_date]
+
+    if starts.present? && ends.present?
+      scope = scope.where("(requests.start_date, requests.end_date) OVERLAPS (?, ?)", starts, ends)
+      scope = Request.where.not(id: scope.pluck(:id))
+    end
+
+    scope = scope.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
+    scope
+  end
 
   def set_request
     @request = Request.find(params[:id])
