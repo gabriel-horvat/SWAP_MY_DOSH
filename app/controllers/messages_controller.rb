@@ -1,12 +1,31 @@
 class MessagesController < ApplicationController
-    before_action 
 
+    before_action :find_offer
     def index
-    @messages = Messages.all
 
-    # @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
+      @request = Request.find(params[:request_id])
 
-    # @message = @messages.new
+      @messages = @offer.messages
+
+      @message = @offer.messages.new
+
+    end
+
+    def create
+      @request = Request.find(params[:request_id])
+      @message = @offer.messages.new(message_params)
+      @message.sender_id = current_user.id
+      if @message.sender_id == @offer.user_id
+        @message.receiver_id = @offer.request.user.id
+      else
+        @message.receiver_id = @offer.user_id
+      end
+
+      if @message.save!
+        redirect_to request_offer_messages_path(@request, @offer)
+      else
+        raise
+      end
     end
 
     # def create
@@ -21,7 +40,10 @@ class MessagesController < ApplicationController
     private
 
     def message_params
-        params.require(:message).permit(:content, :user_id)
+        params.require(:message).permit(:sender_id, :receiver_id, :content)
     end
 
+    def find_offer
+      @offer = Offer.find(params[:offer_id])
+    end
 end
