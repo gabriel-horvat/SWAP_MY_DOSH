@@ -2,12 +2,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(220, 245, 239);
+    background-color: white;
     border-radius: 8px;
     box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75);
     margin: 10px;
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-container:hover {
+    // border: 1px solid black;
+    box-shadow: 10px 10px 30px -5px rgba(0, 0, 0, 0.75);
 }
 
 .request-details {

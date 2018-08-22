@@ -5,7 +5,6 @@ class RequestsController < ApplicationController
     session[:start_date] = params[:start_date]
     session[:end_date] = params[:end_date]
     @user = User.all.sample
-    @request = Request.all.sample
     @requests = Request.all
   end
 
