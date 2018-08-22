@@ -42,7 +42,7 @@ class RequestsController < ApplicationController
 
     if starts.present? && ends.present?
       scope = scope.where("(requests.start_date, requests.end_date) OVERLAPS (?, ?)", starts, ends)
-      scope = Request.where.not(id: scope.pluck(:id))
+     # scope = Request.where.not(id: scope.pluck(:id))
     end
 
     scope = scope.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
