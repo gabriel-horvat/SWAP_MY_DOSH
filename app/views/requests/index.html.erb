@@ -17,6 +17,15 @@
           </div>
           <div class="col-sm-6">
 
+            <% @requests.each do |request| %>
+              <%= user = User.find.where(user_id = request.user_id) %>
+              <%= render 'shared/card', user: user, request: request  %>
+            <% end %> 
+
+            <%= render 'shared/card', user: @user, request: @request  %>
+            <%= render 'shared/card', user: @user, request: @request  %>
+            <%= render 'shared/card', user: @user, request: @request  %>
+
             <p class="white-color">Start Date:</p>
             <%= date_field_tag :start_date,
             params[:start_date], :value => Time.now.strftime('%Y-%m-%d'),
