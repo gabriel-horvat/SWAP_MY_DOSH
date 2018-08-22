@@ -5,10 +5,10 @@
 
     <div class="message">
       <ul>
-        <% @messages.each do |message| %>
-          <% if message.body %>
+        <% @offer.messages.each do |message|%>
+          <% if message.id.present? %>
             <li>
-              <h4><%= message.user.email %></h4>
+              <h4><%= message.sender.email %></h4>
               <p class = "message-content"><%= message.content %></p>
             </li>
           <% end %>
@@ -17,14 +17,12 @@
     </div>
 
     <div class="message-form">
-      <%= form_for [@message] do |f| %>
+      <%= simple_form_for [@request, @offer, @message] do |f| %>
         <div class="field">
-          <%= f.text_area :body, placeholder: "Your message" %>
+          <%= f.input :content %>
         </div>
-
         <%= f.submit "Send" %>
       <% end %>
     </div>
-
   </div>
 </div>
