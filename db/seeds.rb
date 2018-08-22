@@ -18,13 +18,13 @@ end
 
 puts "user created!"
 
-
+locations_array = [["Tirana, Albania"], ["Andorra la Vella, Andorra"], ["Vienna, Austria"], ["Minsk, Belarus"], ["Brussels, Belgium"], ["Sarajevo, Bosnia and Herzegovina"], ["Sofia, Bulgaria"], ["Zagreb, Croatia"], ["Nicosia, Cyprus"], ["Prague, Czech Republic"], ["Copenhagen, Denmark"], ["Tallinn, Estonia"], ["Tórshavn, Faroe Islands"], ["Helsinki, Finland"], ["Paris, France"], ["Berlin, Germany"], ["Gibraltar, Gibraltar"], ["Athens, Greece"], ["St. Peter Port, Guernsey"], ["Budapest, Hungary"], ["Reykjavik, Iceland"], ["Dublin, Ireland"], ["Douglas, Isle of Man"], ["Rome, Italy"], ["Saint Helier, Jersey"], ["Riga, Latvia"], ["Vaduz, Liechtenstein"], ["Vilnius, Lithuania"], ["Luxembourg, Luxembourg"], ["Skopje, Macedonia"], ["Valletta, Malta"], ["Chișinău, Moldova"], ["Monaco, Monaco"], ["Podgorica, Montenegro"], ["Amsterdam, Netherlands"], ["Oslo, Norway"], ["Warsaw, Poland"], ["Lisbon, Portugal"], ["Bucharest, Romania"], ["Moscow, Russia"], ["City of San Marino, San Marino"], ["Belgrade, Serbia"], ["Bratislava, Slovakia"], ["Ljubljana, Slovenia"], ["Madrid, Spain"], ["Stockholm, Sweden"], ["Bern, Switzerland"], ["Kiev, Ukraine"], ["London, United Kingdom"]]
 
 300.times do Request.create!(
   request_currency: Faker::Currency.code,
-  wanted_currency: Faker::Currency.code,
+  wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: Faker::Address.city,
+  location: locations_array.sample[0],
   start_date: Faker::Date.forward(100),
   end_date: Faker::Date.forward(100),
   status: "pending",

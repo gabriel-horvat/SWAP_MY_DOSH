@@ -22,8 +22,12 @@ gem 'faker'
 gem 'ui_faces'
 
 gem 'chat'
+gem 'searchkick', '~> 3.0'
+
 
 gem 'restcountry'
+gem 'pg_search'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
