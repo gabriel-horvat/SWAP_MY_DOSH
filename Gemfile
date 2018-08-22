@@ -24,6 +24,8 @@ gem 'ui_faces'
 gem 'chat'
 
 gem 'restcountry'
+gem 'pg_search'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
