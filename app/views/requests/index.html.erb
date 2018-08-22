@@ -28,14 +28,14 @@
 
             <p class="white-color">Start Date:</p>
             <%= date_field_tag :start_date,
-            params[:start_date], :value => Time.now.strftime('%Y-%m-%d'),
+            params[:start_date],
             class: "form-control",
               label: "Start Date",
               placeholder: "From" %>
               <br>
               <p class="white-color">End Date:</p>
               <%= date_field_tag :end_date,
-              params[:end_date], :value => Time.now.strftime('%Y-%m-%d'),
+              params[:end_date],
               class: "form-control",
                 label: "End Date",
                 placeholder: "To" %>
