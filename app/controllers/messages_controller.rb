@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
       if @message.save!
         redirect_to request_offer_messages_path(@request, @offer)
       else
-        raise
+        redirect_to request_offer_messages_path(@request, @offer)
       end
     end
 
@@ -40,7 +40,8 @@ class MessagesController < ApplicationController
     private
 
     def message_params
-        params.require(:message).permit(:sender_id, :receiver_id, :content)
+        params.permit(:sender_id, :receiver_id, :content)
+        params.require(:message).permit(:content)
     end
 
     def find_offer

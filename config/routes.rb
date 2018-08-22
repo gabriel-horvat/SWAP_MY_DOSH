@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 resources :requests do
-  resources :offers do
+  resources :offers, only: [:new, :create] do
     resources :messages
+    post "/confirm", to: "offers#confirm"
     end
   end
+
+  resources :offers, only: [:index]
 end

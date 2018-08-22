@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
 
   def index
-    @offers = Offer.all.where(user_id == current_user)
+    @offers = Offer.all.where("user_id = ? AND status = 'confirmed'", current_user.id)
   end
 
 
@@ -23,18 +23,29 @@ class OffersController < ApplicationController
   end
 
   def edit
+    @offer = Offer.find(params[:id])
   end
 
   def update
+    @offer = Offer.find(params[:id])
+    @offer.update(offer_params)
+    redirect_to offers_path
   end
 
   def destroy
   end
 
+  def confirm
+    @offer = Offer.find(params[:offer_id])
+    @offer.update(:status => "confirmed")
+    @offer.save
+    redirect_to offers_path
+  end
+
   private
 
   def offer_params
-    params.permit(:user_id, :request_id)
+    params.permit(:user_id, :request_id, :status)
   end
 
 end
