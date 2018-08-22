@@ -6,10 +6,24 @@
       <ul style="list-style: none;">
         <li>Matching Travellers</li>
         <li>Swapping Currencies</li>
-        <li>Bypassing Fees</li>
+        <li>Zero Fees</li>
       </ul>
     </div>
+
+  
+    <%= render 'shared/card', user: @user, request: @request  %>
+    <%= render 'shared/card', user: @user, request: @request  %>
+    <%= render 'shared/card', user: @user, request: @request  %>
+
+
   </div>
 </div>
+
+    <%# @requests.each do |request| %>
+      <%#= user = User.find.where(user_id = request.user_id) %>
+      <%#= render 'shared/card', user: user, request: request  %>
+       
+    
+    <%# end %> 
 
 
