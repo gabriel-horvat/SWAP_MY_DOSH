@@ -44,68 +44,15 @@
 
 
         <nav>
-          <ul style="overflow-y:scroll">
+          <ol style="overflow-y:scroll">
             <% @requests.each do |request| %>
               <%= render 'shared/card', request: request  %>
             <% end %>
-          </ul>
+          </ol>
         </nav>
 
-
-    </div>
-    <div class="row">
-          <h2 class="text-center">Your matches:</h2>
-          <%@requests.each do |request|%>
-      <div class="col-xs-10">
-        <div class="card-content">
-          <%= link_to new_request_offer_path(request) do %>
-            <div class="flex-container">
-              <div class="flex item">
-                  <div class="card-avatar"><h3>AVATAR</h3>
-                </div>
-              <div class="user-name-avatar">
-                <p>Pink Panther</p>
-              </div>
-
-            </div>
-              <div class="flex item">
-                <p class="card-request_currency">
-                    <%= request.request_currency %>
-                  </p>
-                <p class="card-request_amount">
-                    <%=request.request_amount%>
-                  </p>
-                <p class="card-wanted_currency">
-                    <%=request.wanted_currency%>
-                  </p>
-                <p class="card-wanted_amount">
-                    <%=request.wanted_amount%>
-                  </p>
-                <p class="card-location">
-                    <%=request.location%>
-                  </p>
-                <p class="card-start_date">
-                    <%=request.start_date%>
-                  </p>
-                <p class="card-end_date">
-                    <%=request.end_date%>
-                  </p>
-              </div>
-
-                <div class="flex-item">
-                  <div class="status-msg-button">
-                    <p>pending</p>
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                </div>
-          </div>
-              <% end %>
-                <br>
-        </div>
       </div>
-    <%end%>
-  </div>
-
+    </div>
   </div>
 </div>
 
