@@ -35,6 +35,10 @@ class RequestsController < ApplicationController
   def destroy
   end
 
+  def personal
+    @requests = Request.where("user_id = ?", current_user.id)
+  end
+
 
   private
 

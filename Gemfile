@@ -23,6 +23,8 @@ gem 'ui_faces'
 
 gem 'chat'
 
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 gem 'restcountry'
 
