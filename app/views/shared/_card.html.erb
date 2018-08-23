@@ -17,12 +17,12 @@
         <div>for <strong><%= request.wanted_currency %></strong></div>
       </div>
       <%# <div class="swap-dates">
-        <strong><%= request.start_date.strftime('%d.%b.%Y') %></strong>
+        <strong><%#= request.start_date.strftime('%d.%b.%Y') %></strong>
         <%# - <strong>= request.end_date.strftime('%d.%b.%Y')</strong> %>
       <%# </div>  %>
     </div>
     <div class="swap-amount">
-      <%= request.request_currency %> <%= request.request_amount %>
+      <%#= request.request_currency %> <%#= request.request_amount %>
     </div>
   </div>
 <% end %>
@@ -32,11 +32,3 @@
 
 
 
-
-<nav>
-          <ul style="overflow-y:scroll">
-            <% @requests.each do |request| %>
-              <%= render 'shared/card', request: request  %>
-            <% end %>
-          </ul>
-        </nav>
