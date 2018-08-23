@@ -104,8 +104,8 @@ ActiveRecord::Schema.define(version: 2018_08_22_143102) do
     t.string "chat_status", default: "offline"
     t.string "photo"
     t.string "description"
-    t.integer "rating"
     t.string "name"
+    t.integer "rating"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
