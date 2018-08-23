@@ -1,14 +1,13 @@
-<div class = "card-content card-body">
-            <p class="card-text"><%= @request.request_currency %></p>
-            <p class="card-text"><%= @request.request_amount %></p>
-            <p class="card-text"><%= @request.wanted_currency %></p>
-            <p class="card-text"><%= @request.wanted_amount %></p>
-            <p class="card-text"><%= @request.location %></p>
-            <p class="card-text"><%= @request.start_date %></p>
-            <p class="card-text"><%= @request.end_date %></p>
-            <br>
-          </div>
+<h1> Your Offered Swaps </h1>
+
+<%=  @requests.each do |request| %>
+<%= if request.user.id == current_user.id %>
+<%= request %>
+<% end %>
+<% end %>
 
 
 
-<!––for testing purposes only. We don't actually have a requests/show in our app––>
+
+
+
