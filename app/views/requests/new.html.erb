@@ -1,9 +1,6 @@
 <% require "open-uri" %>
 <% require "json" %>
 
-
-
-
 <% url = ("https://openexchangerates.org/api/currencies.json") %>
 <% currencies = JSON.parse(open(url).read) %>
 <% cur_array = [] %>
@@ -16,8 +13,6 @@
 
     <div class="col-xs-12 col-lg-4 col-lg-offset-4">
       <h2> What are you swapping ? Conversion still missing</h2>
-
-
 
                  <div class="form">
           <%= simple_form_for @request do |f|  %>
@@ -32,24 +27,14 @@
             <p> When do you want to swap?</p>
 
             <%= f.label "From" %>
-            <%= f.date_field :start_date, as: :string, required: false,
-                 input_html: {class: "datepicker"} %> <br>
-            <%= f.label "Until:" %>
-            <%= f.date_field :end_date, as: :string, required: false,
-                 input_html: {class: "datepicker"} %> <br>
+            <%= f.date_field :start_date, as: :string, required: false, class: "datepicker" %> <br>
+            <%= f.label "Until" %>
+            <%= f.date_field :end_date, as: :string, required: false, class: "datepicker" %> <br>
 
 
             <%= f.submit "Swap my dosh" %>
           <% end %>
         </div>
-
-
-
-
-
-
-
-
 
     </div>
   </div>
