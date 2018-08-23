@@ -19,40 +19,33 @@
 
 
 
-            <div class="form">
-           <br>
-          <%= form_tag requests_path, method: :get do %>
-          <p class="white-color">Filter by Location:</p>
-          <%= text_field_tag :location,
-          params[:location],
-          class: "form-control",
-            label: "Location",
-            placeholder: "Location" %>
+                 <div class="form">
+          <%= simple_form_for @request do |f|  %>
+            <p> Which currency do you have to offer ? </p>
+            <%= f.select :request_currency, cur_array %>
+            <p> How much do you have to offer ?</p>
+            <%= f.input :request_amount %>
+            <p> Which currency are you looking for ? </p>
+            <%= f.select :wanted_currency, cur_array %>
+            <p> Where do you want to swap ? </p>
+            <%= f.input :location %>
+            <p> When do you want to swap?</p>
 
-            <br>
+            <%= f.label "From" %>
+            <%= f.date_field :start_date, as: :string, required: false,
+                 input_html: {class: "datepicker"} %> <br>
+            <%= f.label "Until:" %>
+            <%= f.date_field :end_date, as: :string, required: false,
+                 input_html: {class: "datepicker"} %> <br>
 
-            <p class="white-color">Filter by Dates:</p>
-            <%= date_field_tag(
-                    :start_date, "",
-                     as: :string,
-                    class: "datepicker",
-                    label: "Start Date",
-                    placeholder: "From") %>
-              <br>
-              <p class="white-color">End Date:</p>
-              <%= date_field_tag(
-                     :end_date, "",
-                      as: :string,
-                      class: "datepicker",
-                      label: "End Date",
-                      placeholder: "To") %>
-                <br>
 
-                <div class="button">
-                  <%= submit_tag "Apply Filters", class: "btn btn-primary" %>
-                </div>
-              <% end %>
-              </div>
+            <%= f.submit "Swap my dosh" %>
+          <% end %>
+        </div>
+
+
+
+
 
 
 
