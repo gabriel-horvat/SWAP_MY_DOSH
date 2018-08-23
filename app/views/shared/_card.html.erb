@@ -4,7 +4,7 @@
       <% if request.user.photo.nil? %>
         <div class="card-photo"></div>
       <% else %>
-        <div><%= image_tag request.user.photo, class:"card-photo" %></div>
+        <div><%= cl_image_tag request.user.photo, class:"card-photo" %></div>
       <% end %>
     </div>
     <div class="request-details">
