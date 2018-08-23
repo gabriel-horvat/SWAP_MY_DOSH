@@ -3,7 +3,6 @@ class RequestsController < ApplicationController
   def index
     @requests = apply_filters(Request.all.order("created_at DESC"))
     @user = User.all.sample
-
   end
 
   def show
