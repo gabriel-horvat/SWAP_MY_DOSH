@@ -33,6 +33,9 @@ class RequestsController < ApplicationController
   end
 
   def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    redirect_to personal_path, notice: "Your request has been deleted"
   end
 
   def personal

@@ -1,0 +1,24 @@
+<h1> Your open Chats </h1>
+    <p>Put all the information and apply card design</p>
+
+  <h2> Offers you have reacted to :</h1>
+    <% @relevant_offers.each do |offer| %>
+      <% if offer.user == current_user %>
+        <%= offer.request.location %>
+        <%= link_to "", request_offer_messages_path(offer.id, offer.request.id), class: "far fa-envelope" %>
+      <% end %>
+    <% end %>
+
+  <h2> Your Offers People reacted to:</h2>
+    <% @relevant_offers.each do |offer| %>
+      <% if offer.user != current_user %>
+        <%= offer.request.location %>
+        <%= link_to "", request_offer_messages_path(offer.id, offer.request.id), class: "far fa-envelope" %>
+      <% end %>
+    <% end %>
+
+
+
+
+
+

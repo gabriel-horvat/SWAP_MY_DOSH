@@ -27,6 +27,6 @@
   </div>
 </div>
 <div>
-  <%= link_to "Confirm Swap", offers_path, class: "btn btn-success" %>
-  <%= link_to '+', request_offer_confirm_path, class: "btn", method: :post  %>
+  <%= link_to 'Confirm the Swap!', request_offer_confirm_path, class: "far fa-check-circle", method: :post  %>
+  <%= link_to 'Decline the Swap!', request_offer_decline_path, class: "far fa-times-circle", method: :post %>
 </div>

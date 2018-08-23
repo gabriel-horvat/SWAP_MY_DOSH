@@ -42,6 +42,23 @@ class OffersController < ApplicationController
     redirect_to offers_path
   end
 
+  def decline
+    @offer = Offer.find(params[:offer_id])
+    @offer.update(:status => "declined")
+    @offer.save
+    redirect_to requests_path
+  end
+
+  def my_chats
+    @relevant_offers = []
+    @offers = Offer.all
+    @offers.each do |offer|
+      if offer.user_id == current_user.id || offer.request.user.id == current_user.id
+        @relevant_offers << offer
+      end
+    end
+  end
+
   private
 
   def offer_params

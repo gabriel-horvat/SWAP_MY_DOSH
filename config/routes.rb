@@ -8,9 +8,11 @@ resources :requests do
   resources :offers, only: [:new, :create] do
     resources :messages
     post "/confirm", to: "offers#confirm"
+    post "/decline", to: "offers#decline"
     end
   end
 
   get "/personal", to: "requests#personal"
+  get "/chats", to: "offers#my_chats"
   resources :offers, only: [:index]
 end
