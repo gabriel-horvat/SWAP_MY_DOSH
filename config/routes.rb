@@ -11,5 +11,6 @@ resources :requests do
     end
   end
 
+  get "/personal", to: "requests#personal"
   resources :offers, only: [:index]
 end
