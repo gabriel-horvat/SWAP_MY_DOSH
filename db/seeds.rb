@@ -11,7 +11,7 @@ Review.destroy_all
   name: Faker::Name.name,
   email: Faker::Internet.email,
   password: "123456",
-  photo: UiFaces.face,
+  remote_photo_url: UiFaces.face,
   description: Faker::HarryPotter.quote
   )
 end
