@@ -1,0 +1,31 @@
+<%#= link_to "", request_offer_messages_path(offer.id, offer.request.id) do %>  
+  <div class="card-container" role="button" @click="handleClick()">
+    <div class="card-profile">
+      <% if offer.request.user.photo.nil? %>
+        <div class="card-photo"></div>
+      <% else %>
+        <div><%= cl_image_tag offer.request.user.photo, class:"card-photo" %></div>
+      <% end %>
+    </div>
+    <div class="request-details">
+      <div class="user-name"><%= offer.request.user.name %></div>
+      <div class="user-location">
+        <strong><%= offer.request.location %></strong>
+      </div>
+      <div class="swap-currencies">
+        <div>Swapping <strong><%= offer.request.request_currency %></strong></div>
+        <div>for <strong><%= offer.request.wanted_currency %></strong></div>
+      </div>
+      <div class="swap-dates">
+        <strong><%= offer.request.start_date.strftime('%d. %b. %Y') %></strong>
+        - <strong><%#= offer.request.end_date.strftime('%d. %b. %Y')%></strong>
+      </div> 
+    </div>
+    <i class="far fa-envelope"></i>
+    <div class="swap-amount">
+      <%= offer.request.request_currency %> <%= offer.request.request_amount %>
+    </div>
+  </div>
+<%# end %>
+
+
