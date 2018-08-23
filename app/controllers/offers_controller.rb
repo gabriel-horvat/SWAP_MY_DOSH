@@ -42,6 +42,13 @@ class OffersController < ApplicationController
     redirect_to offers_path
   end
 
+  def decline
+    @offer = Offer.find(params[:offer_id])
+    @offer.update(:status => "declined")
+    @offer.save
+    redirect_to requests_path
+  end
+
   private
 
   def offer_params

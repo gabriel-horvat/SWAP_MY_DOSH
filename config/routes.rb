@@ -8,6 +8,7 @@ resources :requests do
   resources :offers, only: [:new, :create] do
     resources :messages
     post "/confirm", to: "offers#confirm"
+    post "/decline", to: "offers#decline"
     end
   end
 

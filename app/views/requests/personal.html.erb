@@ -1,5 +1,6 @@
 <h1>Your Public Offers</h1>
 
-<%= @requests.each do |request| %>
+<% @requests.each do |request| %>
 <%= request %>
+<%= link_to "", request_path(request.id), method: :delete, data: {confirm: "Are you sure?"}, class: "fas fa-trash-alt" %>
 <% end %>
