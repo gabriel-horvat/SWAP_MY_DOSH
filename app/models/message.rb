@@ -14,6 +14,8 @@ class Message < ApplicationRecord
     self.sender_id == current_user.id ? self.receiver : self.sender
   end
 
+
+
   private
 
     def message_time

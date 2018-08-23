@@ -7,6 +7,8 @@ class MessagesController < ApplicationController
 
       @messages = @offer.messages
 
+
+
       @message = @offer.messages.new
 
     end
