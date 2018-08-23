@@ -45,7 +45,7 @@ class RequestsController < ApplicationController
   private
 
   def apply_filters(scope)
-    starts = params[:start_date]
+    starts = params[:start_date].split(" ").first if params[:start_date]
     ends = params[:end_date]
 
     if starts.present? && ends.present?
