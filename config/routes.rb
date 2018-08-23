@@ -13,5 +13,6 @@ resources :requests do
   end
 
   get "/personal", to: "requests#personal"
+  get "/chats", to: "offers#my_chats"
   resources :offers, only: [:index]
 end
