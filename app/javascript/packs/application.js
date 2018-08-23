@@ -10,6 +10,11 @@ flatpickr(".datepicker", {
 
 });
 
+flatpickr("#request_start_date", {
+  altInput: true,
+  plugins: [new rangePlugin({ input: "#request_end_date"})]
+})
+
 flatpickr("#start_date", {
   altInput: true,
   plugins: [new rangePlugin({ input: "#end_date"})]
