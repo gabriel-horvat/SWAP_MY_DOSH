@@ -57,6 +57,20 @@ class OffersController < ApplicationController
         @relevant_offers << offer
       end
     end
+    my_chats_counter
+    raise
+  end
+
+  def my_chats_counter
+    @relevant_offers = my_chats
+    @counter = 0
+    @relevant_offers.each do |offer|
+      offer.messages.each do |message|
+        if message.read == false
+          @counter += 1
+        end
+      end
+    end
   end
 
   private
