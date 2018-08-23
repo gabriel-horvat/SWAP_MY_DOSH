@@ -24,7 +24,13 @@
             <%= f.input :request_amount %>
             <p> Which currency are you looking for ? </p>
             <%= f.select :wanted_currency, cur_array %>
-            <br>
+            <p> Where do you want to swap ? </p>
+            <%= f.input :location %>
+            <p> When do you want to swap?</p>
+            <%= f.label "From" %>
+            <%= f.date_field :start_date %> <br>
+            <%= f.label "Until:" %>
+            <%= f.date_field :end_date %> <br>
             <%= f.submit "Swap my dosh" %>
           <% end %>
         </div>
