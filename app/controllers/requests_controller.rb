@@ -4,6 +4,7 @@ class RequestsController < ApplicationController
     @requests = apply_filters(Request.all.order("created_at DESC"))
     session[:start_date] = params[:start_date]
     session[:end_date] = params[:end_date]
+    @user = User.all.sample
   end
 
   def show
@@ -44,7 +45,7 @@ class RequestsController < ApplicationController
   private
 
   def apply_filters(scope)
-    starts = params[:start_date]
+    starts = params[:start_date].split(" ").first if params[:start_date]
     ends = params[:end_date]
 
     if starts.present? && ends.present?
