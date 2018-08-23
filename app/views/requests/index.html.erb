@@ -13,10 +13,11 @@
 
             <br>
 
-          </div>
-          <div class="col-sm-6">
             <p class="white-color">Filter by Dates:</p>
-            <%= date_field_tag(:start_date, "", as: :string, class: "datepicker",
+            <%= date_field_tag(
+                    :start_date, "",
+                     as: :string,
+                    class: "datepicker",
                     label: "Start Date",
                     placeholder: "From") %>
               <br>
@@ -29,17 +30,18 @@
                       placeholder: "To") %>
                 <br>
 
-                <div class="sf-button">
-                  <%= submit_tag "Pick dates", class: "btn btn-primary" %>
+                <div class="button">
+                  <%= submit_tag "Apply Filters", class: "btn btn-primary" %>
                 </div>
-              </div>
               <% end %>
+              </div>
 
             </div>
           </div>
-
         </div>
-      </div>
+
+
+
 
         <nav>
           <ul style="overflow-y:scroll">
