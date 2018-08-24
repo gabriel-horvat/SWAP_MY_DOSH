@@ -1,0 +1,33 @@
+.simple_form input {
+  border-radius: 5px;
+}
+
+.message-btn {
+  border-radius: 5px;
+  float: right;
+  background-color: white;
+  height: 30px;
+}
+
+.message {
+  background-color:#efefef;
+  border-radius: 5px;
+  color: black;
+  font-size: 12px;
+  box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75);
+}
+
+.content-container {
+  margin-right:10px;
+  margin-left: 10px;
+}
+
+.confirmation-message {
+  font-size: 10px;
+
+}
+
+.message-form {
+  position:relative;
+  bottom: 0px;
+}
