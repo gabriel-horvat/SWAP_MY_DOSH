@@ -4,7 +4,7 @@
   <h2> Offers you have reacted to :</h1>
     <% @relevant_offers.each do |offer| %>
       <% if offer.user == current_user %>
-        <%= link_to "", request_offer_messages_path(offer.id, offer.request.id), class: "far fa-envelope" %>
+        <%#= link_to "", request_offer_messages_path(offer.request.id, offer.id), class: "far fa-envelope" %>
         <%= render 'shared/chat_card', offer: offer  %>
       <% end %>
     <% end %>
@@ -12,7 +12,7 @@
   <h2> Your Offers People reacted to:</h2>
     <% @relevant_offers.each do |offer| %>
       <% if offer.user != current_user %>
-        <%= link_to "", request_offer_messages_path(offer.id, offer.request.id), class: "far fa-envelope" %>
+        <%#= link_to "", request_offer_messages_path(offer.request.id, offer.id), class: "far fa-envelope" %>
         <%= render 'shared/chat_card', offer: offer  %>
       <% end %>
     <% end %>

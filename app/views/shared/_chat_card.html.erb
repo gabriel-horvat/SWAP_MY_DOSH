@@ -1,4 +1,4 @@
-<%#= link_to "", request_offer_messages_path(offer.id, offer.request.id) do %>  
+<%= link_to request_offer_messages_path(offer.request.id, offer.id) do %>  
   <div class="card-container" role="button" @click="handleClick()">
     <div class="card-profile">
       <% if offer.request.user.photo.nil? %>
@@ -26,6 +26,6 @@
       <%= offer.request.request_currency %> <%= offer.request.request_amount %>
     </div>
   </div>
-<%# end %>
+<% end %>
 
 

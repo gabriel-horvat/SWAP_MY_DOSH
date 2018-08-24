@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
 
-    before_action :find_offer
+    before_action :set_offer
     def index
 
       @request = Request.find(params[:request_id])
@@ -46,7 +46,7 @@ class MessagesController < ApplicationController
         params.require(:message).permit(:content)
     end
 
-    def find_offer
+    def set_offer
       @offer = Offer.find(params[:offer_id])
     end
 end
