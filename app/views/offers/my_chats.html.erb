@@ -1,7 +1,6 @@
 <h1> Your open Chats </h1>
-    <p>Put all the information and apply card design</p>
 
-  <h2> Offers you have reacted to :</h1>
+  <h4> People you want to swap with:</h4>
     <% @relevant_offers.each do |offer| %>
       <% if offer.user == current_user %>
 
@@ -11,7 +10,7 @@
       <% end %>
     <% end %>
 
-  <h2> Your Offers People reacted to:</h2>
+  <h4> Responses to your Swap Offerings:</h4>
     <% @relevant_offers.each do |offer| %>
       <% if offer.user != current_user %>
 
