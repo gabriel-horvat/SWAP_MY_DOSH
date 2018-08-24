@@ -1,25 +1,13 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background-image: linear-gradient(to right, #133466, #2c3e86, #5044a4, #7c46bc, #ac40cf);
+  background-image: linear-gradient(to right, #1a2c5b, #3e4e88, #7971ea, #b8dff0);
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-/* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
-}
-
-/* User Avatar */
-.navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
 }
 
 /* Right section */
