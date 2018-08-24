@@ -1,6 +1,23 @@
 <h1 style="text-align: center;">Upcoming Swaps</h1>
-<% @offers.each do |offer| %>
-  <%= offer.id %>
-  <%= offer.user.email %>
-  <%= link_to "", request_offer_messages_path(offer.id, offer.request_id), class:"fas fa-comment-alt" %>
+
+<% @offers_confirmed.each do |offer| %>
+  <% if offer.user.id == current_user.id %>
+    <%= render 'shared/chat_card', offer: offer  %>
+  <% elsif offer.request.user.id == current_user.id %>
+    <%= render 'shared/chat_card', offer: offer  %>
   <% end %>
+<% end %>
+
+<%# @offers.each do |offer| %>
+  <%#= offer.id %>
+  <%#= offer.user.email %>
+   <%#= render 'shared/chat_card', offer: offer  %>
+  <%#= link_to "", request_offer_messages_path(offer.id, offer.request_id), class:"fas fa-comment-alt" %>
+  <%# end %>
+  <%#= @offers_confirmed.each do |offer| %>
+    <%# if offer.user.id == current_user.id %>
+      <%#= render 'shared/chat_card', offer: offer  %>
+    <%# elsif offer.request.user.id == current_user.id %>
+      <%#= render 'shared/chat_card', offer: offer  %>
+    <%# end %>
+  <%# end %>
