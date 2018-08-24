@@ -21,7 +21,7 @@
         - <strong><%= request.end_date.strftime('%d. %b. %Y')%></strong>
       </div> 
     </div>
-    <div class="delete-bin">
+    <div class=>
         <%= link_to "", request_path(request.id), method: :delete, data: {confirm: "Are you sure?"}, class: "fas fa-trash-alt" %>
     </div>
     <div class="swap-amount">
