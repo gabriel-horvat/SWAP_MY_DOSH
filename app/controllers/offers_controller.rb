@@ -1,6 +1,7 @@
 class OffersController < ApplicationController
 
   def index
+    @user = User.find_by_id(params[:id])
     @offers_confirmed = Offer.all.where("status = 'confirmed'")
   end
 
