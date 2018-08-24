@@ -1,0 +1,30 @@
+.profile-container {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75);
+    margin: 10px;
+    position: relative;
+}
+
+#swapper {
+    // border: 1px solid black;
+    padding: 20px;
+}
+
+.user-details {
+    // border: 1px solid black;
+    padding: 20px;
+}
+
+.swap-details {
+    // border: 1px solid black;
+    padding: 20px;
+}
+
+.btn {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}

@@ -1,19 +1,25 @@
-<h1> Users Offer to Swap </h1>
+<div class="container">
+  <div class="profile-container">
+    <h1 id="swapper"><%= @request.user.name  %>'s Swapper Profile</h1>
+      <div class="user-details">  
+        <div class="user-photo"><%= cl_image_tag @request.user.photo, :width => 250, :height => 250, :crop => :fit %></div>
+        <p>"<em><%= @request.user.description  %></em>"</p>
+      </div>
 
+      <div class="swap-details">  
+        <h4>Swap Details</h4>
+        <p>I'm in <strong><%= @request.location  %></strong> from <strong><%= @request.start_date.strftime("%A, %b %d %Y") %></strong> until <strong><%= @request.end_date.strftime("%A, %b %d %Y") %></strong></p>
+        <p>I want to swap <strong><%= @request.request_currency %> <%= @request.request_amount %></strong> for <strong><%= @request.wanted_currency %></strong></p>
+      </div>
 
-<p> On here we need: </p>
-<ul>
-  <li>profile picture </li>
-  <li>user description</li>
-  <li>request information</li>
-  <li>button to go vack to requests without creating an offer</li>
-</ul>
-
-<p>creating an offer here that directs to a chat</p>
-<%= simple_form_for [@request, @offer] do |f| %>
-<%=  f.submit %>
-<% end %>
-
+      <%= simple_form_for [@request, @offer] do |f| %>
+      <%=  f.submit 'Go to Chat and Create an Offer', class: "btn btn-primary" %>
+      <% end %>
+      
+      <%= link_to "Back to search results", requests_path, class: "btn btn-primary" %>
+    
+  </div>
+</div>
 
 
 
