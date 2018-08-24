@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
       @request = Request.find(params[:request_id])
 
       @messages = @offer.messages
-
+      @messages.where("receiver_id != ? AND read = ?", current_user.id, false).update_all(read: true)
 
 
       @message = @offer.messages.new

@@ -1,13 +1,13 @@
 <div class="content-container">
   <div class="message-container">
 
-    <h3>Your Messages</h3>
+    <h3>Your Messages<small id="count">(0)</small></h3>
 
-    <div class="message">
+    <div>
       <ul>
         <% @offer.messages.each do |message|%>
           <% if message.id.present? %>
-            <li>
+            <li class="message">
               <h4><%= message.sender.email %></h4>
               <p class = "message-content"><%= message.content %></p>
             </li>
@@ -30,3 +30,23 @@
   <%= link_to 'Confirm the Swap!', request_offer_confirm_path, class: "far fa-check-circle", method: :post  %>
   <%= link_to 'Decline the Swap!', request_offer_decline_path, class: "far fa-times-circle", method: :post %>
 </div>
+<div>
+  <% if @offer.status == "sent" %>
+    <% if current_user.status == "receiver"%>
+        <%= link_to "Accept Swap", request_offer_confirmed_path %>
+        <%= link_to "Keep Negotiating", request_offer_continue_path%>
+      <% elsif current_user.status == "sender"  %>
+      <p>Waiting for Confirmation...</p>
+    <% end %>
+  <% end %>
+  <% if @offer.status == "confirmed" %>
+      <p> <%= link_to "Swap confirmed! Go to upcoming Swaps!", offers_path %></p>
+  <% end %>
+  <% if @offer.status == "continue" %>
+    <% if current_user.status == "sender"%>
+      <p> Your partner does not seem satisfied. Maybe something was left unclear?</p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to_function "Back", history.back() %>

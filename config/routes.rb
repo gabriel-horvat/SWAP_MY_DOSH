@@ -9,6 +9,8 @@ resources :requests do
     resources :messages
     post "/confirm", to: "offers#confirm"
     post "/decline", to: "offers#decline"
+    get "/confirmed", to: "offers#actual_confirmation"
+    get "/continue", to: "offers#keep_chatting"
     end
   end
 

@@ -3,16 +3,21 @@
   <h4> People you want to swap with:</h4>
     <% @relevant_offers.each do |offer| %>
       <% if offer.user == current_user %>
+
         <%#= link_to "", request_offer_messages_path(offer.request.id, offer.id), class: "far fa-envelope" %>
         <%= render 'shared/chat_card', offer: offer  %>
+
       <% end %>
     <% end %>
 
   <h4> Responses to your Swap Offerings:</h4>
     <% @relevant_offers.each do |offer| %>
       <% if offer.user != current_user %>
+
+
         <%#= link_to "", request_offer_messages_path(offer.request.id, offer.id), class: "far fa-envelope" %>
         <%= render 'shared/chat_card', offer: offer  %>
+
       <% end %>
     <% end %>
 
