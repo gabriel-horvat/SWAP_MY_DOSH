@@ -5,7 +5,7 @@
     <% @relevant_offers.each do |offer| %>
       <% if offer.user == current_user %>
         <%= offer.request.location %>
-        <%= link_to "", request_offer_messages_path(offer.id, offer.request.id), class: "far fa-envelope" %>
+        <%= link_to "", request_offer_messages_path(offer.request.id, offer.id, ), class: "far fa-envelope" %>
       <% end %>
     <% end %>
 
@@ -13,7 +13,7 @@
     <% @relevant_offers.each do |offer| %>
       <% if offer.user != current_user %>
         <%= offer.request.location %>
-        <%= link_to "", request_offer_messages_path(offer.id, offer.request.id), class: "far fa-envelope" %>
+        <%= link_to "", request_offer_messages_path(offer.request.id, offer.id), class: "far fa-envelope" %>
       <% end %>
     <% end %>
 

@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
 
   def index
-    @offers = Offer.all.where("user_id = ? AND status = 'confirmed'", current_user.id)
+    @offers_confirmed = Offer.all.where("status = 'confirmed'")
   end
 
 
@@ -52,23 +52,9 @@ class OffersController < ApplicationController
   def my_chats
     @relevant_offers = []
     @offers = Offer.all
-    @offers.each do |offer|
+    @offers.map do |offer|
       if offer.user_id == current_user.id || offer.request.user.id == current_user.id
         @relevant_offers << offer
-      end
-    end
-    my_chats_counter
-    raise
-  end
-
-  def my_chats_counter
-    @relevant_offers = my_chats
-    @counter = 0
-    @relevant_offers.each do |offer|
-      offer.messages.each do |message|
-        if message.read == false
-          @counter += 1
-        end
       end
     end
   end
@@ -76,7 +62,7 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.permit(:user_id, :request_id, :status)
+    params.permit( :request_id, :user_id, :status)
   end
 
 end
