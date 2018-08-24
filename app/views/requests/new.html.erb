@@ -12,17 +12,17 @@
   <div class="row">
 
     <div class="col-xs-12 col-lg-4 col-lg-offset-4">
-      <h2> What are you swapping ? Conversion still missing</h2>
+      <h2> What are you swapping?</h2>
 
                  <div class="form">
           <%= simple_form_for @request do |f|  %>
-            <p> Which currency do you have to offer ? </p>
+            <p> Which currency do you have to offer? </p>
             <%= f.select :request_currency, cur_array %>
-            <p> How much do you have to offer ?</p>
+            <p> How much do you have to offer?</p>
             <%= f.input :request_amount %>
-            <p> Which currency are you looking for ? </p>
+            <p> Which currency are you looking for? </p>
             <%= f.select :wanted_currency, cur_array %>
-            <p> Where do you want to swap ? </p>
+            <p> Where do you want to swap? </p>
             <%= f.input :location %>
             <p> When do you want to swap?</p>
 
