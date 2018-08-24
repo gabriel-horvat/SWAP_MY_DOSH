@@ -17,9 +17,9 @@
         <div>for <strong><%= request.wanted_currency %></strong></div>
       </div>
       <div class="swap-dates">
-        <strong><%= request.start_date.strftime('%d. %b. %Y') %></strong>
-        - <strong><%= request.end_date.strftime('%d. %b. %Y')%></strong>
-      </div> 
+        <strong><%= request.start_date %></strong>
+        - <strong><%= request.end_date%></strong>
+      </div>
     </div>
     <div class="swap-amount">
       <%= request.request_currency %> <%= request.request_amount %>

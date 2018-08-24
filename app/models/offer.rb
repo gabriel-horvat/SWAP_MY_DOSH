@@ -3,7 +3,7 @@ class Offer < ApplicationRecord
   belongs_to :user
   belongs_to :request
 
-  validates :status, inclusion: { in: ["pending","confirmed", "declined"] }
+  validates :status, inclusion: { in: ["pending","confirmed", "declined", "sent", "continue"] }
 end
 
 

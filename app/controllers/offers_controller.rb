@@ -38,9 +38,31 @@ class OffersController < ApplicationController
 
   def confirm
     @offer = Offer.find(params[:offer_id])
-    @offer.update(:status => "confirmed")
+    @offer.update(:status => "sent")
+    if @offer.request.user == current_user
+      current_user.update(:status => "sender")
+      @offer.user.update(:status => "receiver")
+    elsif @offer.user == current_user
+      current_user.update(:status => "sender")
+      @offer.request.user.update(:status => "receiver")
+    end
     @offer.save
-    redirect_to offers_path
+    redirect_to request_offer_messages_path(@offer.request.id, @offer)
+  end
+
+  def actual_confirmation
+    @offer = Offer.find(params[:offer_id])
+    @offer.update(:status => "confirmed")
+    if @offer.save
+      redirect_to offers_path
+    end
+  end
+
+  def keep_chatting
+    @offer = Offer.find(params[:offer_id])
+    @offer.update(:status => "continue")
+    @offer.save
+    redirect_to request_offer_messages_path(@offer.request.id, @offer)
   end
 
   def decline
@@ -59,6 +81,7 @@ class OffersController < ApplicationController
       end
     end
   end
+
 
   private
 
