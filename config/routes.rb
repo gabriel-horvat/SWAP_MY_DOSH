@@ -11,8 +11,9 @@ resources :requests do
     post "/decline", to: "offers#decline"
     get "/confirmed", to: "offers#actual_confirmation"
     get "/continue", to: "offers#keep_chatting"
-    end
   end
+  resources :search_by_location_and_wanted_currency, only: [:index]
+end
 
   get "/personal", to: "requests#personal"
   get "/chats", to: "offers#my_chats"

@@ -14,28 +14,41 @@
     <div class="col-xs-12 col-lg-4 col-lg-offset-4">
       <h2> What are you swapping?</h2>
 
-                 <div class="form">
-          <%= simple_form_for @request do |f|  %>
+        <div class="form">
+          <%= form_for @request, url: {action: "create"} do |f|  %>
+            <%#= select_tag :query, params[:query], placeholder: params[:query] %>
             <p> Which currency do you have to offer? </p>
-            <%= f.select :request_currency, cur_array %>
+            <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
+            <%#= f.select :request_currency, cur_array %>
+  
             <p> How much do you have to offer?</p>
-            <%= f.input :request_amount %>
+            <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field" %>
+            <%#= f.input :request_amount %>
+
             <p> Which currency are you looking for? </p>
-            <%= f.select :wanted_currency, cur_array %>
+            <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }) %>
+            <%#= text_field :wanted_currency, rrency], placeholder: "Amount", class:"form-control search-stretch input-field" %>
+            <%#= f.select :wanted_currency, cur_array %>
+
             <p> Where do you want to swap? </p>
-            <%= f.input :location %>
+            <%= f.text_field :location,placeholder: "Location", class:"form-control search-stretch input-field" %>
+            <%#= f.input :location %>
+
             <p> When do you want to swap?</p>
-            <%= f.label "Dates" %>
+            <%#= f.label "Dates" %>
             <div class="row">
               <div class="col-xs-6">
-                <%= f.date_field :start_date, as: :string, required: false, class: "datepicker" %>
+                <%= f.date_field :start_date, placeholder: "FROM", id:"range_start", class: "datepicker form-control input-field date-field datepicker" %>
+                <%#= f.date_field :start_date, as: :string, required: false, class: "datepicker" %>
               </div>
+
               <div class="col-xs-6">
-                <%= f.date_field :end_date, required: false, class: "datepicker form-control" %>
+                <%#= f.date_field :end_date, required: false, class: "datepicker form-control" %>
+                <%= f.date_field :end_date, placeholder: "TO", id:"range_end", class: "datepicker form-control input-field date-field" %>
               </div>
             </div>
 
-            <%= f.submit "Swap my dosh", class: "btn btn-success" %>
+            <%= f.submit "Swap my dosh", name: nil, class: "btn btn-success" %>
           <% end %>
         </div>
 
@@ -44,7 +57,7 @@
 </div>
 
 
-<%= javascript_pack_tag 'conversion' %>
+<%#= javascript_pack_tag 'conversion' %>
 
 
 

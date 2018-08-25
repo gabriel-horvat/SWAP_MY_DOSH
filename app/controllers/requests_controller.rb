@@ -1,25 +1,34 @@
 class RequestsController < ApplicationController
+  # before_action :set_request
 
   def index
-    @requests = apply_filters(Request.all.order("created_at DESC"))
-    @user = User.all.sample
+    # @requests = apply_filters(Request.all.order("created_at DESC"))
+    #@user = User.all.sample
+    if params[:request].present?
+      #@requests = Request.search_by_location_and_wanted_currency(request_params).all.order("created_at DESC")
+      @requests = apply_filters(Request.all.order("created_at DESC"))
+      puts "Looking For Swaps!"
+    else
+      @requests = Request.all.order("created_at DESC")
+    end
+    
   end
-
+  
   def show
     set_request
   end
-
+  
   def new
     @request = Request.new
   end
-
+  
   def create
     end_date = params[:request][:end_date].to_date.strftime("%Y-%m-%d")
     @request = Request.new(request_params)
     @request.end_date = end_date
-     @request.user = current_user
+    @request.user = current_user
     if @request.save
-      redirect_to requests_path, notice: "Your request is now visible to other doshers!"
+      redirect_to requests_path(request: request_params), notice: "Your request is now visible to other doshers!"
     else
       render :new
     end
@@ -45,14 +54,14 @@ class RequestsController < ApplicationController
   private
 
   def apply_filters(scope)
-    starts = params[:start_date].split(" ").first if params[:start_date]
-    ends = params[:end_date]
+    starts = params[:request][:start_date].split(" ").first if params[:request][:start_date]
+    ends = params[:request][:end_date]
 
     if starts.present? && ends.present?
        scope = scope.where('start_date BETWEEN ? AND ?', starts, ends)
     end
-    scope = scope.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
-    scope = scope.where()
+    scope = scope.where("location ILIKE ?", "%#{params[:request][:location]}%") if params[:request][:location].present?
+    #scope = scope.where("wanted_currency ILIKE ?", "%#{params[:request][:wanted_currency]}%") if params[:request][:wanted_currency].present?
     scope
   end
 
@@ -61,6 +70,10 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:request_currency, :wanted_currency, :location, :start_date, :end_date, :request_amount, :user_id)
+    params.require(:request).permit(:wanted_currency, :location, :request_currency, :start_date, :end_date, :request_amount, :user_id)
+    #params.permit(:wanted_currency, :location, :request_currency, :start_date, :end_date, :request_amount, :user_id)
+
+    # {wanted_currency: "EUR"}
+    # {request: { wanted_currency: "EUR" }}
   end
 end
