@@ -52,6 +52,7 @@ class RequestsController < ApplicationController
        scope = scope.where('start_date BETWEEN ? AND ?', starts, ends)
     end
     scope = scope.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
+    scope = scope.where()
     scope
   end
 
