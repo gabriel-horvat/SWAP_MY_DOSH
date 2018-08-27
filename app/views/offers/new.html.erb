@@ -1,12 +1,12 @@
 <div class="container">
   <div class="profile-container">
     <h1 id="swapper"><%= @request.user.name  %>'s Swapper Profile</h1>
-      <div class="user-details">  
+      <div class="user-details">
         <div class="user-photo"><%= cl_image_tag @request.user.photo, :width => 250, :height => 250, :crop => :fit %></div>
         <p>"<em><%= @request.user.description  %></em>"</p>
       </div>
 
-      <div class="swap-details">  
+      <div class="swap-details">
         <h4>Swap Details</h4>
         <p>I'm in <strong><%= @request.location  %></strong> from <strong><%= @request.start_date.strftime("%A, %b %d %Y") %></strong> until <strong><%= @request.end_date.strftime("%A, %b %d %Y") %></strong></p>
         <p>I want to swap <strong><%= @request.request_currency %> <%= @request.request_amount %></strong> for <strong><%= @request.wanted_currency %></strong></p>
@@ -15,11 +15,21 @@
       <%= simple_form_for [@request, @offer] do |f| %>
       <%=  f.submit 'Go to Chat and Create an Offer', class: "btn btn-primary" %>
       <% end %>
-      
+
       <%= link_to "Back to search results", requests_path, class: "btn btn-primary" %>
-    
+
   </div>
 </div>
 
 
 
+ <div class="review-details">
+      <h3 class="h3-no-margin">Reviews:</h3>
+      <%@request.reviews.each do |review| %>
+      <hr>
+        <% review.rating.times do %>
+        <i class="fas fa-star" style="color:#EAE01C;"></i>
+        <% end %></p>
+        <p> <%= review.content %> </p>
+      <% end %>
+  </div>
