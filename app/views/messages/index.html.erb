@@ -1,5 +1,7 @@
 <div class="content-container">
   <div class="message-container">
+  <br>
+  <%= link_to "My Chats", chats_path,class: "btn btn-success" %>
 
     <h3>Your Messages<small id="count">(0)</small></h3>
 
@@ -25,7 +27,7 @@
         <div class="field">
           <%= f.input :content, label:false %>
         </div>
-        <%= f.submit "Send", class: "message-btn" %>
+        <%= f.submit "Send", class: "btn btn-success" %>
         <div>
           <%= link_to 'Confirm', request_offer_confirm_path, class: " btn btn-danger", method: :post  %>
           <%= link_to 'Decline', request_offer_decline_path, class: " btn btn-success", method: :post %>

@@ -1,4 +1,8 @@
 class Review < ApplicationRecord
-  belongs_to :reviewer, class_name: 'User', foreign_key: 'reviewer_id'
-  belongs_to :reviewee, class_name: 'User', foreign_key: 'reviewee_id'
+  belongs_to :user
+  belongs_to :request
+
+  validates :content, presence: true
+  validates :rating, presence: true
+  validates :rating, inclusion: {in: [1,2,3,4,5]}
 end

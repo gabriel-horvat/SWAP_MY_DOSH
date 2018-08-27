@@ -28,3 +28,4 @@ function refresh() {
 document.addEventListener("DOMContentLoaded", () => {
   setInterval(refresh, 1000); // Every 1 second, the `refresh` function is called.
 });
+

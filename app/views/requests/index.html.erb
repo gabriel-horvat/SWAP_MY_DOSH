@@ -5,17 +5,19 @@
            <br>
           <%= form_tag requests_path, method: :get do %>
           <p class="white-color">Filter by Location:</p>
-          <%= text_field_tag :location,
-          params[:location],
+          <%= text_field_tag :request,
+          params[:request],
           class: "form-control",
             label: "Location",
             placeholder: "Location" %>
+          <%#= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field" %>
+
 
             <br>
 
             <p class="white-color">Filter by Dates:</p>
             <%= date_field_tag(
-                    :start_date, "",
+                    :date_start, "",
                      as: :string,
                     class: "datepicker",
                     label: "Start Date",
@@ -23,7 +25,7 @@
               <br>
               <p class="white-color">End Date:</p>
               <%= date_field_tag(
-                     :end_date, "",
+                     :date_end, "",
                       as: :string,
                       class: "datepicker",
                       label: "End Date",
@@ -39,10 +41,7 @@
             </div>
           </div>
         </div>
-
-
-
-
+      
         <nav>
           <ol style="overflow-y:scroll">
             <% @requests.each do |request| %>
@@ -55,5 +54,16 @@
     </div>
   </div>
 </div>
-
-
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        <script>
+            var autocomplete;
+            function initialize() {
+              autocomplete = new google.maps.places.Autocomplete(
+                  /** @type {HTMLInputElement} */(document.getElementById('location')),
+                  { types: ['geocode'] });
+              google.maps.event.addListener(autocomplete, 'place_changed', function() {
+              });
+            }
+        </script>
+        <body onload="initialize()">
+      </body>

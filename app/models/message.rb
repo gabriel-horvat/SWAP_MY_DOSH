@@ -20,9 +20,6 @@ class Message < ApplicationRecord
         });
   end
 
-
-
-
   private
 
     def message_time
