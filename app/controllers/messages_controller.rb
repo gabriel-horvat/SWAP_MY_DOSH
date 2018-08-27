@@ -1,34 +1,34 @@
 class MessagesController < ApplicationController
+
+    before_action :set_offer, :set_request
     before_action :set_message_count
     before_action :set_offer
 
     def index
 
-      @request = Request.find(params[:request_id])
-
       @messages = @offer.messages
-      @messages.where("sender_id != ? AND read = ?", current_user.id, false).update_all(read: true)
 
+      @messages.where("sender_id != ? AND read = ?", current_user.id, false).update_all(read: true)
 
       @message = @offer.messages.new
 
     end
 
     def create
-      @request = Request.find(params[:request_id])
-      @message = @offer.messages.new(message_params)
-      @message.sender_id = current_user.id
-      if @message.sender_id == @offer.user_id
-        @message.receiver_id = @offer.request.user.id
+      @message = Message.new(message_params.merge(sender: current_user))
+      @message.offer = @offer
+      @message.sender = current_user
+      @message.receiver_id = @offer.user_id
+      if @message.save
+        respond_to do |format|
+          format.html { redirect_to request_offer_path(@offer.request, @offer) }
+          format.js
+        end
       else
-        @message.receiver_id = @offer.user_id
-      end
-      if @message.save!
-        redirect_to request_offer_messages_path(@request, @offer)
-      else
-        redirect_to request_offer_messages_path(@request, @offer)
-      end
-
+        respond_to do |format|
+          format.html { render "offers/show" }
+          format.js
+        end
       set_message_count
     end
 
@@ -52,11 +52,14 @@ class MessagesController < ApplicationController
      end
 
     def message_params
-        params.permit(:sender_id, :receiver_id, :content)
         params.require(:message).permit(:content)
     end
 
     def set_offer
       @offer = Offer.find(params[:offer_id])
+    end
+
+    def set_request
+      @request = Request.find(params[:request_id])
     end
 end

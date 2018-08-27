@@ -10,7 +10,6 @@
 
 <div class="container">
   <div class="row">
-
     <div class="col-xs-12 col-lg-4 col-lg-offset-4">
       <h2> What are you swapping?</h2>
 
@@ -21,7 +20,7 @@
             <p> Which currency do you have to offer? </p>
             <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
             <%#= f.select :request_currency, cur_array %>
-  
+
             <p> How much do you have to offer?</p>
             <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field" %>
             <%#= f.input :request_amount %>
@@ -54,15 +53,10 @@
             <%= f.submit "Swap my dosh", class: "btn btn-success" %> <%= link_to "Back", :back ,class: "btn btn-success" %>
 
           <% end %>
-
         </div>
-
+      </div>
     </div>
   </div>
-</div>
-
-
-<%#= javascript_pack_tag 'conversion' %>
 
 
 

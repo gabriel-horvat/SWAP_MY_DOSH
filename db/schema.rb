@@ -48,13 +48,11 @@ ActiveRecord::Schema.define(version: 2018_08_27_102048) do
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "sender_id"
-    t.bigint "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "offer_id"
     t.boolean "read", default: false
     t.index ["offer_id"], name: "index_messages_on_offer_id"
-    t.index ["receiver_id"], name: "index_messages_on_receiver_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
@@ -111,7 +109,6 @@ ActiveRecord::Schema.define(version: 2018_08_27_102048) do
   end
 
   add_foreign_key "messages", "offers"
-  add_foreign_key "messages", "users", column: "receiver_id"
   add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "offers", "requests"
   add_foreign_key "offers", "users"
