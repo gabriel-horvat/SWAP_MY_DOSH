@@ -4,6 +4,11 @@ class Offer < ApplicationRecord
   belongs_to :request
 
   validates :status, inclusion: { in: ["pending","confirmed", "declined", "sent", "continue"] }
+
+
+  def unread_message_count(current_user)
+    self.messages.where("sender_id != ? AND read = ?", current_user, false).count
+  end
 end
 
 

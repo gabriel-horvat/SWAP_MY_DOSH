@@ -20,7 +20,6 @@ flatpickr("#start_date", {
   plugins: [new rangePlugin({ input: "#end_date"})]
 })
 
-console.log( "hello")
 
 
 function refresh() {
@@ -31,3 +30,4 @@ function refresh() {
 document.addEventListener("DOMContentLoaded", () => {
   setInterval(refresh, 1000); // Every 1 second, the `refresh` function is called.
 });
+

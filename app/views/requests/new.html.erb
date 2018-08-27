@@ -48,8 +48,13 @@
                 <%= f.date_field :end_date, placeholder: "TO", id:"range_end", class: "datepicker form-control input-field date-field" %>
               </div>
             </div>
-            <%= f.submit "Swap my dosh", name: nil, class: "btn btn-success" %>
+
+
+             <br>
+            <%= f.submit "Swap my dosh", class: "btn btn-success" %> <%= link_to "Back", :back ,class: "btn btn-success" %>
+
           <% end %>
+
         </div>
 
     </div>
@@ -62,3 +67,16 @@
 
 
 
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        <script>
+            var autocomplete;
+            function initialize() {
+              autocomplete = new google.maps.places.Autocomplete(
+                  /** @type {HTMLInputElement} */(document.getElementById('request_location')),
+                  { types: ['geocode'] });
+              google.maps.event.addListener(autocomplete, 'place_changed', function() {
+              });
+            }
+        </script>
+        <body onload="initialize()">
+      </body>
