@@ -1,39 +1,15 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:index]
+
   def index
-    
-    
     if params[:new_request].present?
-      @requests = []
-      Request.all.each do  |request| 
-        if  params[:new_request][:location] == request.location 
-            @requests << request
-        end 
-      end
-    elsif params[:request].present?
-      set_request
+      @requests = Request.search_by_requests(params[:new_request][:location]).where(request_currency: params[:new_request][:wanted_currency]) #.where(wanted_currency: params[:new_request][:requested_currency])
+    elsif params[:location].present?
+      set_request(params[:location])
+    elsif params[:start_date].present?
+      set_request(params[:start_date])
     else
       @requests = Request.all
     end
-
-
-    #@requests = apply_filters(Request.all.order("created_at DESC"))
-    # session[:date_start] = params[:date_start]
-    # session[:date_end] = params[:date_end]
-    #@user = User.all.sample
-    # if params[:request]
-    #   @requests = Request.search_by_requests(params[:request][:location]).all.order("created_at DESC")
-    #   #@requests = apply_filters(Request.all.order("created_at DESC"))
-    #   #@requests = Request.search_by_requests(params[:request][:wanted_currency]).all.order("created_at DESC")
-    # elsif params[:location].present?
-    #   @requests = Request.search_by_requests(params[:location]).all.order("created_at DESC")
-    #   #@requests = apply_filters(Request.all.order("created_at DESC"))
-    # elsif params[:start_date].present?
-    #   start_date = params[:start_date].split(" ").first
-    #   @requests = Request.search_by_requests(start_date).all.order("created_at DESC")
-    # else
-    #   @requests = Request.all.order("created_at DESC")
-    # end
   end
   
   def show
@@ -96,15 +72,11 @@ class RequestsController < ApplicationController
     # #scope = scope.where("wanted_currency ILIKE ?", "%#{params[:request][:wanted_currency]}%") if params[:request][:wanted_currency].present?
     # scope
 
-  def set_request
-    @requests = Request.search_by_requests(params[:request])
+  def set_request(search_term)
+    @requests = Request.search_by_requests(search_term)
   end
   
   def request_params
     params.require(:request).permit(:wanted_currency, :location, :request_currency, :start_date, :end_date, :request_amount, :user_id)
-    #params.permit(:wanted_currency, :location, :request_currency, :start_date, :end_date, :request_amount, :user_id)
-
-    # {wanted_currency: "EUR"}
-    # {request: { wanted_currency: "EUR" }}
   end
 end
