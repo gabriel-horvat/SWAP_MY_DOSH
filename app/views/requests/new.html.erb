@@ -17,6 +17,7 @@
         <div class="form">
           <%= form_for @request, url: {action: "create"} do |f|  %>
             <%#= select_tag :query, params[:query], placeholder: params[:query] %>
+
             <p> Which currency do you have to offer? </p>
             <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
             <%#= f.select :request_currency, cur_array %>
@@ -31,7 +32,7 @@
             <%#= f.select :wanted_currency, cur_array %>
 
             <p> Where do you want to swap? </p>
-            <%= f.text_field :location,placeholder: "Location", class:"form-control search-stretch input-field" %>
+            <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field" %>
             <%#= f.input :location %>
 
             <p> When do you want to swap?</p>
@@ -47,7 +48,6 @@
                 <%= f.date_field :end_date, placeholder: "TO", id:"range_end", class: "datepicker form-control input-field date-field" %>
               </div>
             </div>
-
             <%= f.submit "Swap my dosh", name: nil, class: "btn btn-success" %>
           <% end %>
         </div>

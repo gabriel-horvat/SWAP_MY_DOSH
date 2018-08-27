@@ -12,7 +12,6 @@ resources :requests do
     get "/confirmed", to: "offers#actual_confirmation"
     get "/continue", to: "offers#keep_chatting"
   end
-  resources :search_by_location_and_wanted_currency, only: [:index, :new, :show]
 end
 
   get "/personal", to: "requests#personal"
