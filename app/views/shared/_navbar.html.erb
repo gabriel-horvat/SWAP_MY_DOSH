@@ -17,17 +17,10 @@
     <%= link_to "My Chats", chats_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <!--  <p><small id="count">(0)</small></p> -->
 
-
     <div id="counter">
-
       <%= @messages_unique.length %>
-
-      <% #if !message.unread_message_count(current_user).zero? %>
-      <% #number += message.unread_message_count(current_user) %>
-      <% # end %>
-      <%#=# number %>
     </div>
-    <%# end %>
+
 
 
 
@@ -74,10 +67,21 @@
         <li><%= link_to "My Own Offers", personal_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "All Offers", requests_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "Upcoming Swaps", offers_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "My Chats", chats_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "My Chats (#{@messages_unique.length})", chats_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <!--   <div id="counter">
+      <%#= @messages_unique.length %></div> -->
         <li><a href="#">Completed Swaps</a></li>
         <li><a href="#">About Us</a></li>
-        <li><a href="#">Log Out</a></li>
+        <% if user_signed_in? %>
+         <li>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to('Login', new_user_session_path)  %>
+        </li>
+        <% end %>
+
       </ul>
     </div>
   </div>
