@@ -19,16 +19,15 @@
 
 
     <div id="counter">
-      <% if !@offers.nil? %>
-      <% number = 0%>
-      <% @offers.each do |offer| %>
-      <% if !offer.unread_message_count(current_user).zero? %>
-      <% number += offer.unread_message_count(current_user) %>
-      <%  end %>
-      <% end %>
-      <%= number %>
+
+      <%= @messages_unique.length %>
+
+      <% #if !message.unread_message_count(current_user).zero? %>
+      <% #number += message.unread_message_count(current_user) %>
+      <% # end %>
+      <%#=# number %>
     </div>
-    <% end %>
+    <%# end %>
 
 
 

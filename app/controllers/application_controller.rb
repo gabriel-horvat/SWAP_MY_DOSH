@@ -3,9 +3,13 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  before_action :set_offers
-    def set_offers
-      @offers = Offer.all
+  before_action :set_message_count
+    def set_message_count
+      @messages = Message.where(receiver_id: current_user)
+      if !@messages.nil?
+        @messages_unread = @messages.select { |message| message.read == false }
+        @messages_unique = @messages_unread.uniq {|message| message.sender_id}
+      end
     end
 
   def configure_permitted_parameters
