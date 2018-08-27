@@ -45,7 +45,7 @@ puts "requests created!"
 
 
 
-50.times do |i|
+300.times do |i|
   puts "Creating reviews ##{i}"
   Review.create!(
   content: Faker::HarryPotter.quote,

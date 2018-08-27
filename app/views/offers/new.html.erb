@@ -22,14 +22,17 @@
 </div>
 
 
-
- <div class="review-details">
-      <h3 class="h3-no-margin">Reviews:</h3>
-      <%@request.reviews.each do |review| %>
-      <hr>
-        <% review.rating.times do %>
-        <i class="fas fa-star" style="color:#EAE01C;"></i>
-        <% end %></p>
-        <p> <%= review.content %> </p>
-      <% end %>
+<div class="container">
+  <div class="profile-container">
+      <h2 id="swapper"> Reviews</h2>
+      <div class="user-details">
+        <%@request.reviews.each do |review| %>
+          <% review.rating.times do %>
+            <i class="fas fa-star" style="color:#EAE01C;"></i>
+          <% end %></p>
+          <p> <%= review.content %> </p>
+        <% end %>
+    </div>
   </div>
+</div>
+
