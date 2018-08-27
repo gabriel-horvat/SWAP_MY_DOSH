@@ -48,8 +48,8 @@ puts "requests created!"
 300.times do |i|
   puts "Creating reviews ##{i}"
   Review.create!(
-  content: Faker::HarryPotter.quote,
-  rating: Faker::Number.number(1),
+  content: Faker::RickAndMorty.quote,
+  rating: rand(1..5),
   user: User.all.sample,
   request: Request.all.sample
   )
