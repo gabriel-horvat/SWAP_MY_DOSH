@@ -59,7 +59,7 @@
         </div>
       </section>
 
-       <section id="input-location" class="deactivated">
+       <section id="location" class="deactivated">
         <div class="container">
         <%= f.label "input-location" %>
         <p> Where do you want to swap?</p>
@@ -71,19 +71,14 @@
         </div>
       </section>
 
-       <section id="input-time" class="deactivated">
+       <section id="time" class="deactivated">
         <div class="container">
         <p> When do you want to swap?</p>
         <%= f.date_field :start_date, as: :string, required: false, class: "datepicker" %>
-        <div class="btn btn-success next">NEXT
-        </div>
-        <div class="btn btn-success previous">PREVIOUS
-        </div>
 
         <p> When do you want to swap?</p>
         <%= f.date_field :end_date, required: false, class: "datepicker form-control" %>
-        <div class="btn btn-success next">NEXT
-        </div>
+        <%= f.submit "Swap my dosh", class: "btn btn-success" %>
         <div class="btn btn-success previous">PREVIOUS
         </div>
         </div>
