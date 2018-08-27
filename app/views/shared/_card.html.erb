@@ -1,29 +1,52 @@
 <%= link_to new_request_offer_path(request) do %>
-  <div class="card-container" role="button" @click="handleClick()">
-    <div class="card-profile">
-      <% if request.user.photo.nil? %>
-        <div class="card-photo"></div>
-      <% else %>
-        <div><%= cl_image_tag request.user.photo, class:"card-photo" %></div>
-      <% end %>
-    </div>
-    <div class="request-details">
-      <div class="user-name"><%= request.user.name %></div>
-      <div class="user-location">
-        <strong><%= request.location %></strong>
+  <div class="card-content">
+    <div class="card-container card" role="button" @click="handleClick()">
+      <div class="card-profile firstinfo">
+        <% if request.user.photo.nil? %>
+          <div class="card-photo"></div>
+        <% else %>
+          <div><%= cl_image_tag request.user.photo, class:"card-photo" %></div>
+        <% end %>
       </div>
-       <div class="swap-currencies">
-        <div>Swapping <strong><%= request.request_currency %></strong></div>
-        <div>for <strong><%= request.wanted_currency %></strong></div>
+      <div class="request-details profileinfo">
+        <div class="user-name"><%= request.user.name %></div>
+        <div class="user-location">
+          <strong><%= request.location %></strong>
+        </div>
+        <div class="swap-currencies">
+          <div>Swapping <strong><%= request.request_currency %></strong></div>
+          <div>for <strong><%= request.wanted_currency %></strong></div>
+        </div>
+        <div class="swap-dates">
+          <strong><%= request.start_date %></strong>
+          <strong><%= request.end_date%></strong>
+        </div>
       </div>
-      <div class="swap-dates">
-        <strong><%= request.start_date %></strong>
-        <strong><%= request.end_date%></strong>
+      <div class="swap-amount">
+        <%= request.request_currency %> <%= request.request_amount %>
       </div>
     </div>
-    <div class="swap-amount">
-      <%= request.request_currency %> <%= request.request_amount %>
-    </div>
+    <%# <div class="badgescard">
+        <%= request.request_currency %> <%#= request.request_amount %>
+    <%# </div> %> 
   </div>
 <% end %>
+
+<%# .content
+  .card
+    .firstinfo
+      img(src="https://s3.amazonaws.com/uifaces/faces/twitter/mrvanz/128.jpg")
+      .profileinfo
+         h1 Francesco Moustache
+         h3 Python Ninja
+         p.bio
+           | Lived all my life on the top of mount Fuji, learning the way to be a Ninja Dev.
+  .badgescard 
+    span.devicons.devicons-django
+    span.devicons.devicons-python 
+    span.devicons.devicons-codepen
+    span.devicons.devicons-javascript_badge
+    span.devicons.devicons-gulp
+    span.devicons.devicons-angular
+    span.devicons.devicons-sass   %>
 
