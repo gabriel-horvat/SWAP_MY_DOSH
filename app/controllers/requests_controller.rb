@@ -4,13 +4,19 @@ class RequestsController < ApplicationController
   def index
     # @requests = apply_filters(Request.all.order("created_at DESC"))
     #@user = User.all.sample
-    if params[:request].present?
-      #@requests = Request.search_by_location_and_wanted_currency(request_params).all.order("created_at DESC")
-      @requests = apply_filters(Request.all.order("created_at DESC"))
-      puts "Looking For Swaps!"
+    if params[:request]
+      @requests = Request.search_by_requests(params[:request][:location]).all.order("created_at DESC")
+      @requests = Request.search_by_requests(params[:request][:request_currency]).all.order("created_at DESC")
+    elsif params[:location].present?
+      @requests = Request.search_by_requests(params[:location]).all.order("created_at DESC")
+      #@requests = apply_filters(Request.all.order("created_at DESC"))
+    elsif params[:start_date].present?
+      start_date = params[:start_date].split(" ").first
+      @requests = Request.search_by_requests(start_date).all.order("created_at DESC")
     else
       @requests = Request.all.order("created_at DESC")
     end
+   
     
   end
   
