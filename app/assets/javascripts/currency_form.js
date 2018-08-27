@@ -24,6 +24,17 @@ document.querySelector("#input-currency .next").addEventListener("click", (event
 
 })
 
+
+// click on previous button from quantity currency to input
+document.querySelector("#quantity-currency .previous").addEventListener("click", (event) => {
+    document.querySelector("#quantity-currency").classList.remove("activated");
+    document.querySelector('#quantity-currency').classList.add("deactivated");
+        document.querySelector("#input-currency").classList.remove("deactivated");
+    document.querySelector('#input-currency').classList.add("activated");
+
+
+})
+
 // click on next button to remove first page and show second page
 document.querySelector("#quantity-currency .next").addEventListener("click", (event) => {
     document.querySelector("#quantity-currency").classList.remove("activated");
@@ -33,12 +44,17 @@ document.querySelector("#quantity-currency .next").addEventListener("click", (ev
 
 })
 
-// click on previous button to hide current page and show previous page
-document.querySelector("#quantity-currency .previous").addEventListener("click", (event) => {
-    document.querySelector("#quantity-currency").classList.remove("activated");
-    document.querySelector('#quantity-currency').classList.add("deactivated");
-        document.querySelector("#input-currency").classList.remove("deactivated");
-    document.querySelector('#input-currency').classList.add("activated");
+
+// previous button from wanted currency to quantity currency
 
 
-})
+// wanted currency to location
+
+
+// previous button from location to wanted currency
+
+
+// location to time
+
+
+// previous button back from time to location
