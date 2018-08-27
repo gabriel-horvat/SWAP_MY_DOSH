@@ -5,6 +5,9 @@ class OffersController < ApplicationController
     @offers_confirmed = Offer.all.where("status = 'confirmed'")
   end
 
+  def show
+    @offer = Offer.includes(messages: :sender).find(params[:id])
+  end
 
   def new
     @request = Request.find(params[:request_id])
@@ -17,7 +20,7 @@ class OffersController < ApplicationController
     @request = Request.find(params[:request_id])
     @offer.request = @request
     if @offer.save!
-      redirect_to request_offer_messages_path(@request, @offer), notice: "Have a chat on the conditions of your swap!"
+      redirect_to request_offer_path(@request, @offer), notice: "Have a chat on the conditions of your swap!"
     else
       redirect_to requests_path
     end
@@ -81,6 +84,8 @@ class OffersController < ApplicationController
       end
     end
   end
+
+
 
 
   private

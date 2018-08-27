@@ -1,6 +1,5 @@
-console.log("ghjk")
+
 import "bootstrap";
-import { hello } from "./conversion";
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
@@ -20,8 +19,6 @@ flatpickr("#start_date", {
   plugins: [new rangePlugin({ input: "#end_date"})]
 })
 
-console.log( "hello")
-
 
 function refresh() {
   const oldCount = document.getElementById("count");
@@ -31,3 +28,4 @@ function refresh() {
 document.addEventListener("DOMContentLoaded", () => {
   setInterval(refresh, 1000); // Every 1 second, the `refresh` function is called.
 });
+
