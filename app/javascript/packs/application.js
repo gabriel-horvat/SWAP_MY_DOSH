@@ -1,9 +1,8 @@
-console.log("ghjk")
-import "bootstrap";
-import { hello } from "./conversion";
-import flatpickr from 'flatpickr';
-import 'flatpickr/dist/flatpickr.min.css';
-import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
+ import "bootstrap";
+ import { hello } from "./conversion";
+ import flatpickr from 'flatpickr';
+ import 'flatpickr/dist/flatpickr.min.css';
+ import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
 
 
 flatpickr(".datepicker", {
