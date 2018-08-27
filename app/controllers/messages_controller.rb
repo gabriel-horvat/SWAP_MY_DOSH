@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
-
+    before_action :set_message_count
     before_action :set_offer
+
     def index
 
       @request = Request.find(params[:request_id])
@@ -22,12 +23,13 @@ class MessagesController < ApplicationController
       else
         @message.receiver_id = @offer.user_id
       end
-
       if @message.save!
         redirect_to request_offer_messages_path(@request, @offer)
       else
         redirect_to request_offer_messages_path(@request, @offer)
       end
+
+      set_message_count
     end
 
     # def create
@@ -40,6 +42,14 @@ class MessagesController < ApplicationController
     # end
 
     private
+
+    def set_message_count
+        @messages = Message.where(receiver_id: current_user)
+        if !@messages.nil?
+          @messages_unread = @messages.select { |message| message.read == false }
+          @messages_unique = @messages_unread.uniq {|message| message.sender_id}
+        end
+     end
 
     def message_params
         params.permit(:sender_id, :receiver_id, :content)
