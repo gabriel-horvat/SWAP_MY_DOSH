@@ -15,6 +15,12 @@ class Message < ApplicationRecord
   end
 
 
+  # def unread_message_count(current_user)
+  #   self..where("offer.user != ? AND read = ?", current_user, false).count
+  # end
+
+
+
 
   private
 

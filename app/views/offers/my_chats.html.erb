@@ -1,6 +1,6 @@
 <h1> Your open Chats </h1>
 
-  <h4> People you want to swap with:</h4>
+  <h4> People you want to swap with:<small id="count">(0)</small></h4>
     <% @relevant_offers.each do |offer| %>
       <% if offer.user == current_user %>
 
