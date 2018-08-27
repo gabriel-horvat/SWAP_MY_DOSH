@@ -23,39 +23,75 @@
 
 
 
+<div class="form" id="currency-form">
+    <%= simple_form_for @request do |f| %>
+      <section id="input-currency">
+        <div class="container">
+        <%= f.label "input-currency" %>
+        <p> Which currency do you have to offer? </p>
+        <%= f.select :request_currency, cur_array %>
+        <div class="btn btn-success next">NEXT
+        </div>
+        </div>
+      </section>
 
-<form class="form">
-  <div class="form-section">
-    <label for="input-currency">Which currency do you want to swap?</label>
-    <input type="text" class="form-control" name="input-currency" required="">
+       <section id="quantity-currency">
+        <div class="container">
+        <%= f.label "quantity-currency" %>
+        <p> How much of your currency do you want to swap? </p>
+        <%= f.input :request_amount %>
+        <div class="btn btn-success next">NEXT
+        </div>
+        <div class="btn btn-success previous">PREVIOUS
+        </div>
+        </div>
+      </section>
 
-    <label for="quantity-currency">How much of your currency do you want to swap?</label>
-    <input type="int" class="form-control" name="quantity-currency" required="">
-  </div>
+       <section id="wanted-currency">
+        <div class="container">
+        <%= f.label "wanted-currency" %>
+        <p> Which currency are you looking for? </p>
+        <%= f.select :wanted_currency, cur_array %>
+        <div class="btn btn-success next">NEXT
+        </div>
+        <div class="btn btn-success previous">PREVIOUS
+        </div>
+        </div>
+      </section>
 
-  <div class="form-section">
-    <label for="wanted-currency">Which currency are you looking for?</label>
-    <input type="email" class="form-control" name="wanted-currency" required="">
-  </div>
+       <section id="input-location">
+        <div class="container">
+        <%= f.label "input-location" %>
+        <p> Where do you want to swap?</p>
+        <%= f.input :location %>
+        <div class="btn btn-success next">NEXT
+        </div>
+        <div class="btn btn-success previous">PREVIOUS
+        </div>
+        </div>
+      </section>
 
-  <div class="form-section">
-    <label for="color">Where do you want to swap?</label>
-    <input type="text" class="form-control" name="location" required="">
-  </div>
+       <section id="input-time">
+        <div class="container">
+        <p> When do you want to swap?</p>
+        <%= f.date_field :start_date, as: :string, required: false, class: "datepicker" %>
+        <div class="btn btn-success next">NEXT
+        </div>
+        <div class="btn btn-success previous">PREVIOUS
+        </div>
 
-  <div class="form-section">
-    <label for="color">When do you want to swap?</label>
-    <input type="text" class="form-control" name="time" required="">
-  </div>
+        <p> When do you want to swap?</p>
+        <%= f.date_field :end_date, required: false, class: "datepicker form-control" %>
+        <div class="btn btn-success next">NEXT
+        </div>
+        <div class="btn btn-success previous">PREVIOUS
+        </div>
+        </div>
+      </section>
+      <% end %>
+    </div>
 
-  <div class="form-navigation">
-    <button type="button" class="previous btn btn-info pull-left">&lt; Previous</button>
-    <button type="button" class="next btn btn-info pull-right">Next &gt;</button>
-    <input type="submit" class="btn btn-default pull-right">
-    <span class="clearfix"></span>
-  </div>
 
-</form>
 
 <script type="text/javascript">
 $(function () {
