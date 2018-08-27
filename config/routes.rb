@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   get 'messages/index'
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # For details on the DSL available within file, see http://guides.rubyonrails.org/routing.html
 resources :requests do
-  resources :offers, only: [:new, :create] do
+  resources :offers, only: [:new, :create, :show] do
     resources :messages
     post "/confirm", to: "offers#confirm"
     post "/decline", to: "offers#decline"

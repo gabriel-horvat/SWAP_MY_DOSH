@@ -1,0 +1,21 @@
+
+function scrollLastMessageIntoView() {
+  const messages = document.querySelectorAll('.message');
+  const lastMessage = messages[messages.length - 1];
+
+  if (lastMessage !== undefined) {
+    lastMessage.scrollIntoView();
+  }
+}
+
+
+<% if @message.errors.any? %>
+    // handle validation errors later
+  <% else %>
+    document.querySelector('.messages').insertAdjacentHTML('beforeend', '<%= j render "message", message: @message, user_is_messages_author: true %>');
+    document.querySelector('#input-content').value = '';
+    document.querySelector('#input-content').blur();
+    scrollLastMessageIntoView();
+  <% end %>
+
+

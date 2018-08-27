@@ -4,15 +4,20 @@
     <h3>Your Messages<small id="count">(0)</small></h3>
 
     <div>
-        <% @offer.messages.each do |message|%>
-          <% if message.id.present? %>
-            <div class="message">
-              <p><%= message.sender.name %></p>
-              <p class = "message-content"><%= message.content %></p>
-            </div>
+      <nav>
+        <ul>
+          <% @offer.messages.each do |message|%>
+            <li>
+              <% if message.id.present? %>
+                <div class="message">
+                  <p><%= message.sender.name %></p>
+                  <p class = "message-content"><%= message.content %></p>
+                </div>
+              <% end %>
+            </li>
           <% end %>
-        <% end %>
-      </ul>
+        </ul>
+      </nav>
     </div>
 
     <div class="message-form">
