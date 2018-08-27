@@ -16,6 +16,10 @@ class Message < ApplicationRecord
 
 
 
+
+
+
+
   private
 
     def message_time

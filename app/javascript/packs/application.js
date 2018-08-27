@@ -20,6 +20,8 @@ flatpickr("#start_date", {
   plugins: [new rangePlugin({ input: "#end_date"})]
 })
 
+
+
 function refresh() {
   const oldCount = document.getElementById("count");
   const newCount = document.querySelectorAll(".message").length;
@@ -28,3 +30,4 @@ function refresh() {
 document.addEventListener("DOMContentLoaded", () => {
   setInterval(refresh, 1000); // Every 1 second, the `refresh` function is called.
 });
+
