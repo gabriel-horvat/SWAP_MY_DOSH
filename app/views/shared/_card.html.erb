@@ -10,15 +10,18 @@
       </div>
       <div class="request-details profileinfo">
         <div class="user-name"><%= request.user.name %></div>
+
+
         <div class="user-location">
           <strong><%= request.location %></strong>
         </div>
         <div class="swap-currencies">
-          <div>Swapping <strong><%= request.request_currency %></strong></div>
-          <div>for <strong><%= request.wanted_currency %></strong></div>
+
+          <div> <strong><%= request.request_currency %></strong> <i class="fas fa-caret-right"></i> <strong><%= request.wanted_currency %></strong></div>
         </div>
         <div class="swap-dates">
-          <strong><%= request.start_date %></strong>
+          <i class="far fa-calendar-alt"></i>
+          <strong><%= request.start_date %></strong> -
           <strong><%= request.end_date%></strong>
         </div>
       </div>
@@ -28,7 +31,7 @@
     </div>
     <%# <div class="badgescard">
         <%= request.request_currency %> <%#= request.request_amount %>
-    <%# </div> %> 
+    <%# </div> %>
   </div>
 <% end %>
 
@@ -41,9 +44,9 @@
          h3 Python Ninja
          p.bio
            | Lived all my life on the top of mount Fuji, learning the way to be a Ninja Dev.
-  .badgescard 
+  .badgescard
     span.devicons.devicons-django
-    span.devicons.devicons-python 
+    span.devicons.devicons-python
     span.devicons.devicons-codepen
     span.devicons.devicons-javascript_badge
     span.devicons.devicons-gulp
