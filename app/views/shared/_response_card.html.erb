@@ -8,8 +8,9 @@
       <% end %>
     </div>
     <div class="request-details">
-      <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
-
+      <% if !@offer.nil? %>
+        <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
+      <%end%>
       <div class="user-location">
         <strong><%= offer.request.location %></strong>
       </div>
