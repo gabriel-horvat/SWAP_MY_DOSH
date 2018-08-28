@@ -14,14 +14,13 @@
       <h2> What are you swapping?</h2>
 
 
-
 <div class="form" id="currency-form">
-    <%= simple_form_for @request do |f| %>
+        <%= simple_form_for @request, url: {action: "create"} do |f|  %>
       <section id="input-currency">
         <div class="container">
         <%= f.label "input-currency" %>
         <p> Which currency do you have to offer? </p>
-        <%= f.select :request_currency, cur_array %>
+        <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
         <div class="btn btn-success next">NEXT
         </div>
 
@@ -32,7 +31,8 @@
         <div class="container">
         <%= f.label "quantity-currency" %>
         <p> How much of your currency do you want to swap? </p>
-        <%= f.input :request_amount %>
+        <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field" %>
+        <%#= f.input :request_amount %>
         <div class="btn btn-success next">NEXT
         </div>
         <div class="btn btn-success previous">PREVIOUS
@@ -44,7 +44,7 @@
         <div class="container">
         <%= f.label "wanted-currency" %>
         <p> Which currency are you looking for? </p>
-        <%= f.select :wanted_currency, cur_array %>
+        <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }) %>
         <div class="btn btn-success next">NEXT
         </div>
         <div class="btn btn-success previous">PREVIOUS
@@ -56,8 +56,10 @@
         <div class="container">
         <%= f.label "input-location" %>
         <p> Where do you want to swap?</p>
-        <%= f.input :location %>
+        <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field" %>
+        <%#= f.input :location %>
         <div class="btn btn-success next">NEXT
+
         </div>
         <div class="btn btn-success previous">PREVIOUS
         </div>
@@ -66,11 +68,23 @@
 
        <section id="time" class="deactivated">
         <div class="container">
-        <p> When do you want to swap?</p>
-        <%= f.date_field :start_date, as: :string, required: false, class: "datepicker" %>
+          
+           <p> When do you want to swap?</p>
+            <%#= f.label "Dates" %>
+            <div class="row">
+              <div class="col-xs-6">
+                <%#= f.date_field :start_date, "", as: :string, placeholder: "FROM", id:"range_start", class: "datepicker form-control input-field date-field datepicker" %>
+                <%= f.date_field :start_date, as: :string, required: true, class: "datepicker", prompt: "test" %>
+              </div>
 
-        <p> When do you want to swap?</p>
-        <%= f.date_field :end_date, required: false, class: "datepicker form-control" %>
+              <div class="col-xs-6">
+                <%= f.date_field :end_date, required: false, class: "datepicker form-control" %>
+                <%#= f.date_field :end_date, "", as: :string, placeholder: "TO", id:"range_end", class: "datepicker form-control input-field date-field" %>
+              </div>
+            </div>
+
+         
+         
         <%= f.submit "Swap my dosh", class: "btn btn-success" %>
         <div class="btn btn-success previous">PREVIOUS
         </div>

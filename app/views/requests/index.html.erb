@@ -17,19 +17,25 @@
 
             <p class="white-color">Filter by Dates:</p>
             <%= date_field_tag(
-                    :date_start, "",
-                     as: :string,
+                    :start_date, "",
+                    as: :string,
+                    required: false,
                     class: "datepicker",
                     label: "Start Date",
                     placeholder: "From") %>
+              <%#= f.date_field :start_date, as: :string, required: false, class: "datepicker" %>
+
               <br>
               <p class="white-color">End Date:</p>
               <%= date_field_tag(
-                     :date_end, "",
-                      as: :string,
-                      class: "datepicker",
-                      label: "End Date",
-                      placeholder: "To") %>
+                    :end_date, "",
+                    as: :string,
+                    required: false,
+                    class: "datepicker",
+                    label: "End Date",
+                    placeholder: "To") %>
+              <%#= f.date_field :end_date, required: false, class: "datepicker form-control" %>
+
                 <br>
 
                 <div class="button">
