@@ -14,7 +14,6 @@ class OffersController < ApplicationController
     # else
     #   @messages.where("sender_id = ? AND read = ?", current_user, false).update_all(read: true)
     # end
-
   end
 
   def new

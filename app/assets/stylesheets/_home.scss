@@ -18,3 +18,31 @@
   text-align: center;
   opacity: 0.9;
 }
+
+.btn {
+  padding: 10px 20px;
+  letter-spacing: 5px;
+}
+
+.form-input {
+  height: 120px;
+}
+
+.filter {
+  position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 70px;
+    background-color: white;
+  }
+
+.flex-form {
+    display: flex;
+    padding-left: 14px;
+    padding-top: 7px;
+    padding-right: 5px;
+}
+
+.filter-input {
+    flex: 0 0 20% !important;
+}

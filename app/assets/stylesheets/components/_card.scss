@@ -47,7 +47,20 @@
     margin-top: 0px;
     align-items: flex-start;
     font-size: 14px;
-    color: gray;
+    color: red;
+    position: absolute;
+    top: 5px;
+}
+
+.user-name-unread {
+    display: flex;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    align-items: flex-start;
+    font-size: 18px;
+    font-weight: bolder;
+    color: black;
     position: absolute;
     top: 5px;
 }
