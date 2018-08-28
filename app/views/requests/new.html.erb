@@ -14,7 +14,7 @@
       <h2> What are you swapping?</h2>
 
         <div class="form">
-          <%= form_for @request, url: {action: "create"} do |f|  %>
+          <%= simple_form_for @request, url: {action: "create"} do |f|  %>
             <%#= select_tag :query, params[:query], placeholder: params[:query] %>
 
             <p> Which currency do you have to offer? </p>
@@ -39,7 +39,7 @@
             <div class="row">
               <div class="col-xs-6">
                 <%#= f.date_field :start_date, "", as: :string, placeholder: "FROM", id:"range_start", class: "datepicker form-control input-field date-field datepicker" %>
-                <%= f.date_field :start_date, as: :string, required: false, class: "datepicker" %>
+                <%= f.date_field :start_date, as: :string, required: true, class: "datepicker", prompt: "test" %>
               </div>
 
               <div class="col-xs-6">
