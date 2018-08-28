@@ -29,6 +29,7 @@ class MessagesController < ApplicationController
           format.html { render "offers/show" }
           format.js
         end
+      end
       set_message_count
     end
 
