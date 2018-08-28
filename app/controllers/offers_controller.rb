@@ -50,7 +50,7 @@ class OffersController < ApplicationController
       @offer.request.user.update(:status => "receiver")
     end
     @offer.save
-    redirect_to request_offer_messages_path(@offer.request.id, @offer)
+    redirect_to request_offer_path(@offer.request.id, @offer)
   end
 
   def actual_confirmation
@@ -65,7 +65,7 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:offer_id])
     @offer.update(:status => "continue")
     @offer.save
-    redirect_to request_offer_messages_path(@offer.request.id, @offer)
+    redirect_to request_offer_path(@offer.request.id, @offer)
   end
 
   def decline
