@@ -17,4 +17,8 @@ end
   get "/personal", to: "requests#personal"
   get "/chats", to: "offers#my_chats"
   resources :offers, only: [:index]
+
+  mount ActionCable.server => "/cable"
+  
 end
+
