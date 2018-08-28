@@ -33,10 +33,14 @@
     width: 100%;
     z-index: 2;
     top: 70px;
+    background-color: white;
   }
 
 .flex-form {
-      display: flex;
+    display: flex;
+    padding-left: 14px;
+    padding-top: 7px;
+    padding-right: 5px;
 }
 
 .filter-input {
