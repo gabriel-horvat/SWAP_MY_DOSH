@@ -12,7 +12,7 @@
   <div class="request-details">
 
 
-      <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
+     <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
     <div class="user-location">
       <strong><%= offer.request.location %></strong>
     </div>
@@ -35,14 +35,3 @@
 
 
 
-<!-- style="<%#= @offer.message.read == false  || @offer.message.read == true ? 'font-weigt:bold;' : 'font-weigt:normal;'%>">
-
-.status.accepted {
-  color: #04A366;
-}
-.status.declined {
-  color: red;
-}
-.status.pending {
-  color: lightgrey;
-} -->
