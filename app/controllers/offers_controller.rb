@@ -7,6 +7,14 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.includes(messages: :sender).find(params[:id])
+    @messages = @offer.messages
+
+    # if @sender_id == current_user
+    @messages.where("sender_id != ? AND read = ?", current_user, false).update_all(read: true)
+    # else
+    #   @messages.where("sender_id = ? AND read = ?", current_user, false).update_all(read: true)
+    # end
+
   end
 
   def new
