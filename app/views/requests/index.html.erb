@@ -5,8 +5,8 @@
            <br>
           <%= form_tag requests_path, method: :get do %>
           <p class="white-color">Filter by Location:</p>
-          <%= text_field_tag :request,
-          params[:request],
+          <%= text_field_tag :location,
+          params[:location],
           class: "form-control",
             label: "Location",
             placeholder: "Location" %>
