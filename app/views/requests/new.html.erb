@@ -17,11 +17,11 @@
 <div class="form" id="currency-form">
         <%= simple_form_for @request, url: {action: "create"} do |f|  %>
       <section id="input-currency">
-        <div class="container">
+        <div class="container-form">
         <%= f.label "input-currency" %>
         <p> Which currency do you have to offer? </p>
         <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
-        <div class="flex-buttons">
+        <div class="flex-buttons" id="next-button">
           <div class="btn btn-success next">NEXT
           </div>
         </div>
@@ -29,7 +29,7 @@
       </section>
 
        <section id="quantity-currency" class="deactivated">
-        <div class="container">
+        <div class="container-form">
         <%= f.label "quantity-currency" %>
         <p> How much of your currency do you want to swap? </p>
         <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field" %>
@@ -45,7 +45,7 @@
       </section>
 
        <section id="wanted-currency" class="deactivated">
-        <div class="container">
+        <div class="container-form">
         <%= f.label "wanted-currency" %>
         <p> Which currency are you looking for? </p>
         <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }) %>
@@ -59,7 +59,7 @@
       </section>
 
        <section id="location" class="deactivated">
-        <div class="container">
+        <div class="container-form">
         <%= f.label "input-location" %>
         <p> Where do you want to swap?</p>
         <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field" %>
@@ -74,7 +74,7 @@
       </section>
 
   <section id="time" class="deactivated">
-    <div class="container">
+    <div class="container-form">
 
            <p> When do you want to swap?</p>
             <%#= f.label "Dates" %>
@@ -94,7 +94,7 @@
       <div class="flex-buttons">
         <div class="btn btn-primary previous">BACK
         </div>
-        <%= f.submit "Swap my dosh", class: "btn btn-success" %>
+        <%= f.submit "NEXT", class: "btn btn-success" %>
       </div>
   </div>
 </section>
