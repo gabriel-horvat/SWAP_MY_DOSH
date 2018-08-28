@@ -20,12 +20,12 @@ flatpickr("#start_date", {
 })
 
 
-function refresh() {
-  const oldCount = document.getElementById("count");
-  const newCount = document.querySelectorAll(".message").length;
-  oldCount.innerHTML = `(${newCount})`
-}
-document.addEventListener("DOMContentLoaded", () => {
-  setInterval(refresh, 1000); // Every 1 second, the `refresh` function is called.
-});
+// function refresh() {
+//   const oldCount = document.getElementById("count");
+//   const newCount = document.querySelectorAll(".message").length;
+//   oldCount.innerHTML = `(${newCount})`
+// }
+// document.addEventListener("DOMContentLoaded", () => {
+//   setInterval(refresh, 1000); // Every 1 second, the `refresh` function is called.
+// });
 
