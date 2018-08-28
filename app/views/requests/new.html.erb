@@ -13,28 +13,63 @@
     <div class="col-xs-12 col-lg-4 col-lg-offset-4">
       <h2> What are you swapping?</h2>
 
-        <div class="form">
-          <%= simple_form_for @request, url: {action: "create"} do |f|  %>
-            <%#= select_tag :query, params[:query], placeholder: params[:query] %>
 
-            <p> Which currency do you have to offer? </p>
-            <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
-            <%#= f.select :request_currency, cur_array %>
+<div class="form" id="currency-form">
+        <%= simple_form_for @request, url: {action: "create"} do |f|  %>
+      <section id="input-currency">
+        <div class="container">
+        <%= f.label "input-currency" %>
+        <p> Which currency do you have to offer? </p>
+        <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
+        <div class="btn btn-success next">NEXT
+        </div>
 
-            <p> How much do you have to offer?</p>
-            <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field" %>
-            <%#= f.input :request_amount %>
+        </div>
+      </section>
 
-            <p> Which currency are you looking for? </p>
-            <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }) %>
-            <%#= text_field :wanted_currency, rrency], placeholder: "Amount", class:"form-control search-stretch input-field" %>
-            <%#= f.select :wanted_currency, cur_array %>
+       <section id="quantity-currency" class="deactivated">
+        <div class="container">
+        <%= f.label "quantity-currency" %>
+        <p> How much of your currency do you want to swap? </p>
+        <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field" %>
+        <%#= f.input :request_amount %>
+        <div class="btn btn-success next">NEXT
+        </div>
+        <div class="btn btn-success previous">PREVIOUS
+        </div>
+        </div>
+      </section>
 
-            <p> Where do you want to swap? </p>
-            <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field" %>
-            <%#= f.input :location %>
+       <section id="wanted-currency" class="deactivated">
+        <div class="container">
+        <%= f.label "wanted-currency" %>
+        <p> Which currency are you looking for? </p>
+        <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }) %>
+        <div class="btn btn-success next">NEXT
+        </div>
+        <div class="btn btn-success previous">PREVIOUS
+        </div>
+        </div>
+      </section>
 
-            <p> When do you want to swap?</p>
+       <section id="location" class="deactivated">
+        <div class="container">
+        <%= f.label "input-location" %>
+        <p> Where do you want to swap?</p>
+        <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field" %>
+        <%#= f.input :location %>
+        <div class="btn btn-success next">NEXT
+
+        </div>
+        <div class="btn btn-success previous">PREVIOUS
+        </div>
+        </div>
+      </section>
+
+       <section id="time" class="deactivated">
+        <div class="container">
+          
+           <p> When do you want to swap?</p>
             <%#= f.label "Dates" %>
             <div class="row">
               <div class="col-xs-6">
@@ -48,19 +83,18 @@
               </div>
             </div>
 
-            <%#= date_field_tag(
-                    :date_start, "",
-                     as: :string,
-                    class: "datepicker",
-                    label: "Start Date",
-                    placeholder: "From") %>
-
-             <br>
-            <%= f.submit "Swap my dosh", class: "btn btn-success" %> <%= link_to "Back", :back ,class: "btn btn-success" %>
-
-          <% end %>
+         
+         
+        <%= f.submit "Swap my dosh", class: "btn btn-success" %>
+        <div class="btn btn-success previous">PREVIOUS
         </div>
-      </div>
+        </div>
+      </section>
+      <% end %>
+    </div>
+
+
+
     </div>
   </div>
 
