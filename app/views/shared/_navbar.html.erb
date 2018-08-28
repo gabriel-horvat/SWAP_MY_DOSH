@@ -18,7 +18,7 @@
     <!--  <p><small id="count">(0)</small></p> -->
 
     <div id="counter">
-
+      <%=@messages_unique.length%>
     </div>
 
 
@@ -67,10 +67,10 @@
         <li><%= link_to "My Own Offers", personal_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "All Offers", requests_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "Upcoming Swaps", offers_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "My Chats", chats_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-      <!--   <div id="counter">
-      <%#= @messages_unique.length %></div>
-    (#{@messages_unique.length})"-->
+        <li><%= link_to "My Chats", chats_path, class: "navbar-wagon-item navbar-wagon-link" %><div id="counter">
+      <%= @messages_unique.length %></div></li>
+
+   <!--  (#{@messages_unique.length})" -->
         <li><a href="#">Completed Swaps</a></li>
         <li><a href="#">About Us</a></li>
         <% if user_signed_in? %>
