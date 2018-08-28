@@ -7,7 +7,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
-gem 'redis'
+gem 'redis', '~> 3.3'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -22,11 +22,13 @@ gem 'faker'
 gem 'ui_faces'
 
 gem 'chat'
+gem 'actioncable'
 
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
-
+gem 'pg_search'
 gem 'restcountry'
+'3.0.0'
 
 
 group :development do

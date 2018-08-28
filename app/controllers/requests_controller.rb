@@ -1,25 +1,32 @@
 class RequestsController < ApplicationController
 
   def index
-    @requests = apply_filters(Request.all.order("created_at DESC"))
-    @user = User.all.sample
+    if params[:new_request].present?
+      @requests = Request.search_by_requests(params[:new_request][:location]).where(request_currency: params[:new_request][:wanted_currency]) #.where(wanted_currency: params[:new_request][:requested_currency])
+    elsif params[:location].present?
+      set_request(params[:location])
+    elsif params[:start_date].present?
+      set_request(params[:start_date])
+    else
+      @requests = Request.all
+    end
   end
-
+  
   def show
     set_request
   end
-
+  
   def new
     @request = Request.new
   end
-
+  
   def create
     end_date = params[:request][:end_date].to_date.strftime("%Y-%m-%d")
     @request = Request.new(request_params)
     @request.end_date = end_date
-     @request.user = current_user
+    @request.user = current_user
     if @request.save
-      redirect_to requests_path, notice: "Your request is now visible to other doshers!"
+      redirect_to requests_path( new_request: request_params), notice: "Your request is now visible to other doshers!"
     else
       render :new
     end
@@ -44,22 +51,32 @@ class RequestsController < ApplicationController
 
   private
 
-  def apply_filters(scope)
-    starts = params[:start_date].split(" ").first if params[:start_date]
-    ends = params[:end_date]
+  # def apply_filters(scope)
+  #   starts = params[:date_start]
+  #   ends = params[:date_end] 
+  #   if starts.present? && ends.present?
+  #     scope = scope.where("(requests.start_date, requests.end_date) OVERLAPS (?, ?)", starts, ends)
+  #   end
+  #   scope = scope.where(request_currency: params[:wanted_currency]) if params[:wanted_currency].present?
+  #   scope = scope.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
 
-    if starts.present? && ends.present?
-       scope = scope.where('start_date BETWEEN ? AND ?', starts, ends)
-    end
-    scope = scope.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
-    scope
+  #   scope
+  # end
+    # starts = params[:request][:start_date].split(" ").first if params[:request][:start_date]
+    # ends = params[:request][:end_date]
+
+    # if starts.present? && ends.present?
+    #    scope = scope.where('start_date BETWEEN ? AND ?', starts, ends)
+    # end
+    # scope = scope.where("location ILIKE ?", "%#{params[:request][:location]}%") if params[:request][:location].present?
+    # #scope = scope.where("wanted_currency ILIKE ?", "%#{params[:request][:wanted_currency]}%") if params[:request][:wanted_currency].present?
+    # scope
+
+  def set_request(search_term)
+    @requests = Request.search_by_requests(search_term)
   end
-
-  def set_request
-    @request = Request.find(params[:id])
-  end
-
+  
   def request_params
-    params.require(:request).permit(:request_currency, :wanted_currency, :location, :start_date, :end_date, :request_amount, :user_id)
+    params.require(:request).permit(:wanted_currency, :location, :request_currency, :start_date, :end_date, :request_amount, :user_id)
   end
 end
