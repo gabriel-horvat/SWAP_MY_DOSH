@@ -6,6 +6,9 @@
   margin-right: 20px;
   margin-left: 20px;
   border-radius: 5px;
+  -webkit-box-shadow: 0px 9px 20px -2px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 9px 20px -2px rgba(0,0,0,0.75);
+box-shadow: 0px 9px 20px -2px rgba(0,0,0,0.75);
 }
 
 .messages {
@@ -23,12 +26,17 @@
 
 .message {
   display: flex;
+  margin-top: 10px;
   margin-bottom: 10px;
   min-width: 200px;
+
   &.right {
     flex-direction: row-reverse;
     .message-content {
       background-color: #4b77cd;
+     -webkit-box-shadow: 5px 12px 15px -14px rgba(0,0,0,0.75);
+     -moz-box-shadow: 5px 12px 15px -14px rgba(0,0,0,0.75);
+     box-shadow: 5px 12px 15px -14px rgba(0,0,0,0.75);
     }
   }
 }
@@ -44,6 +52,39 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.confirm-button {
+  border-style: solid;
+  border-color: #42b3a2;
+  border-radius: 5px;
+  padding: 5px;
+  color: #42b3a2;
+}
+.btnn {
+  letter-spacing: 5px;
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+.decline-button {
+  border-style: solid;
+  border-color: #4b77cd;
+  border-radius: 5px;
+  padding: 5px;
+  color: #4b77cd;
+}
+
+.submit-button {
+  background-color: #4b77cd;
+  border-style: solid;
+  border-color: #4b77cd;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
 }
 
 #create-message {
@@ -59,9 +100,9 @@
 
 .chat-buttons {
   display: flex;
-  flex: space-between;
-  margin: 0 auto;
-  .btn {
+  justify-content: space-around;
+  margin: 0 ;
+  .button {
     height: 40px;
     background-color: whitesmoke;
     width: 80px;
@@ -120,6 +161,7 @@ input.form-control {
 .message-time {
   font-size: 8px;
   float:bottom-right;
+  margin-top: 3px;
 }
 
 .acceptance-question {
