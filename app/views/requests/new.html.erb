@@ -21,7 +21,7 @@
         <%= f.label "input-currency" %>
         <p> Which currency do you have to offer? </p>
         <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
-        <div class="flex-container">
+        <div class="flex-buttons">
           <div class="btn btn-success next">NEXT
           </div>
         </div>
@@ -34,8 +34,8 @@
         <p> How much of your currency do you want to swap? </p>
         <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field" %>
         <%#= f.input :request_amount %>
-        <div class="flex-container">
-          <div class="btn btn-primary previous">PREVIOUS
+        <div class="flex-buttons">
+          <div class="btn btn-primary previous">BACK
           </div>
           <div class="btn btn-success next">NEXT
           </div>
@@ -49,8 +49,8 @@
         <%= f.label "wanted-currency" %>
         <p> Which currency are you looking for? </p>
         <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }) %>
-         <div class="flex-container">
-          <div class="btn btn-primary previous">PREVIOUS
+         <div class="flex-buttons">
+          <div class="btn btn-primary previous">BACK
           </div>
           <div class="btn btn-success next">NEXT
           </div>
@@ -64,8 +64,8 @@
         <p> Where do you want to swap?</p>
         <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field" %>
         <%#= f.input :location %>
-        <div class="flex-container">
-          <div class="btn btn-primary previous">PREVIOUS
+        <div class="flex-buttons">
+          <div class="btn btn-primary previous">BACK
           </div>
           <div class="btn btn-success next">NEXT
           </div>
@@ -81,7 +81,7 @@
             <div class="row">
               <div class="col-xs-6">
                 <%#= f.date_field :start_date, "", as: :string, placeholder: "FROM", id:"range_start", class: "datepicker form-control input-field date-field datepicker" %>
-                <%= f.date_field :start_date, as: :string, required: true, class: "datepicker", prompt: "test" %>
+                <%= f.date_field :start_date, as: :string, required: true, class: "datepicker form-control", prompt: "test" %>
               </div>
 
               <div class="col-xs-6">
@@ -91,8 +91,8 @@
             </div>
 
 
-      <div class="flex-container">
-        <div class="btn btn-primary previous">PREVIOUS
+      <div class="flex-buttons">
+        <div class="btn btn-primary previous">BACK
         </div>
         <%= f.submit "Swap my dosh", class: "btn btn-success" %>
       </div>
