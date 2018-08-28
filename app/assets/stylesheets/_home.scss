@@ -23,3 +23,22 @@
   padding: 10px 20px;
   letter-spacing: 5px;
 }
+
+.form-input {
+  height: 120px;
+}
+
+.filter {
+  position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 70px;
+  }
+
+.flex-form {
+      display: flex;
+}
+
+.filter-input {
+    flex: 0 0 20% !important;
+}
