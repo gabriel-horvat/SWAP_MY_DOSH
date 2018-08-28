@@ -1,26 +1,69 @@
-.profile-container {
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75);
-    margin: 10px;
-    position: relative;
+@media screen and (max-width: 720px) {
+    // .container {
+    //     display: flex;
+    //     flex-direction: column;
+    // }
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .image-container {
+        object-fit: cover;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75) !important;
+        // padding: 5px;
+    }
+    .user-photo {
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        crop: fit;
+    }
+    .info-container {
+        width: 380px;
+        background-color: white;
+        // border: 1px solid black;
+        padding: 5px;
+        box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75);
+        margin-top: 1.5px;
+    }
+    .buttons {
+        padding: 5px;
+        display: flex;
+        justify-content: space-around;
+    }
 }
 
-#swapper {
-    // border: 1px solid black;
-    padding: 20px;
+@media screen and (min-width: 721px) {
+    .profile-container {
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+        background-color: white;
+    }
+    #swapper {
+        // border: 1px solid black;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75);
+        margin: 10px;
+        position: relative;
+    }
+    .user-details {
+        // border: 1px solid black;
+        padding: 20px;
+    }
+    .swap-details {
+        // border: 1px solid black;
+        padding: 20px;
+    }
+    .submit-button {
+        padding: 20px;
+    }
+    .back-button {
+        padding: 20px;
+    }
 }
-
-.user-details {
-    // border: 1px solid black;
-    padding: 20px;
-}
-
-.swap-details {
-    // border: 1px solid black;
-    padding: 20px;
-}
-
