@@ -18,9 +18,10 @@
         <%= simple_form_for @request, url: {action: "create"} do |f|  %>
       <section id="input-currency">
         <div class="container-form">
-        <%= f.label "input-currency" %>
+          <div class="form-input">
         <p> Which currency do you have to offer? </p>
         <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
+          </div>
         <div class="flex-buttons" id="next-button">
           <div class="btn btn-success next">NEXT
           </div>
@@ -30,10 +31,11 @@
 
        <section id="quantity-currency" class="deactivated">
         <div class="container-form">
-        <%= f.label "quantity-currency" %>
+            <div class="form-input">
         <p> How much of your currency do you want to swap? </p>
         <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field" %>
         <%#= f.input :request_amount %>
+            </div>
         <div class="flex-buttons">
           <div class="btn btn-primary previous">BACK
           </div>
@@ -46,9 +48,10 @@
 
        <section id="wanted-currency" class="deactivated">
         <div class="container-form">
-        <%= f.label "wanted-currency" %>
+          <div class="form-input">
         <p> Which currency are you looking for? </p>
         <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }) %>
+            </div>
          <div class="flex-buttons">
           <div class="btn btn-primary previous">BACK
           </div>
@@ -60,10 +63,11 @@
 
        <section id="location" class="deactivated">
         <div class="container-form">
-        <%= f.label "input-location" %>
+            <div class="form-input">
         <p> Where do you want to swap?</p>
         <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field" %>
         <%#= f.input :location %>
+            </div>
         <div class="flex-buttons">
           <div class="btn btn-primary previous">BACK
           </div>
@@ -75,7 +79,7 @@
 
   <section id="time" class="deactivated">
     <div class="container-form">
-
+        <div class="form-input">
            <p> When do you want to swap?</p>
             <%#= f.label "Dates" %>
             <div class="row">
@@ -89,7 +93,7 @@
                 <%#= f.date_field :end_date, "", as: :string, placeholder: "TO", id:"range_end", class: "datepicker form-control input-field date-field" %>
               </div>
             </div>
-
+          </div>
 
       <div class="flex-buttons">
         <div class="btn btn-primary previous">BACK
