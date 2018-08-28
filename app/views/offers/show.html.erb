@@ -24,13 +24,13 @@
                       <%= link_to "Accept Swap", request_offer_confirmed_path(@offer.request_id, @offer.id), id: "accept" %>
                       <%= link_to "Keep Negotiating", request_offer_continue_path(@offer.request_id, @offer.id), id: "negotiate"%>
                   <% elsif current_user.status == "sender"  %>
-                    <p>Waiting for Confirmation...</p>
+                    <p class="confirmation-message"</class>confirmation-message>Waiting for Confirmation...</p>
                   <% end %>
                 <% end %>
               </div>
               <div class="acceptance-feedback" style="<%= @offer.status == "confirmed" || @offer.status == "continue" ? 'visibility:visible;' : 'visibility:hidden;'%>">
                 <% if @offer.status == "confirmed" %>
-                    <p class="confirmation-message"> <%= link_to "Swap confirmed! Go to upcoming Swaps!", offers_path %></p>
+                    <p class="confirmation-message" <%= link_to "Swap confirmed! See your upcoming Swaps!", offers_path %></p>
                 <% end %>
                 <% if @offer.status == "continue" %>
                   <% if current_user.status == "sender"%>
