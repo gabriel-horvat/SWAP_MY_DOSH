@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
     before_action :set_offer, :set_request
-    before_action :set_message_count
+    #before_action :set_message_count
     before_action :set_offer
 
     def index
@@ -44,13 +44,13 @@ class MessagesController < ApplicationController
 
     private
 
-    def set_message_count
-        @messages = Message.where(receiver_id: current_user)
-        if !@messages.nil?
-          @messages_unread = @messages.select { |message| message.read == false }
-          @messages_unique = @messages_unread.uniq {|message| message.sender_id}
-        end
-     end
+    # def set_message_count
+    #     @messages = Message.where(receiver_id: current_user)
+    #     if !@messages.nil?
+    #       @messages_unread = @messages.select { |message| message.read == false }
+    #       @messages_unique = @messages_unread.uniq {|message| message.sender_id}
+    #     end
+    #  end
 
     def message_params
         params.require(:message).permit(:content)

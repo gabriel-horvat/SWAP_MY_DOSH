@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :set_message_count
+  #before_action :set_message_count
 
     def set_message_count
       @messages = Message.where(receiver_id: current_user.id)

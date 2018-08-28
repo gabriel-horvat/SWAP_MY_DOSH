@@ -1,28 +1,50 @@
 <div class="container">
   <div class="row">
     <div class="column-xs-12">
-      <div class="chat-header"><h4><%= @offer.user.name %></h4></div>
-      <div class="messages">
-        <% @offer.messages.each do |message| %>
-        <%= render "messages/message", message: message, user: current_user, user_is_messages_author: message.sender == current_user %>
-        <% end %>
-      </div>
-      <div id="create-message">
-        <%= simple_form_for [ @offer.request, @offer, Message.new ], remote: true do |f| %>
-        <%= f.text_area :content, id: "input-content" %>
-        <%= f.submit "send", id: "send" %>
-        <% end %>
+      <div class="chat-container">
+        <div class="chat-header"><h4><%= @offer.user == current_user ? @offer.request.user.name : @offer.user.name %></h4></div>
+        <div class="messages">
+          <% @offer.messages.each do |message| %>
+          <%= render "messages/message", message: message, user: current_user, user_is_messages_author: message.sender == current_user %>
+          <% end %>
+        </div>
+        <div id="create-message">
+          <%= simple_form_for [ @offer.request, @offer, Message.new ], remote: true do |f| %>
+          <%= f.text_area :content, id: "input-content" %>
+          <br>
+            <div class="chat-buttons">
+              <%= link_to 'Confirm', request_offer_confirm_path(@offer.request_id, @offer.id), class: " btn", id: "confirm", method: :post  %>
+              <%= link_to 'Decline', request_offer_decline_path(@offer.request_id, @offer.id), class: " btn",id: "decline", method: :post %>
+              <%= f.submit "fas fa-share-square", class: "btn", id: "send" %>
+            </div>
+            <div>
+              <div class="acceptance-question" style="<%= @offer.status == "sent" ? 'visibility:visible;' : 'visibility:hidden;'%>">
+                <% if @offer.status == "sent" %>
+                  <% if current_user.status == "receiver"%>
+                      <%= link_to "Accept Swap", request_offer_confirmed_path(@offer.request_id, @offer.id), id: "accept" %>
+                      <%= link_to "Keep Negotiating", request_offer_continue_path(@offer.request_id, @offer.id), id: "negotiate"%>
+                  <% elsif current_user.status == "sender"  %>
+                    <p>Waiting for Confirmation...</p>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="acceptance-feedback" style="<%= @offer.status == "confirmed" || @offer.status == "continue" ? 'visibility:visible;' : 'visibility:hidden;'%>">
+                <% if @offer.status == "confirmed" %>
+                    <p class="confirmation-message"> <%= link_to "Swap confirmed! Go to upcoming Swaps!", offers_path %></p>
+                <% end %>
+                <% if @offer.status == "continue" %>
+                  <% if current_user.status == "sender"%>
+                    <p class="confirmation-message"> Your partner does not seem satisfied. Maybe something was left unclear?</p>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 
 <% content_for :after_js do %>
   <script>
@@ -40,4 +62,6 @@
     )
   </script>
 <% end %>
+
+
 

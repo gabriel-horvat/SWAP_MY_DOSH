@@ -2,6 +2,12 @@
   border-radius: 5px;
 }
 
+.chat-container {
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
 .messages {
   font-size: 14px;
   color: #868686;
@@ -12,11 +18,13 @@
   border-bottom-width: 0;
   max-height: calc(100vh - 70px - 45px - 61px - 30px);
   overflow: scroll;
+  height: 60vh;
 }
 
 .message {
   display: flex;
   margin-bottom: 10px;
+  min-width: 200px;
   &.right {
     flex-direction: row-reverse;
     .message-content {
@@ -29,6 +37,8 @@
   border-radius: 3px;
   margin: 0 10px;
   padding: 11px 10px 8px 10px;
+  max-width: 200px;
+  overflow-wrap: break-word;
 }
 .avatar {
   width: 42px;
@@ -41,9 +51,31 @@
   background-color: #ffffff;
   margin-bottom: 20px;
   border: 1px solid #ececec;
+  border-radius-bottom: 5px;
 }
 .message_content {
   margin-bottom: 0;
+}
+
+.chat-buttons {
+  display: flex;
+  flex: space-between;
+  margin: 0 auto;
+  .btn {
+    height: 40px;
+    background-color: whitesmoke;
+    width: 80px;
+  }
+}
+textarea {
+   display: block;
+    margin-left: 0;
+    margin-right: 0;
+    width: 90%;
+}
+
+#input-content {
+  margin: 0 auto;
 }
 input.form-control {
   border: 1px solid #ECECEC;
@@ -57,8 +89,11 @@ input.form-control {
   }
 }
 .chat-header {
-  background-color: #4F2F4C;
-  color: white;
+  background-color: white;
+  box-shadow: 0 1px 1px #777;
+  margin-bottom: 2px;
+  border-radius: 5px;
+  color: black;
   padding: 10px 20px;
   margin-top: 10px;
   h4 {
@@ -73,6 +108,7 @@ input.form-control {
 
 .confirmation-message {
   font-size: 10px;
+  text-align: center;
 
 }
 
@@ -81,6 +117,18 @@ input.form-control {
   bottom: 0px;
 }
 
+.message-time {
+  font-size: 8px;
+  float:bottom-right;
+}
+
+.acceptance-question {
+
+}
+
+.acceptance-feedback {
+
+}
   ul {
     list-style: none;
   }
