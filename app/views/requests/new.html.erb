@@ -8,7 +8,7 @@
 <%  cur_array << [key] %>
 <% end %>
 
-<div class="container">
+<div class="wrapper">
   <div class="row">
     <div class="col-xs-12 col-lg-4 col-lg-offset-4">
       <h2> What are you swapping?</h2>
@@ -21,9 +21,10 @@
         <% f.label "input-currency" %>
         <p> Which currency do you have to offer? </p>
         <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
-        <div class="btn btn-success next">NEXT
+        <div class="flex-buttons">
+          <div class="btn btn-success next">NEXT
+          </div>
         </div>
-
         </div>
       </section>
 
@@ -32,11 +33,14 @@
         <% f.label "quantity-currency" %>
         <p> How much of your currency do you want to swap? </p>
         <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field" %>
-       
-        <div class="btn btn-success next">NEXT
+        <%#= f.input :request_amount %>
+        <div class="flex-buttons">
+          <div class="btn btn-primary previous">BACK
+          </div>
+          <div class="btn btn-success next">NEXT
+          </div>
         </div>
-        <div class="btn btn-success previous">PREVIOUS
-        </div>
+
         </div>
       </section>
 
@@ -45,9 +49,11 @@
         <% f.label "wanted-currency" %>
         <p> Which currency are you looking for? </p>
         <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }) %>
-        <div class="btn btn-success next">NEXT
-        </div>
-        <div class="btn btn-success previous">PREVIOUS
+         <div class="flex-buttons">
+          <div class="btn btn-primary previous">BACK
+          </div>
+          <div class="btn btn-success next">NEXT
+          </div>
         </div>
         </div>
       </section>
@@ -57,17 +63,19 @@
         <% f.label "input-location" %>
         <p> Where do you want to swap?</p>
         <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field" %>
-        <div class="btn btn-success next">NEXT
-
-        </div>
-        <div class="btn btn-success previous">PREVIOUS
+        <%#= f.input :location %>
+        <div class="flex-buttons">
+          <div class="btn btn-primary previous">BACK
+          </div>
+          <div class="btn btn-success next">NEXT
+          </div>
         </div>
         </div>
       </section>
 
-       <section id="time" class="deactivated">
-        <div class="container">
-          
+  <section id="time" class="deactivated">
+    <div class="container">
+
            <p> When do you want to swap?</p>
             <div class="row">
               <div class="col-xs-6">
@@ -79,13 +87,14 @@
               </div>
             </div>
 
-         
-         
+
+      <div class="flex-buttons">
+        <div class="btn btn-primary previous">BACK
+        </div>
         <%= f.submit "Swap my dosh", class: "btn btn-success" %>
-        <div class="btn btn-success previous">PREVIOUS
-        </div>
-        </div>
-      </section>
+      </div>
+  </div>
+</section>
       <% end %>
     </div>
 
