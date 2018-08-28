@@ -1,4 +1,4 @@
-<%= link_to request_offer_messages_path(offer.request.id, offer.id) do %>  
+<%= link_to request_offer_path(offer.request.id, offer.id) do %>
   <div class="card-container" role="button" @click="handleClick()">
     <div class="card-profile">
       <% if offer.request.user.photo.nil? %>
@@ -19,7 +19,7 @@
       <div class="swap-dates">
         <strong><%= offer.request.start_date.strftime('%d. %b. %Y') %></strong>
         - <strong><%= offer.request.end_date.strftime('%d. %b. %Y')%></strong>
-      </div> 
+      </div>
     </div>
     <i class="far fa-envelope chat-icon"></i>
     <div class="swap-amount">
