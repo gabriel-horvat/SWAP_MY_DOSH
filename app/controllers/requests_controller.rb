@@ -3,10 +3,15 @@ class RequestsController < ApplicationController
   def index
     if params[:new_request].present?
       @requests = Request.search_by_requests(params[:new_request][:location]).where(request_currency: params[:new_request][:wanted_currency]) #.where(wanted_currency: params[:new_request][:requested_currency])
+    elsif params[:location].present? && params[:start_date].present?
+      set_request(params[:location]) 
+      @requests = dates_filter(@requests)
     elsif params[:location].present?
-      set_request(params[:location])
-    elsif params[:start_date].present?
-      set_request(params[:start_date])
+      set_request(params[:location]) 
+    # elsif params[:date_start].present?
+    #   set_request(params[:date_start])
+    # elsif params[:location].present?
+    #   set_request(params[:location]) 
     else
       @requests = Request.all
     end
@@ -21,9 +26,11 @@ class RequestsController < ApplicationController
   end
   
   def create
-    end_date = params[:request][:end_date].to_date.strftime("%Y-%m-%d")
     @request = Request.new(request_params)
-    @request.end_date = end_date
+    if params[:request][:end_date] != ""
+      end_date = params[:request][:end_date].to_date.strftime("%Y-%m-%d")
+      @request.end_date = end_date
+    end
     @request.user = current_user
     if @request.save
       redirect_to requests_path( new_request: request_params), notice: "Your request is now visible to other doshers!"
@@ -51,6 +58,15 @@ class RequestsController < ApplicationController
 
   private
 
+  def dates_filter(scope)
+    starts = params[:start_date].split(" ").first if params[:end_date]
+    ends = params[:end_date]
+
+    if starts.present? && ends.present?
+       scope = scope.where('start_date BETWEEN ? AND ?', starts, ends)
+    end
+    scope
+  end
   # def apply_filters(scope)
   #   starts = params[:date_start]
   #   ends = params[:date_end] 
