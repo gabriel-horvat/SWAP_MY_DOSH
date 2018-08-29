@@ -2,11 +2,15 @@
 .background {
 
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(https://images.pexels.com/photos/316401/pexels-photo-316401.jpeg?cs=srgb&dl=bank-notes-bills-cash-316401.jpg&fm=jpg);
+    background-image: url(https://images.pexels.com/photos/316401/pexels-photo-316401.jpeg?cs=srgb&dl=bank-notes-bills-cash-316401.jpg&fm=jpg),  linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
 }
 
 #center-taglines {
@@ -73,4 +77,8 @@ ol {
 
 .header-home {
   margin-top: 0px;
+}
+
+.text-white {
+  color: white;
 }
