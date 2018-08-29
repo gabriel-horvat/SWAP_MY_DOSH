@@ -1,0 +1,88 @@
+// .card-container {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     background-color: white;
+//     border-radius: 8px;
+//     box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75);
+//     margin: 10px;
+//     margin-right: 21px;
+//     margin-left: auto;
+//     position: relative;
+//     height: 120px;
+//     min-width: 333px;
+// }
+
+// .card-container:hover {
+//     // border: 1px solid black;
+//     box-shadow: 10px 10px 30px -5px rgba(0, 0, 0, 0.75);
+// }
+
+.request-details {
+    flex-grow: 1;
+    // padding: 5px;
+    padding-left: 10px;
+    // width: 60%
+}
+
+.card-profile {}
+
+.card-photo {
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    margin: 0px;
+    border-radius: 8px 0px 0px 8px;
+    height: 120px;
+    width: 120px;
+    // display: flex;
+    // justify-content: center;
+}
+
+.partner-name {
+    display: flex;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: gray;
+    position: absolute;
+    top: 5px;
+}
+
+
+
+.offer-location {
+    padding-top: 5px;
+    padding-bottom: 30px;
+    color: navy;
+    position: absolute;
+    top: 25px;
+    font-size:17px;
+}
+
+.offer-currencies {
+    font-size: 14px;
+    color: gray;
+    position: absolute;
+    bottom: 30px;
+}
+
+.offer-date {
+    font-size: 12px;
+    color: gray;
+    padding-top:5px;
+}
+
+.offer-amount {
+    display: flex;
+    align-items: baseline;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: #5ACA7C;
+
+}
+
+

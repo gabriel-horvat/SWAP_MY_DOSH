@@ -4,7 +4,6 @@ import 'flatpickr/dist/flatpickr.min.css';
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 
 
-import { screenfull } from "./screenfull";
 
 flatpickr(".datepicker", {
 

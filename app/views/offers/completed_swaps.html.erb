@@ -1,5 +1,6 @@
 <h1> Your Completed Swaps </h1>
 
+<div class="card-container">
 <%= @completed_swaps.each do |offer|  %>
   <div class="swap-card">
     <div class="partner-name">
@@ -12,10 +13,13 @@
       <%= offer.request.location %>
     </div>
     <div class="offer-amount">
-      offer.request.request_amount
+      <%=offer.request.request_amount%>
     </div>
     <div class="offer-rating">
-      offer.request.review.rating
+     <% offer.request.reviews.each do |review| %>
+     <%= review.rating %>
+     <% end %>
     </div>
   </div>
 <% end %>
+</div>
