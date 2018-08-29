@@ -11,6 +11,7 @@
   </div>
   <div class="request-details">
 
+
     <% if !@offer.nil? %>
      <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
     <%end%>
