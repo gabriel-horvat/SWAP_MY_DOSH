@@ -2,6 +2,7 @@ import "bootstrap";
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
+import { }
 
 
 
@@ -29,3 +30,9 @@ flatpickr("#start_date", {
 //   setInterval(refresh, 1000); // Every 1 second, the `refresh` function is called.
 // });
 
+// <script>
+//   const goFS = document.getElementById("goFS");
+//   goFS.addEventListener("click", function() {
+//       document.body.requestFullscreen();
+//   }, false);
+// </script>
