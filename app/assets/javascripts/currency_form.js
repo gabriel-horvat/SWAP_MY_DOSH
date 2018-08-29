@@ -17,7 +17,9 @@
 // });
 
 
-document.querySelector("#input-currency .next").addEventListener("click", (event) => {
+const input1 = document.querySelector("#input-currency .next")
+if (input1) {
+.addEventListener("click", (event) => {
     document.querySelector("#input-currency").classList.remove("activated");
 
   document.querySelector('#input-currency').classList.add("deactivated");
@@ -25,10 +27,12 @@ document.querySelector("#input-currency .next").addEventListener("click", (event
     document.querySelector('#quantity-currency').classList.add("activated");
 
 })
-
+}
 
 //  previous button from quantity currency to input
-document.querySelector("#quantity-currency .previous").addEventListener("click", (event) => {
+const input2 = document.querySelector("#quantity-currency .previous")
+if (input2) {
+.addEventListener("click", (event) => {
     document.querySelector("#quantity-currency").classList.remove("activated");
     document.querySelector('#quantity-currency').classList.add("deactivated");
         document.querySelector("#input-currency").classList.remove("deactivated");
@@ -36,19 +40,25 @@ document.querySelector("#quantity-currency .previous").addEventListener("click",
 
 
 })
+}
 
 // from quantity currency to wanted currency
-document.querySelector("#quantity-currency .next").addEventListener("click", (event) => {
+const input3 = document.querySelector("#quantity-currency .next")
+if (input3) {
+.addEventListener("click", (event) => {
     document.querySelector("#quantity-currency").classList.remove("activated");
     document.querySelector('#quantity-currency').classList.add("deactivated");
   document.querySelector("#wanted-currency").classList.remove("deactivated");
     document.querySelector('#wanted-currency').classList.add("activated");
 
 })
+}
 
 
 // previous button from wanted currency to quantity currency
-document.querySelector("#wanted-currency .previous").addEventListener("click", (event) => {
+const input4 = document.querySelector("#wanted-currency .previous")
+if (input4) {
+.addEventListener("click", (event) => {
     document.querySelector("#wanted-currency").classList.remove("activated");
     document.querySelector('#wanted-currency').classList.add("deactivated");
         document.querySelector("#quantity-currency").classList.remove("deactivated");
@@ -56,6 +66,7 @@ document.querySelector("#wanted-currency .previous").addEventListener("click", (
 
 
 })
+}
 
 // wanted currency to location
 document.querySelector("#wanted-currency .next").addEventListener("click", (event) => {
