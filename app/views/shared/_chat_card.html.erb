@@ -15,16 +15,16 @@
     <% if !@offers.nil? %>
      <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
     <%end%>
+
     <div class="user-location">
-      <strong><%= offer.request.location %></strong>
+      <%= offer.request.location %>
     </div>
     <div class="swap-currencies">
-      <div> <strong><%= offer.request.request_currency %></strong> <i class="fas fa-caret-right"></i> <strong><%= offer.request.wanted_currency %></strong></div>
+      <div> <%= offer.request.request_currency %> <i class="fas fa-caret-right"></i> <%= offer.request.wanted_currency %></div>
     </div>
     <div class="swap-dates">
       <i class="far fa-calendar-alt"></i>
-      <strong><%= offer.request.start_date.strftime('%d. %b. %Y') %></strong>
-      - <strong><%= offer.request.end_date.strftime('%d. %b. %Y')%></strong>
+      <%= offer.request.start_date.strftime('%d. %b. %Y') %>      - <%= offer.request.end_date.strftime('%d. %b. %Y')%>
     </div>
   </div>
   <i class="far fa-envelope chat-icon"></i>
