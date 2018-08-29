@@ -1,7 +1,6 @@
-<div class="margin-h4">
+<div class="h2-styling">
 
 <h2> Your open Chats </h2>
-  <h4> People you want to swap with:<small id="count">(0)</small></h4>
     <% @relevant_offers.each do |offer| %>
       <% if offer.user == current_user %>
 </div>
@@ -12,7 +11,10 @@
       <% end %>
     <% end %>
 
-  <h4 class="margin-h4"> Responses to your Swap Offerings:</h4>
+    <div class="h2-styling">
+      <h2>Responses</h2>
+    </div>
+
     <% @relevant_offers.each do |offer| %>
       <% if offer.user != current_user %>
 
