@@ -9,7 +9,7 @@
     </div>
 
     <div class="request-details">
-      <% if !@offers.nil? %>
+      <% if !offer.messages.empty? %>
         <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
       <%end%>
       <div class="user-location">
