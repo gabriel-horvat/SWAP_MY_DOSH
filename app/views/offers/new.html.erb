@@ -58,14 +58,17 @@
 
     <div class="reviews-container">
       <h2 id="swapper"> Reviews</h2>
-      <div class="user-details">
-        <%@request.reviews.each do |review| %>
-        <% review.rating.times do %>
-        <i class="fas fa-star" style="color:#EAE01C;"></i>
-        <% end %></p>
-        <p> <%= review.content %> </p>
-        <% end %>
-      </div>
+
+          <div class="reviews">
+            <%@request.reviews.each do |review| %>
+              <div class="scrolling-wrapper">
+                <div class="review_card">
+                  <%= render 'shared/review_card', review: review  %>
+                </div>
+              <div>
+            <% end %>
+        </div>
+
     </div>
 
   </div>

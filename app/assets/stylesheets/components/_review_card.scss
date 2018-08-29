@@ -1,0 +1,42 @@
+
+.review-card-container {
+  width: 85%;
+  height: 125px;
+  margin: 120px auto 120px;
+  background-color: #fff;
+  padding: 0 20px 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  text-align: center;
+}
+
+.review-avatar {
+  border-radius: 100px;
+  overflow: hidden;
+  height: 65px;
+  width: 65px;
+  position: relative;
+
+  top: -30px;
+  left: -120px;
+}
+
+.review-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  .review-card {
+    display: inline-block;
+  }
+}
+
