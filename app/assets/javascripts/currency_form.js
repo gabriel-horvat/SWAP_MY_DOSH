@@ -18,6 +18,8 @@
 
 
 document.querySelector("#input-currency .next").addEventListener("click", (event) => {
+    document.querySelector("#input-currency").classList.remove("activated");
+
   document.querySelector('#input-currency').classList.add("deactivated");
   document.querySelector("#quantity-currency").classList.remove("deactivated");
     document.querySelector('#quantity-currency').classList.add("activated");
