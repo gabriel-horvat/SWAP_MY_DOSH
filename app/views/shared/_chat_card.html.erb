@@ -32,6 +32,9 @@
     <%= offer.request.request_currency %> <%= offer.request.request_amount %>
   </div>
 </div>
+<div>
+  <%= link_to "Done", new_request_review_path(offer.request) %>
+</div>
 <% end %>
 
 

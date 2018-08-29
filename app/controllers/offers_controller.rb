@@ -92,7 +92,15 @@ class OffersController < ApplicationController
     end
   end
 
-
+  def completed_swaps
+    @offers = Offer.all.where("status = ?", "completed")
+    @completed_swaps = []
+    @offers.each do |offer|
+      if offer.user == current_user || offer.request.user == current_user
+        @completed_swaps << offer
+      end
+    end
+  end
 
 
   private

@@ -10,6 +10,14 @@ class ReviewsController < ApplicationController
 
   def new
     @request = Request.find(params[:request_id])
+    @offers = Offer.all.where("request_id = ?", @request.id )
+    @offers.each do |offer|
+      if offer.request.user == current_user || offer.user == current_user
+        @offer = offer
+      end
+    end
+    @offer.update(:status => "completed")
+    @offer.save!
     @review = Review.new
   end
 
@@ -19,7 +27,7 @@ class ReviewsController < ApplicationController
     @request = Request.find(params[:request_id])
     @review.request = @request
     if @review.save!
-      redirect_to root_path
+      redirect_to completed_path
     else
       render :new
     end
@@ -46,4 +54,6 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:content, :rating, :user_id, :request_id)
   end
+
+
 end
