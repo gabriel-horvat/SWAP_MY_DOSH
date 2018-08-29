@@ -9,6 +9,18 @@
   <% end %>
 <% end %>
 
+<h1 style="text-align: center;">Past Swaps</h1>
+
+<% @offers_confirmed.each do |offer| %>
+  <% if offer.user.id == current_user.id %>
+    <%= render 'shared/chat_card', offer: offer  %>
+  <% elsif offer.request.user.id == current_user.id %>
+    <%= render 'shared/chat_card', offer: offer  %>
+  <% end %>
+<% end %>
+
+
+
 <%= link_to 'Back', :back, class: "btn btn-success"  %>
 
 <%# @offers.each do |offer| %>
