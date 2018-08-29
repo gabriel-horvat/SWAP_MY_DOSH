@@ -1,11 +1,9 @@
-Offer.destroy_all
-Request.destroy_all
-Message.destroy_all
 User.destroy_all
+Request.destroy_all
+Offer.destroy_all
+Message.destroy_all
 Review.destroy_all
-
-
-
+puts "destroyed all"
 
 50.times do |i|
   puts "Creating User ##{i}"
