@@ -2,7 +2,22 @@
   <div class="row">
     <div class="column-xs-12">
       <div class="chat-container">
-        <div class="chat-header"><h4><%= @offer.user == current_user ? @offer.request.user.name : @offer.user.name %></h4>
+        <div class="chat-header"><h4><%= @offer.user == current_user ? @offer.request.user.name : @offer.user.name %></h4></div>
+        <div class="messages">
+          <% @offer.messages.each do |message| %>
+          <%= render "messages/message", message: message, user: current_user, user_is_messages_author: message.sender == current_user %>
+          <% end %>
+        </div>
+        <div id="create-message">
+          <%= simple_form_for [ @offer.request, @offer, Message.new ], remote: true do |f| %>
+          <%= f.text_area :content, id: "input-content" %>
+          <br>
+            <div class="chat-buttons">
+              <%= link_to 'BACK', :back, class: "btn btn-primary"  %>
+              <%= link_to 'Confirm', request_offer_confirm_path(@offer.request_id, @offer.id), class: "confirm-button", id: "confirm", method: :post  %>
+              <%= link_to 'Decline', request_offer_decline_path(@offer.request_id, @offer.id), class: "decline-button",id: "decline", method: :post %>
+              <%= f.submit '>>', :class => 'submit-button btn btn-success', id: "send" %>
+            </div>
             <div>
               <div class="acceptance-question" style="<%= @offer.status == "sent" ? 'visibility:visible;' : 'visibility:hidden;'%>">
                 <% if @offer.status == "sent" %>

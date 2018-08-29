@@ -11,17 +11,18 @@
   </div>
   <div class="request-details">
 
-      <% if !offer.nil? %>
-      <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
-      <% end %>
+
+    <% if !@offer.nil? %>
+     <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
+    <%end%>
     <div class="user-location">
       <strong><%= offer.request.location %></strong>
     </div>
     <div class="swap-currencies">
-      <div>Swapping <strong><%= offer.request.request_currency %></strong></div>
-      <div>for <strong><%= offer.request.wanted_currency %></strong></div>
+      <div> <strong><%= offer.request.request_currency %></strong> <i class="fas fa-caret-right"></i> <strong><%= offer.request.wanted_currency %></strong></div>
     </div>
     <div class="swap-dates">
+      <i class="far fa-calendar-alt"></i>
       <strong><%= offer.request.start_date.strftime('%d. %b. %Y') %></strong>
       - <strong><%= offer.request.end_date.strftime('%d. %b. %Y')%></strong>
     </div>
@@ -36,14 +37,3 @@
 
 
 
-<!-- style="<%#= @offer.message.read == false  || @offer.message.read == true ? 'font-weigt:bold;' : 'font-weigt:normal;'%>">
-
-.status.accepted {
-  color: #04A366;
-}
-.status.declined {
-  color: red;
-}
-.status.pending {
-  color: lightgrey;
-} -->

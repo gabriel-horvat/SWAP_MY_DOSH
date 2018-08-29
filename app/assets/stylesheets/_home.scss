@@ -29,20 +29,23 @@
 }
 
 .filter {
-  position: fixed;
     width: 100%;
-    z-index: 2;
     top: 70px;
     background-color: white;
   }
 
 .flex-form {
     display: flex;
-    padding-left: 14px;
+    padding-left: 13px;
     padding-top: 7px;
-    padding-right: 5px;
+    padding-right: 13px;
+    flex-wrap: wrap;
 }
 
 .filter-input {
-    flex: 0 0 20% !important;
+    flex: 0 0 50% !important;
+}
+
+#btn-filter {
+  color: white !important;
 }
