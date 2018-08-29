@@ -27,7 +27,7 @@ class OffersController < ApplicationController
     @request = Request.find(params[:request_id])
     @offer.request = @request
     if @offer.save!
-      redirect_to request_offer_path(@request, @offer), notice: "Have a chat on the conditions of your swap!"
+      redirect_to request_offer_path(@request, @offer)
     else
       redirect_to requests_path
     end
@@ -92,7 +92,15 @@ class OffersController < ApplicationController
     end
   end
 
-
+  def completed_swaps
+    @offers = Offer.all.where("status = ?", "completed")
+    @completed_swaps = []
+    @offers.each do |offer|
+      if offer.user == current_user || offer.request.user == current_user
+        @completed_swaps << offer
+      end
+    end
+  end
 
 
   private

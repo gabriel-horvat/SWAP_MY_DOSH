@@ -23,3 +23,9 @@ flatpickr("#start_date", {
 
 
 
+// <script>
+//   const goFS = document.getElementById("goFS");
+//   goFS.addEventListener("click", function() {
+//       document.body.requestFullscreen();
+//   }, false);
+// </script>

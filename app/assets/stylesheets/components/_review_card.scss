@@ -1,8 +1,5 @@
 
 .review-card-container {
-  width: 85%;
-  height: 125px;
-  margin: 120px auto 120px;
   background-color: #fff;
   padding: 0 20px 20px;
   border-radius: 5px;
@@ -12,14 +9,22 @@
   -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
   -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
   text-align: center;
+  min-height: 180px;
+  width: 300px;
+  overflow-wrap: break-word;
+}
+.word-break{
+  height: 100px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: scroll;
+  white-space: initial;
 }
 
 .review-avatar {
   border-radius: 100px;
-  overflow: hidden;
   height: 65px;
   width: 65px;
-  position: relative;
 
   top: -30px;
   left: -120px;
@@ -35,8 +40,20 @@
   overflow-y: hidden;
   white-space: nowrap;
 
-  .review-card {
+  .review-container {
     display: inline-block;
   }
 }
 
+.reviews ul {
+  padding-left: 0;
+}
+
+.reviews-container {
+  width: 300px;
+  min-height: 300px;
+}
+
+.word-break {
+  overflow-wrap: break-word;
+}

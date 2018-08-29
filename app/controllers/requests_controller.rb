@@ -4,27 +4,27 @@ class RequestsController < ApplicationController
     if params[:new_request].present?
       @requests = Request.search_by_requests(params[:new_request][:location]).where(request_currency: params[:new_request][:wanted_currency]).order('created_at DESC') #.where(wanted_currency: params[:new_request][:requested_currency])
     elsif params[:location].present? && params[:start_date].present?
-      set_request(params[:location]) 
+      set_request(params[:location])
       @requests = dates_filter(@requests).order('created_at DESC')
     elsif params[:location].present?
       set_request(params[:location]) .order('created_at DESC')
     # elsif params[:date_start].present?
     #   set_request(params[:date_start])
     # elsif params[:location].present?
-    #   set_request(params[:location]) 
+    #   set_request(params[:location])
     else
       @requests = Request.all.order('created_at DESC')
     end
   end
-  
+
   def show
     set_request
   end
-  
+
   def new
     @request = Request.new
   end
-  
+
   def create
     @request = Request.new(request_params)
     if params[:request][:end_date] != ""
@@ -33,7 +33,7 @@ class RequestsController < ApplicationController
     end
     @request.user = current_user
     if @request.save
-      redirect_to requests_path( new_request: request_params), notice: "Your request is now visible to other doshers!"
+      redirect_to requests_path( new_request: request_params)
     else
       render :new
     end
@@ -48,7 +48,7 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
-    redirect_to personal_path, notice: "Your request has been deleted"
+    redirect_to personal_path
   end
 
   def personal
@@ -69,7 +69,7 @@ class RequestsController < ApplicationController
   end
   # def apply_filters(scope)
   #   starts = params[:date_start]
-  #   ends = params[:date_end] 
+  #   ends = params[:date_end]
   #   if starts.present? && ends.present?
   #     scope = scope.where("(requests.start_date, requests.end_date) OVERLAPS (?, ?)", starts, ends)
   #   end
@@ -91,7 +91,7 @@ class RequestsController < ApplicationController
   def set_request(search_term)
     @requests = Request.search_by_requests(search_term)
   end
-  
+
   def request_params
     params.require(:request).permit(:wanted_currency, :location, :request_currency, :start_date, :end_date, :request_amount, :user_id)
   end
