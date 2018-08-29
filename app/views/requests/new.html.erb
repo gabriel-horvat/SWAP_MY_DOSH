@@ -34,7 +34,7 @@
        <section id="quantity-currency" class="deactivated">
         <div class="container-form">
             <div class="form-input">
-        <p> How much of your currency do you want to swap? </p>
+        <h2> How much of your currency do you want to swap? </h2>
         <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field gray-background" %>
         <%#= f.input :request_amount %>
             </div>
@@ -51,7 +51,7 @@
        <section id="wanted-currency" class="deactivated">
         <div class="container-form">
           <div class="form-input">
-        <p> Which currency are you looking for? </p>
+        <h2> Which currency are you looking for? </h2>
                 <div class="form-control gray-background">
         <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }), class:"form-control gray-background" %>
                 </div>
@@ -68,7 +68,7 @@
        <section id="location" class="deactivated">
         <div class="container-form">
             <div class="form-input">
-        <p> Where do you want to swap?</p>
+        <h2> Where do you want to swap?</h2>
         <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field gray-background" %>
         <%#= f.input :location %>
             </div>
@@ -84,7 +84,7 @@
   <section id="time" class="deactivated">
     <div class="container-form">
         <div class="form-input">
-           <p> When do you want to swap?</p>
+           <h2> When do you want to swap?</h2>
             <div class="row">
               <div class="col-xs-6">
                 <%= f.date_field :start_date, as: :string, required: false, class: "datepicker form-control gray-background" %>
