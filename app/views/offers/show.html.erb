@@ -19,7 +19,7 @@
               </div>
               <div class="acceptance-feedback" style="<%= @offer.status == "confirmed" || @offer.status == "continue" ? 'visibility:visible;' : 'visibility:hidden;'%>">
                 <% if @offer.status == "confirmed" %>
-                    <p class="confirmation-message"> <%= link_to "Swap confirmed! See your upcoming Swaps!", offers_path %>
+                    <p class="confirmation-message confirm-button header"> <%= link_to "Swap confirmed! See your upcoming Swaps!", offers_path %>
                     </p>
                 <% end %>
                 <% if @offer.status == "continue" %>
