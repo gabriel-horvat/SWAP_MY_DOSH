@@ -27,7 +27,7 @@ class OffersController < ApplicationController
     @request = Request.find(params[:request_id])
     @offer.request = @request
     if @offer.save!
-      redirect_to request_offer_path(@request, @offer), notice: "Have a chat on the conditions of your swap!"
+      redirect_to request_offer_path(@request, @offer)
     else
       redirect_to requests_path
     end
