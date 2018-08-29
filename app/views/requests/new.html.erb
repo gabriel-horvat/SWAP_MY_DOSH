@@ -11,19 +11,20 @@
 <div class="wrapper">
   <div class="row">
     <div class="col-xs-12 col-lg-4 col-lg-offset-4">
+      <div class="big-form">
 
   <div class="form" id="currency-form">
         <%= simple_form_for @request, url: {action: "create"} do |f|  %>
       <section id="input-currency">
         <div class="container-form">
           <div class="form-input">
-        <h2> What are you swapping? </h2>
+        <h2 > What are you swapping? </h2>
         <div class="form-control gray-background">
 
         <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
         </div>
           </div>
-        <div class="flex-buttons" id="next-button">
+        <div class="flex-buttons">
           <div class="btn btn-success btn-form-next next">NEXT
           </div>
         </div>
@@ -106,7 +107,7 @@
     </div>
 
 
-
+  </div>
     </div>
   </div>
 
