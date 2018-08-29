@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     @request = Request.find(params[:request_id])
     @review.request = @request
     if @review.save!
-      redirect_to root_path, notice: "Thanks for the review and see you soon!"
+      redirect_to root_path
     else
       render :new
     end
