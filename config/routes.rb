@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within file, see http://guides.rubyonrails.org/routing.html
 resources :requests do
+  resources :reviews, only: [:new, :create, :show]
   resources :offers, only: [:new, :create, :show] do
     resources :messages
     post "/confirm", to: "offers#confirm"
@@ -14,11 +15,11 @@ resources :requests do
   end
 end
 
+  get "/completed", to: "offers#completed_swaps"
   get "/personal", to: "requests#personal"
   get "/chats", to: "offers#my_chats"
   resources :offers, only: [:index]
-
   mount ActionCable.server => "/cable"
-  
+
 end
 

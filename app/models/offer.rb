@@ -3,7 +3,7 @@ class Offer < ApplicationRecord
   belongs_to :user
   belongs_to :request
 
-  validates :status, inclusion: { in: ["pending","confirmed", "declined", "sent", "continue"] }
+  validates :status, inclusion: { in: ["pending","confirmed", "declined", "sent", "continue", "completed"] }
 
 
   def unread_message_count(current_user)
