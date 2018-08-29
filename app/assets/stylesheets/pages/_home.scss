@@ -1,7 +1,7 @@
 .flex-buttons {
-  display: flex;
-  margin-top: 75px;
-  justify-content: space-between;
+      display: flex;
+    margin-top: 195px;
+    justify-content: space-evenly;
 }
 
 #next-button {
@@ -78,9 +78,19 @@ p {
     line-height: inherit;
     padding: 3px;
     margin-top: 19px;
+    font-size: 38px !important;
 }
 
 #request_request_currency , #request_wanted_currency{
   width: 100%;
+  color: #868686;
 }
 
+.form-control {
+   height: 60px;
+
+}
+
+#first-page-form {
+   margin-left: 156px;
+}
