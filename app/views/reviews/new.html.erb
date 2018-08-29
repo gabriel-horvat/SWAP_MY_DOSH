@@ -1,0 +1,7 @@
+<h1> Review your Experience </h1>
+
+<%= simple_form_for [@request, @review]  do |f| %>
+<%= f.select :rating, [1,2,3,4,5] %>
+<%= f.text_area :content %>
+<%= f.submit "Review" %>
+<% end %>

@@ -1,0 +1,21 @@
+<h1> Your Completed Swaps </h1>
+
+<%= @completed_swaps.each do |offer|  %>
+  <div class="swap-card">
+    <div class="partner-name">
+      <%= offer.user == current_user ? offer.request.user.name : offer.user.name %>
+    </div>
+    <div class="offer-date">
+      <%= offer.request.start_date %> <%= offer.request.end_date %>
+    </div>
+    <div class="offer-location">
+      <%= offer.request.location %>
+    </div>
+    <div class="offer-amount">
+      offer.request.request_amount
+    </div>
+    <div class="offer-rating">
+      offer.request.review.rating
+    </div>
+  </div>
+<% end %>
