@@ -1,25 +1,57 @@
 <div class="container">
   <div class="profile-container">
 
-    <div class="image-container">
-      <div class="user-photo"><%= cl_image_tag @request.user.photo %></div>
-    </div>
+
+
+
 
     <div class="info-container">
-      <h4 id="swapper"><strong><%= @request.user.name  %></strong></h4>
-      <p><em><%= @request.user.description  %></em></p>
-      <p><strong><%= @request.location  %></strong></p>
-      <p><strong><%= @request.start_date.strftime("%d %b %Y") %></strong> - <strong><%= @request.end_date.strftime("%d %b %Y") %></strong></p>
-      <p><strong><%= @request.request_currency %> <%= @request.request_amount %></strong> for <strong><%= @request.wanted_currency %></strong></p>
-      <div class="buttons">
-        <div class="back-button">
-          <%#= link_to "Back", requests_path, class: "btn btn-primary" %>
-          <%= link_to 'BACK', :back, class: "btn btn-primary"  %>
-        </div>
-          <%= simple_form_for [@request, @offer] do |f| %>
-            <%=  f.submit 'CHAT', class: "btn btn-success" %>
-          <% end %>
+      <div class="user-info-profile">
+
+
+          <div class="back-angle">
+            <%#= link_to "Back", requests_path, class: "btn btn-primary" %>
+            <%= link_to "", :back, class: "fas fa-arrow-alt-circle-left"%>
+
+          </div>
+
+
+        <!-- <h4 id="swapper"> -->
+
+          <div class="user-photo-profile"><%= cl_image_tag @request.user.photo %></div>
+          <div class="user-name-profile"><%= @request.user.name %></div>
+          <!-- </h4> -->
+          <div class="user-description-profile"><em><%= @request.user.description  %></em></div>
+          <div class="user-location-profile"><strong><%= @request.location %></strong> </div>
+
+          <div class="swap-dates-profile">
+            <i class="far fa-calendar-alt"></i>
+            <%= @request.start_date.strftime("%d %b %Y")%> -
+            <%= @request.end_date.strftime("%d %b %Y")%>
+          </div>
+
+          <div class="swap-currencies-profile">
+            <div><%= @request.request_currency %> <i class="fas fa-caret-right"></i> <%= @request.wanted_currency %></div>
+          </div>
+
+          <div class="swap-amount-profile">
+            <%= @request.request_currency %> <%= @request.request_amount %>
+          </div>
+
       </div>
+
+
+
+        <div class="buttons-profile">
+
+          <%= simple_form_for [@request, @offer] do |f| %>
+          <%=  f.submit 'CHAT', class: "btn btn-success" %>
+          <% end %>
+
+
+      </div>
+
+
     </div>
 
 

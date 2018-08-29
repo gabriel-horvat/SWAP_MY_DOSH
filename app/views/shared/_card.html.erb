@@ -21,8 +21,8 @@
         </div>
         <div class="swap-dates">
           <i class="far fa-calendar-alt"></i>
-          <strong><%= request.start_date %></strong> -
-          <strong><%= request.end_date%></strong>
+          <strong><%= request.start_date.strftime('%d. %b. %Y') %></strong> -
+          <strong><%= request.end_date.strftime('%d. %b. %Y')%></strong>
         </div>
       </div>
       <div class="swap-amount">

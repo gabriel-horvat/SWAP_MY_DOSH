@@ -1,7 +1,9 @@
-<h1> Your open Chats </h1>
-  <h4> People you want to swap with:<small id="count">(0)</small></h4>
+<div class="h2-styling">
+
+<h2> Your open Chats </h2>
     <% @relevant_offers.each do |offer| %>
       <% if offer.user == current_user %>
+</div>
 
         <%#= link_to "", request_offer_messages_path(offer.request.id, offer.id), class: "far fa-envelope" %>
         <%= render 'shared/chat_card', offer: offer  %>
@@ -9,7 +11,10 @@
       <% end %>
     <% end %>
 
-  <h4> Responses to your Swap Offerings:</h4>
+    <div class="h2-styling">
+      <h2>Responses</h2>
+    </div>
+
     <% @relevant_offers.each do |offer| %>
       <% if offer.user != current_user %>
 
@@ -19,10 +24,9 @@
 
       <% end %>
     <% end %>
-
+<div class="margin-h4 margin-top">
   <%= link_to 'BACK', :back, class: "btn btn-primary"  %>
-
-
+</div>
 
 
 
