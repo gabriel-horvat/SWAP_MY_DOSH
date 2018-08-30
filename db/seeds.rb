@@ -110,11 +110,11 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'], ['JPY'], ['KRW'], ['MYA'], ['MXN'], ['NZD'], ['NOK'], ['SGD'], ['ZAR'], ['SEK'], ['CHF'], ['AED'], ['VDN'], ['RUB'], ['PLN']]
+currency_array = [['🇪🇺EUR'], ['🇦🇺AUD'], ['🇺🇸USD'], ['🇬🇧GBP'], ['🇨🇳CNY'], ['🇭🇰HKD'], ['🇨🇦CAD'], ['🇩🇰DKK'], ['🇯🇵JPY'], ['🇰🇷KRW'], ['🇲🇾MYR'], ['🇲🇽MXN'], ['🇳🇿NZD'], ['🇳🇴NOK'], ['🇸🇬SGD'], ['🇿🇦ZAR'], ['🇸🇪SEK'], ['🇨🇭CHF'], ['🇦🇪AED'], ['🇻🇳VDN'], ['🇷🇺RUB'], ['🇵🇱PLN']]
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  wanted_currency: "🇦🇺AUD",
+  request_currency: "🇪🇺EUR",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -124,8 +124,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -135,8 +135,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -146,8 +146,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -157,8 +157,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -168,8 +168,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -179,8 +179,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: currency_array.sample[0],
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -190,8 +190,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: currency_array.sample[0],
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -201,8 +201,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: currency_array.sample[0],
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -212,8 +212,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: currency_array.sample[0],
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -223,8 +223,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: currency_array.sample[0],
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -234,8 +234,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: currency_array.sample[0],
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -245,8 +245,8 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   )
 
   Request.create!(
-  request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  request_currency: "🇪🇺EUR",
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
