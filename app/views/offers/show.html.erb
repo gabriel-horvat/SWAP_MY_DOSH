@@ -45,12 +45,12 @@
 
             <div class="chat-buttons">
               <%= link_to request_offer_decline_path(@offer.request_id, @offer.id), method: :post do %>
-              <%= image_tag 'x.png', class: "btn btn-primary", id: "decline"  %>
+              <%= image_tag 'round_x.svg', class: "btn btn-primary", id: "decline"  %>
               <% end %>
 
 
           <%= link_to request_offer_confirm_path(@offer.request_id, @offer.id), method: :post do %>
-              <%= image_tag 'tick.png', class: "btn btn-success", id: "confirm"  %>
+              <%= image_tag 'round_tick.svg', class: "btn btn-success", id: "confirm"  %>
               <% end %>
 
 
