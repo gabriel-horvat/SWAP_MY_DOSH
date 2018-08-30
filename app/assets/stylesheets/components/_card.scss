@@ -100,6 +100,30 @@
     right: 5px;
 }
 
+.offer-sent {
+ background-color: orange;
+ border-radius: 100%;
+ width: 15px;
+ height:15px;
+ float: right;
+}
+.offer-confirmed {
+  background-color: green;
+  border-radius: 100%;
+  width: 15px;
+ height:15px;
+ position: absolute;
+ top: 5px;
+ right: 5px;
+
+}
+.offer-completed {
+  background-color: blue;
+  border-radius: 100%;
+  width: 15px;
+ height:15px;
+}
+
 // @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
 // %reset {
 //     margin: 0;

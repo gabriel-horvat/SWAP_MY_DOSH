@@ -19,7 +19,7 @@
               </div>
               <div class="acceptance-feedback" style="<%= @offer.status == "confirmed" || @offer.status == "continue" ? 'visibility:visible;' : 'visibility:hidden;'%>">
                 <% if @offer.status == "confirmed" %>
-                    <p class="confirmation-message confirm-button header"> <%= link_to "Swap confirmed! See your upcoming Swaps!", offers_path %>
+                    <p class="confirmation-message confirm-button header"> <%= link_to "Swap confirmed! See your upcoming Swaps!", offers_path, id: "confirmation-message-counter" %>
                     </p>
                 <% end %>
                 <% if @offer.status == "continue" %>
@@ -61,6 +61,11 @@
     </div>
   </div>
 </div>
+<p id="confirmation-message-counter">jgjhg</p>
+
+
+
+
 
 <% content_for :after_js do %>
   <script>
@@ -84,6 +89,7 @@
           }
         }
     )
+
   </script>
 <% end %>
 
