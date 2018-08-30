@@ -1,12 +1,12 @@
-User.destroy_all
 Request.destroy_all
 Offer.destroy_all
 Message.destroy_all
 Review.destroy_all
+User.destroy_all
 puts "destroyed all"
 
 
-  User.create!(
+  user1 = User.create!(
   name: "Christian Sizer",
   email: "Christian.Sizer@example.com",
   password: "123456",
@@ -14,7 +14,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user2 = User.create!(
   name: "Laura Lindt",
   email: "Laura.Lindt@example.com",
   password: "123456",
@@ -22,7 +22,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user3 = User.create!(
   name: "Eloise Ng",
   email: "Eloise.Ng@example.com",
   password: "123456",
@@ -30,7 +30,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user4 = User.create!(
   name: "Marie Moench",
   email: "Marie.Moench@example.com",
   password: "123456",
@@ -38,7 +38,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user5 = User.create!(
   name: "Phillipp Feierabend",
   email: "Phillipp.Feierabend@example.com",
   password: "123456",
@@ -46,7 +46,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user6 = User.create!(
   name: "Shinta Nozawa",
   email: "Shinta.Nozawa@example.com",
   password: "123456",
@@ -54,7 +54,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user7 = User.create!(
   name: "Anna Faust",
   email: "Anna.Faust@example.com",
   password: "123456",
@@ -62,7 +62,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user8 = User.create!(
   name: "Hannah Karlsson",
   email: "Hannah.Karlsson@example.com",
   password: "123456",
@@ -70,7 +70,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user9 = User.create!(
   name: "Ollie Anibaba",
   email: "Ollie.Anibaba@example.com",
   password: "123456",
@@ -78,7 +78,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user10 = User.create!(
   name: "Liam Peacock",
   email: "Liam.Peacock@example.com",
   password: "123456",
@@ -86,7 +86,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user11 = User.create!(
   name: "Harriet Woods",
   email: "Harriet.Woods@example.com",
   password: "123456",
@@ -94,7 +94,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user12 = User.create!(
   name: "Laura Hale",
   email: "Laura.Hale@example.com",
   password: "123456",
@@ -102,7 +102,7 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
-  User.create!(
+  user13 = User.create!(
   name: "Connor Rowe",
   email: "Connor.Rowe@example.com",
   password: "123456",
@@ -120,7 +120,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 1)
+  user: user1
   )
 
   Request.create!(
@@ -131,7 +131,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 2)
+  user: user2
   )
 
   Request.create!(
@@ -142,7 +142,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 3)
+  user: user3
   )
 
   Request.create!(
@@ -153,7 +153,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 4)
+  user: user4
   )
 
   Request.create!(
@@ -164,7 +164,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 5)
+  user: user5
   )
 
   Request.create!(
@@ -175,7 +175,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 6)
+  user: user6
   )
 
   Request.create!(
@@ -186,7 +186,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 7)
+  user: user7
   )
 
   Request.create!(
@@ -197,7 +197,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 8)
+  user: user8
   )
 
   Request.create!(
@@ -208,7 +208,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 9)
+  user: user9
   )
 
   Request.create!(
@@ -219,7 +219,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 10)
+  user: user10
   )
 
   Request.create!(
@@ -230,7 +230,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 11)
+  user: user11
   )
 
   Request.create!(
@@ -241,7 +241,7 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 12)
+  user: user12
   )
 
   Request.create!(
@@ -252,12 +252,12 @@ currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'],
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.find_by(id: 13)
+  user: user13
   )
 
 
 
-50.times do |i|
+20.times do |i|
   puts "Creating User ##{i}"
   User.create!(
   name: Faker::Name.name,
@@ -273,7 +273,7 @@ puts "user created!"
 
 locations_array = [["Tirana, Albania"], ["Vienna, Austria"], ["Minsk, Belarus"], ["Brussels, Belgium"], ["Sofia, Bulgaria"], ["Zagreb, Croatia"], ["Nicosia, Cyprus"], ["Prague, Czech Republic"], ["Copenhagen, Denmark"], ["Tallinn, Estonia"], ["Tórshavn, Faroe Islands"], ["Helsinki, Finland"], ["Paris, France"], ["Berlin, Germany"], ["Athens, Greece"], ["Budapest, Hungary"], ["Reykjavik, Iceland"], ["Dublin, Ireland"], ["Rome, Italy"], ["Saint Helier, Jersey"], ["Riga, Latvia"], ["Vaduz, Liechtenstein"], ["Vilnius, Lithuania"], ["Luxembourg, Luxembourg"], ["Skopje, Macedonia"], ["Valletta, Malta"], ["Chișinău, Moldova"], ["Monaco, Monaco"], ["Podgorica, Montenegro"], ["Amsterdam, Netherlands"], ["Oslo, Norway"], ["Warsaw, Poland"], ["Lisbon, Portugal"], ["Bucharest, Romania"], ["Moscow, Russia"], ["Belgrade, Serbia"], ["Bratislava, Slovakia"], ["Ljubljana, Slovenia"], ["Madrid, Spain"], ["Stockholm, Sweden"], ["Bern, Switzerland"], ["Kiev, Ukraine"], ["London, United Kingdom"]]
 
-50.times do |i|
+20.times do |i|
   puts "Creating request ##{i}"
   Request.create!(
   request_currency: currency_array.sample[0],
@@ -287,13 +287,7 @@ locations_array = [["Tirana, Albania"], ["Vienna, Austria"], ["Minsk, Belarus"],
   )
 end
 
-
-
 puts "requests created!"
-
-
-
-
 
 300.times do |i|
   puts "Creating reviews ##{i}"
@@ -304,7 +298,5 @@ puts "requests created!"
   request: Request.all.sample
   )
 end
-
-
 
 puts "reviews created!"
