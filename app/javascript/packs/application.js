@@ -1,9 +1,9 @@
 import "bootstrap";
 // import 'flatpickr/dist/flatpickr.min.css';
-// import "../plugins/flatpickr"
+import "../plugins/flatpickr"
 // import "flatpickr/dist/themes/airbnb.css" // A path to the theme CSS
 
- import flatpickr from 'flatpickr';
+// import flatpickr from 'flatpickr';
 // import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 
 
