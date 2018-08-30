@@ -17,11 +17,8 @@
 
     <% @relevant_offers.each do |offer| %>
       <% if offer.user != current_user %>
-
-
         <%#= link_to "", request_offer_messages_path(offer.request.id, offer.id), class: "far fa-envelope" %>
         <%= render 'shared/response_card', offer: offer  %>
-
       <% end %>
     <% end %>
 <div class="margin-h4 margin-top">
