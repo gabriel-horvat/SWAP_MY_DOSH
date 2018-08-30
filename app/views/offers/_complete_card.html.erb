@@ -1,0 +1,20 @@
+  <div class="swap-card">
+    <div class="card-photo">
+
+    </div>
+    <div class="user-name">
+      <%= offer.user == current_user ? offer.request.user.name : offer.user.name %>
+    </div>
+    <div class="offer-date">
+      <%= offer.request.start_date %> <%= offer.request.end_date %>
+    </div>
+    <div class="offer-location">
+      <%= offer.request.location %>
+    </div>
+    <div class="offer-amount">
+      offer.request.request_amount
+    </div>
+    <div class="offer-rating">
+      offer.request.review.rating
+    </div>
+  </div>
