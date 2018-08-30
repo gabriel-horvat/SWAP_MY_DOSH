@@ -15,8 +15,9 @@
     <% if !@offers.nil? %>
      <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
     <%end%>
-     <div class="<% if  offer.status == 'sent' %> offer-sent<% elsif offer.status == 'confirmed' %> offer-confirmed <% elsif offer.status == 'completed' %> offer-completed <% else %> pending <% end %>">
 
+     <div class="<% if  offer.status == 'sent' %> offer-sent<% elsif offer.status == 'confirmed' %> offer-confirmed <% elsif offer.status == 'completed' %> offer-completed <% else %> pending <% end %>">
+      <%= offer.status %>
      </div>
 
     <div class="user-location">
