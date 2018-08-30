@@ -101,27 +101,35 @@
 }
 
 .offer-sent {
- background-color: orange;
+ color: orange;
  border-radius: 100%;
  width: 15px;
  height:15px;
  float: right;
+ font-weight: bold;
 }
 .offer-confirmed {
-  background-color: green;
+  color: green;
   border-radius: 100%;
   width: 15px;
  height:15px;
  position: absolute;
  top: 5px;
  right: 5px;
+ font-weight: bold;
 
 }
 .offer-completed {
-  background-color: blue;
+  color: blue;
   border-radius: 100%;
   width: 15px;
  height:15px;
+ font-weight: bold;
+}
+
+.pending {
+  color: grey;
+  font-weight: bold;
 }
 
 // @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
