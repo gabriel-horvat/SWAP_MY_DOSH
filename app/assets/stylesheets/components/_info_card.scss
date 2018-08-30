@@ -1,0 +1,31 @@
+.card-info {
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75);
+    margin: 21px;
+    margin-bottom:0px;
+    margin-top:5px;
+
+    position: relative;
+    min-height: 175px;
+    animation: animatop 0.9s cubic-bezier(0.425, 1.140, 0.470, 1.125) forwards;
+    // max-width: 300px;
+    // overflow-wrap: break-word;
+}
+
+.question{
+  position:absolute;
+  left:5px;
+  top:0px;
+  color:navy;
+}
+
+.text{
+  position:absolute;
+  top:70px;
+  left:5px;
+  color:gray;
+  padding-bottom:500px;
+}
