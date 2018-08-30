@@ -30,9 +30,9 @@
             <%= @request.end_date.strftime("%d %b %Y")%>
           </div>
 
-          <div class="swap-currencies-profile">
+         <!--  <div class="swap-currencies-profile">
             <div><%= convert_currency_to_emoji(@request.request_currency) %> <%=@request.request_currency%> <i class="fas fa-caret-right"></i> <%= convert_currency_to_emoji(@request.wanted_currency) %> <%=@request.wanted_currency%></div>
-          </div>
+          </div> -->
 
           <div class="swap-amount-profile">
             <%= convert_currency_to_emoji(@request.request_currency) %> <%=@request.request_currency%> <%= @request.request_amount %>

@@ -19,6 +19,12 @@
 }
 
 
+.profile-container{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .card-profile {}
   //justify-content: center;
@@ -32,7 +38,7 @@
     width: 180px;
     height: 180px;
     border:6px solid white;
-
+    box-shadow:1px 2px 15px 0px rgba(125,125,125,0.43);
     margin:auto;
   }
   margin-top: auto;
@@ -48,7 +54,7 @@
 
   height:500px;
   position: relative;
-  background-color:#EFF2F5;
+  background-color:#FFFFFF;
 
 }
 
@@ -67,8 +73,8 @@
 
 .user-description-profile{
     position:absolute;
-    bottom:130px;
-    padding-left:10px;
+    bottom:160px;
+    padding-left:70px;
     padding-right:10px;
 }
 
@@ -79,17 +85,17 @@
     padding-bottom: 20px;
     color: navy;
     position: absolute;
-    bottom: 75px;
+    bottom: 105px;
     font-size: 17px;
-    padding-left:10px;
+    padding-left:121px;
 
 }
 
 .swap-currencies-profile {
-    font-size: 14px;
+    font-size: 24px;
     color: gray;
     position: absolute;
-    bottom: 30px;
+    bottom: -31px;
     padding-left:10px;
 }
 
@@ -97,16 +103,17 @@
     font-size: 12px;
     color: gray;
      position: absolute;
-    bottom: 70px;
-    padding-left:10px;
+    bottom: 101px;
+    padding-left:105px;
 }
 
 .swap-amount-profile {
+  font-size: 30px;
     display: flex;
     align-items: baseline;
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 46px;
+    right: 115px;
     color: #5ACA7C;
     font-weight: bolder;
 }
