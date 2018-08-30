@@ -1,3 +1,13 @@
+#swapper {
+        // border: 1px solid black;
+        font-size: 36px;
+    font-size: 23px;
+    font-weight: lighter;
+    text-align: center;
+    color: #656565;
+    margin-bottom: 21px;
+    }
+
 @media screen and (max-width: 720px) {
     // .container {
     //     display: flex;
@@ -46,11 +56,12 @@
     }
     #swapper {
         // border: 1px solid black;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75);
-        margin: 10px;
-        position: relative;
+        font-size: 36px;
+    font-size: 23px;
+    font-weight: lighter;
+    text-align: center;
+    color: #656565;
+    margin-bottom: 21px;
     }
     .user-details {
         // border: 1px solid black;
