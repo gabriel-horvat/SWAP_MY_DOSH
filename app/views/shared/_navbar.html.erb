@@ -33,6 +33,7 @@
           <li><%= link_to "Upcoming Swaps", offers_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "My Chats", chats_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "Completed Swaps", completed_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Information", info_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
 
           <li><a href="#">About Us</a></li>
           <% if user_signed_in? %>
@@ -72,6 +73,7 @@
    <!--  (#{@messages_unique.length})" -->
 
          <li><%= link_to "Completed Swaps", completed_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+         <li><%= link_to "Information", info_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
 
         <li><a href="#">About Us</a></li>
         <% if user_signed_in? %>

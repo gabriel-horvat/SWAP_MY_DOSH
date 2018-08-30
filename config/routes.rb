@@ -16,6 +16,7 @@ resources :requests do
 end
 
   get "/completed", to: "offers#completed_swaps"
+  get "/info", to: "offers#info"
   get "/personal", to: "requests#personal"
   get "/chats", to: "offers#my_chats"
   resources :offers, only: [:index]
