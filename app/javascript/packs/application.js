@@ -2,11 +2,11 @@ import "bootstrap";
 // import 'flatpickr/dist/flatpickr.min.css';
 import "../plugins/flatpickr"
 // import "flatpickr/dist/themes/airbnb.css" // A path to the theme CSS
-
+import { autocomplete } from "../components/autocomplete.js"
 // import flatpickr from 'flatpickr';
 // import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 
-
+autocomplete()
 
 
 // flatpickr(".datepicker", {

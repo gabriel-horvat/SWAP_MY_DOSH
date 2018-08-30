@@ -89,8 +89,8 @@
            <h2> When do you want to swap?</h2>
            <div class="row">
 
-                <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker form-control"} %>
+                <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker form-control"} %>
 
             </div>
           </div>
@@ -110,17 +110,3 @@
     </div>
   </div>
 
-
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-        <script>
-            var autocomplete;
-            function initialize() {
-              autocomplete = new google.maps.places.Autocomplete(
-                  /** @type {HTMLInputElement} */(document.getElementById('request_location')),
-                  { types: ['geocode'] });
-              google.maps.event.addListener(autocomplete, 'place_changed', function() {
-              });
-            }
-        </script>
-        <body onload="initialize()">
-      </body>
