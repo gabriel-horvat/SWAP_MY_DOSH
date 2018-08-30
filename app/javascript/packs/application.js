@@ -1,6 +1,6 @@
 import "bootstrap";
 // import 'flatpickr/dist/flatpickr.min.css';
-import "../plugins/flatpickr"
+// import "../plugins/flatpickr"
 // import "flatpickr/dist/themes/airbnb.css" // A path to the theme CSS
 import { autocomplete } from "../components/autocomplete.js"
 // import flatpickr from 'flatpickr';
@@ -9,9 +9,9 @@ import { autocomplete } from "../components/autocomplete.js"
 autocomplete()
 
 
- flatpickr(".datepicker", {
+ // flatpickr(".datepicker", {
 
- });
+ // });
 
 // flatpickr("#request_start_date", {
 //   altInput: true,
