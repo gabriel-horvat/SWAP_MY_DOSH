@@ -36,12 +36,12 @@
         <strong><%= offer.request.location %></strong>
       </div>
       <div class="swap-currencies">
-        <div><strong><%= offer.request.request_currency %> <i class="fas fa-caret-right"></i> <%= offer.request.wanted_currency %></strong></div>
+        <div><strong><%=convert_currency_to_emoji(offer.request.request_currency)%> <%=offer.request.request_currency%> <i class="fas fa-caret-right"></i> <%= convert_currency_to_emoji(offer.request.wanted_currency) %> <%= offer.request.wanted_currency %></strong></div>
       </div>
 
 
       <div class="offer-amount">
-      <strong> <%= convert_currency_to_emoji(offer.request.request_currency) %> <%=  offer.request.request_amount%></strong>
+      <strong> <%= convert_currency_to_emoji(offer.request.request_currency) %> <%=offer.request.request_currency%> <%=  offer.request.request_amount%></strong>
       </div>
 
     </div>
