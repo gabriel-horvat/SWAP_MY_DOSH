@@ -1,12 +1,9 @@
 <% require "open-uri" %>
 <% require "json" %>
 
-<% url = ("https://openexchangerates.org/api/currencies.json") %>
-<% currencies = JSON.parse(open(url).read) %>
-<% cur_array = [] %>
-<% currencies.each do |key, value|%>
-<%  cur_array << [key] %>
-<% end %>
+
+
+<% cur_array = [['🇪🇺EUR'], ['🇦🇺AUD'], ['🇺🇸USD'], ['🇬🇧GBP'], ['🇨🇳CNY'], ['🇭🇰HKD'], ['🇨🇦CAD'], ['🇩🇰DKK'], ['🇯🇵JPY'], ['🇰🇷KRW'], ['🇲🇾MYR'], ['🇲🇽MXN'], ['🇳🇿NZD'], ['🇳🇴NOK'], ['🇸🇬SGD'], ['🇿🇦ZAR'], ['🇸🇪SEK'], ['🇨🇭CHF'], ['🇦🇪AED'], ['🇻🇳VDN'], ['🇷🇺RUB'], ['🇵🇱PLN']] %>
 
 <div class="wrapper">
   <div class="row">
