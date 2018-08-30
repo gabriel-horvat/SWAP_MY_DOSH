@@ -19,7 +19,7 @@
 
 const input1 = document.querySelector("#input-currency .next")
 if (input1) {
-.addEventListener("click", (event) => {
+input1.addEventListener("click", (event) => {
     document.querySelector("#input-currency").classList.remove("activated");
 
   document.querySelector('#input-currency').classList.add("deactivated");
@@ -32,7 +32,7 @@ if (input1) {
 //  previous button from quantity currency to input
 const input2 = document.querySelector("#quantity-currency .previous")
 if (input2) {
-.addEventListener("click", (event) => {
+input2.addEventListener("click", (event) => {
     document.querySelector("#quantity-currency").classList.remove("activated");
     document.querySelector('#quantity-currency').classList.add("deactivated");
         document.querySelector("#input-currency").classList.remove("deactivated");
@@ -45,7 +45,7 @@ if (input2) {
 // from quantity currency to wanted currency
 const input3 = document.querySelector("#quantity-currency .next")
 if (input3) {
-.addEventListener("click", (event) => {
+input3.addEventListener("click", (event) => {
     document.querySelector("#quantity-currency").classList.remove("activated");
     document.querySelector('#quantity-currency').classList.add("deactivated");
   document.querySelector("#wanted-currency").classList.remove("deactivated");
@@ -58,7 +58,7 @@ if (input3) {
 // previous button from wanted currency to quantity currency
 const input4 = document.querySelector("#wanted-currency .previous")
 if (input4) {
-.addEventListener("click", (event) => {
+input4.addEventListener("click", (event) => {
     document.querySelector("#wanted-currency").classList.remove("activated");
     document.querySelector('#wanted-currency').classList.add("deactivated");
         document.querySelector("#quantity-currency").classList.remove("deactivated");
@@ -69,46 +69,53 @@ if (input4) {
 }
 
 // wanted currency to location
-document.querySelector("#wanted-currency .next").addEventListener("click", (event) => {
+const input5 = document.querySelector("#wanted-currency .next")
+if (input5) {
+input5.addEventListener("click", (event) => {
     document.querySelector("#wanted-currency").classList.remove("activated");
     document.querySelector('#wanted-currency').classList.add("deactivated");
   document.querySelector("#location").classList.remove("deactivated");
     document.querySelector('#location').classList.add("activated");
 
 })
-
+}
 
 
 // previous button from location to wanted currency
 
-document.querySelector("#location .previous").addEventListener("click", (event) => {
+const input6 = document.querySelector("#location .previous")
+if (input6) {
+input6.addEventListener("click", (event) => {
     document.querySelector("#location").classList.remove("activated");
     document.querySelector('#location').classList.add("deactivated");
         document.querySelector("#wanted-currency").classList.remove("deactivated");
     document.querySelector('#wanted-currency').classList.add("activated");
 
 
-})
+})}
 
 
 // location to time
-document.querySelector("#location .next").addEventListener("click", (event) => {
+const input7 = document.querySelector("#location .next")
+if (input7) {
+input7.addEventListener("click", (event) => {
     document.querySelector("#location").classList.remove("activated");
     document.querySelector('#location').classList.add("deactivated");
   document.querySelector("#time").classList.remove("deactivated");
     document.querySelector('#time').classList.add("activated");
 
-})
-
+})}
 
 
 // previous button back from time to location
-document.querySelector("#time .previous").addEventListener("click", (event) => {
+const input8 = document.querySelector("#time .previous")
+if (input8) {
+input8.addEventListener("click", (event) => {
     document.querySelector("#time").classList.remove("activated");
     document.querySelector('#time').classList.add("deactivated");
         document.querySelector("#location").classList.remove("deactivated");
     document.querySelector('#location').classList.add("activated");
 
 
-})
+})}
 

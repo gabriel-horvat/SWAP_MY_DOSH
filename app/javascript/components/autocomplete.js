@@ -14,4 +14,6 @@ function autocomplete() {
   });
 }
 
+console.log("from autocomplete.js");
+
 export { autocomplete };
