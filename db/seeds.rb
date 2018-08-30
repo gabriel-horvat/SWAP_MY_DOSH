@@ -277,7 +277,7 @@ locations_array = [["Tirana, Albania"], ["Vienna, Austria"], ["Minsk, Belarus"],
   puts "Creating request ##{i}"
   Request.create!(
   request_currency: currency_array.sample[0],
-  wanted_currency: "EUR",
+  wanted_currency: "🇪🇺EUR",
   request_amount: Faker::Number.number(3),
   location: locations_array.sample[0],
   start_date: Faker::Date.forward(100),
