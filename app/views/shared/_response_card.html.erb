@@ -16,7 +16,7 @@
         <%= offer.request.location %>
       </div>
       <div class="swap-currencies">
-        <div>Swapping <%= offer.request.request_currency %><i class="fas fa-caret-right"> </i> <%= convert_currency_to_emoji(offer.request.wanted_currency) %></div>
+        <div>Swapping <%= convert_currency_to_emoji(offer.request.request_currency) %><i class="fas fa-caret-right"> </i> <%= convert_currency_to_emoji(offer.request.wanted_currency) %></div>
       </div>
       <div class="swap-dates">
         <i class="far fa-calendar-alt"></i>

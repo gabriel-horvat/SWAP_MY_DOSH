@@ -31,11 +31,11 @@
           </div>
 
           <div class="swap-currencies-profile">
-            <div><%= @request.request_currency %> <i class="fas fa-caret-right"></i> <%= @request.wanted_currency %></div>
+            <div><%= convert_currency_to_emoji(@request.request_currency) %> <i class="fas fa-caret-right"></i> <%= convert_currency_to_emoji(@request.wanted_currency) %></div>
           </div>
 
           <div class="swap-amount-profile">
-            <%= @request.request_currency %> <%= @request.request_amount %>
+            <%= convert_currency_to_emoji(@request.request_currency) %> <%= @request.request_amount %>
           </div>
 
       </div>

@@ -1,12 +1,12 @@
-<div class="filter">
+<!-- <div class="filter">
     <div class="filters">
 
       <div class="form">
-          <%= form_tag requests_path, method: :get do %>
+          <%#= form_tag requests_path, method: :get do %>
               <div class="flex-form">
 
           <div class="filter-input">
-            <%= date_field_tag(
+            <%#= date_field_tag(
                     :start_date, "",
                     as: :string,
                     required: false,
@@ -16,7 +16,7 @@
               <%#= f.date_field :start_date, as: :string, required: false, class: "datepicker" %>
             </div>
                       <div class="filter-input">
-              <%= date_field_tag(
+              <%#= date_field_tag(
                     :end_date, "",
                     as: :string,
                     required: false,
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="filter-input">
-          <%= text_field_tag :location,
+          <%#= text_field_tag :location,
           params[:location],
           class: "form-control",
             label: "Location",
@@ -39,16 +39,16 @@
               <div class="filter-input">
 
                 <div class="button">
-                  <%= submit_tag "FILTER", class: "btn btn-success form-control", id: "btn-filter"%>
+                  <%#= submit_tag "FILTER", class: "btn btn-success form-control", id: "btn-filter"%>
                 </div>
              </div>
 
               </div>
-              <% end %>
+              <%# end %>
             </div>
           </div>
-        </div>
-
+        </div> -->
+<h1> Pick your Swap! </h1>
         <nav>
           <ol style="overflow-y:scroll">
             <% @requests.each do |request| %>
@@ -57,7 +57,7 @@
           </ol>
         </nav>
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
         <script>
             var autocomplete;
             function initialize() {
@@ -69,6 +69,5 @@
             }
         </script>
         <body onload="initialize()">
-      </body>
+      </body> -->
 
-<%# coding is so much fun %>
