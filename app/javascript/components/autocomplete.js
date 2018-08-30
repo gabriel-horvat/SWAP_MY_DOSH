@@ -1,7 +1,6 @@
 function autocomplete() {
   document.addEventListener("DOMContentLoaded", function() {
     var boardAddress = document.getElementById('request_location');
-    console.log(boardAddress);
 
     if (boardAddress) {
       var autocomplete = new google.maps.places.Autocomplete(boardAddress, { types: [ 'geocode' ] });
@@ -13,7 +12,5 @@ function autocomplete() {
     }
   });
 }
-
-console.log("from autocomplete.js");
 
 export { autocomplete };
