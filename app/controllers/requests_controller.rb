@@ -3,15 +3,15 @@ class RequestsController < ApplicationController
   def index
     if params[:new_request].present?
       @requests = Request.search_by_requests(params[:new_request][:location]).where(request_currency: params[:new_request][:wanted_currency]).order('created_at DESC') #.where(wanted_currency: params[:new_request][:requested_currency])
-    elsif params[:location].present? && params[:start_date].present?
-      set_request(params[:location])
-      @requests = dates_filter(@requests).order('created_at DESC')
-    elsif params[:location].present?
-      set_request(params[:location]) .order('created_at DESC')
-    # elsif params[:date_start].present?
-    #   set_request(params[:date_start])
-    # elsif params[:location].present?
+    # elsif params[:location].present? && params[:start_date].present?
     #   set_request(params[:location])
+    #   @requests = dates_filter(@requests).order('created_at DESC')
+    # elsif params[:location].present?
+    #   set_request(params[:location]) .order('created_at DESC')
+    # # elsif params[:date_start].present?
+    # #   set_request(params[:date_start])
+    # # elsif params[:location].present?
+    # #   set_request(params[:location])
     else
       @requests = Request.all.order('created_at DESC')
     end
