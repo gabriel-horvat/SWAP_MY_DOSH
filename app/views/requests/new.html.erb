@@ -14,6 +14,8 @@
       <div class="big-form">
 
   <div class="form" id="currency-form" class="activated">
+
+
         <%= simple_form_for @request, url: {action: "create"} do |f|  %>
       <section id="input-currency">
         <div class="container-form">
@@ -85,10 +87,11 @@
     <div class="container-form">
         <div class="form-input">
            <h2> When do you want to swap?</h2>
-            <div class="row">
-                <%= f.date_field :start_date, as: :string, required: false, class: "datepicker form-control gray-background" %>
+           <div class="row">
 
-                <%= f.date_field :end_date, required: false, class: "datepicker form-control gray-background" %>
+                <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+
             </div>
           </div>
 
@@ -106,8 +109,6 @@
   </div>
     </div>
   </div>
-
-
 
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
