@@ -11,22 +11,23 @@
 <div class="wrapper">
   <div class="row">
     <div class="col-xs-12 col-lg-4 col-lg-offset-4">
-      <h2> What are you swapping?</h2>
+      <div class="big-form">
+
+  <div class="form" id="currency-form" class="activated">
 
 
-  <div class="form" id="currency-form">
         <%= simple_form_for @request, url: {action: "create"} do |f|  %>
       <section id="input-currency">
         <div class="container-form">
           <div class="form-input">
-        <p> Which currency do you have to offer? </p>
+        <h2 > What are you swapping? </h2>
         <div class="form-control gray-background">
 
         <%= f.select :request_currency, options_for_select(cur_array.each { |x| x }) %>
         </div>
           </div>
-        <div class="flex-buttons" id="next-button">
-          <div class="btn btn-success next">NEXT
+        <div class="flex-buttons" id="first-page-form">
+          <div class="btn btn-success btn-form-next next">NEXT
           </div>
         </div>
         </div>
@@ -35,14 +36,14 @@
        <section id="quantity-currency" class="deactivated">
         <div class="container-form">
             <div class="form-input">
-        <p> How much of your currency do you want to swap? </p>
+        <h2> How much of your currency do you want to swap? </h2>
         <%= f.text_field :request_amount, placeholder: "Amount", class:"form-control search-stretch input-field gray-background" %>
         <%#= f.input :request_amount %>
             </div>
         <div class="flex-buttons">
-          <div class="btn btn-primary previous">BACK
+          <div class="btn btn-primary btn-form-next previous">BACK
           </div>
-          <div class="btn btn-success next">NEXT
+          <div class="btn btn-success btn-form-next next">NEXT
           </div>
         </div>
 
@@ -52,15 +53,15 @@
        <section id="wanted-currency" class="deactivated">
         <div class="container-form">
           <div class="form-input">
-        <p> Which currency are you looking for? </p>
+        <h2> Which currency are you looking for? </h2>
                 <div class="form-control gray-background">
         <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }), class:"form-control gray-background" %>
                 </div>
             </div>
          <div class="flex-buttons">
-          <div class="btn btn-primary previous">BACK
+          <div class="btn btn-primary btn-form-next previous">BACK
           </div>
-          <div class="btn btn-success next">NEXT
+          <div class="btn btn-success btn-form-next next">NEXT
           </div>
         </div>
         </div>
@@ -69,14 +70,14 @@
        <section id="location" class="deactivated">
         <div class="container-form">
             <div class="form-input">
-        <p> Where do you want to swap?</p>
+        <h2> Where do you want to swap?</h2>
         <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field gray-background" %>
         <%#= f.input :location %>
             </div>
         <div class="flex-buttons">
-          <div class="btn btn-primary previous">BACK
+          <div class="btn btn-primary btn-form-next previous">BACK
           </div>
-          <div class="btn btn-success next">NEXT
+          <div class="btn btn-success btn-form-next next">NEXT
           </div>
         </div>
         </div>
@@ -85,22 +86,19 @@
   <section id="time" class="deactivated">
     <div class="container-form">
         <div class="form-input">
-           <p> When do you want to swap?</p>
-            <div class="row">
-              <div class="col-xs-6">
-                <%= f.date_field :start_date, as: :string, required: false, class: "datepicker form-control gray-background" %>
-              </div>
+           <h2> When do you want to swap?</h2>
+           <div class="row">
 
-              <div class="col-xs-6">
-                <%= f.date_field :end_date, required: false, class: "datepicker form-control gray-background" %>
-              </div>
+                <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+
             </div>
           </div>
 
       <div class="flex-buttons">
-        <div class="btn btn-primary previous">BACK
+        <div class="btn btn-primary btn-form-next previous">BACK
         </div>
-        <%= f.submit "NEXT", class: "btn btn-success" %>
+        <%= f.submit "NEXT", class: "btn btn-success btn-form-next next" %>
       </div>
   </div>
 </section>
@@ -108,11 +106,9 @@
     </div>
 
 
-
+  </div>
     </div>
   </div>
-
-
 
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>

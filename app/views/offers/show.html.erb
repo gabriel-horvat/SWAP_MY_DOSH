@@ -57,6 +57,14 @@
 <% content_for :after_js do %>
   <script>
 
+    function scrollLastMessageIntoView() {
+    const messages = document.querySelectorAll('.message');
+    const lastMessage = messages[messages.length - 1];
+    if (lastMessage) {
+    lastMessage.scrollIntoView();
+    }
+}
+
     scrollLastMessageIntoView();
     App["offer_<%= @offer.id %>"] = App.cable.subscriptions.create(
       { channel: 'OffersChannel', offer_id: <%= @offer.id %> }, {

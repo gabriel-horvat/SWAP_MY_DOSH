@@ -1,0 +1,8 @@
+{
+  "name": "SwapMyDosh",
+  "short_name": "SwapMyDosh",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Exchange cash easily"
+}

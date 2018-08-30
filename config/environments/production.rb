@@ -49,8 +49,8 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
- 
-  config.action_cable.url = "wss://www.swapmydosh.com/cable"
+
+  config.action_cable.url = "ws://www.swapmydosh.com/cable"
   config.action_cable.allowed_request_origins = [ "http://www.swapmydosh.com", "https://www.swapmydosh.com" ]
 # config/routes.rb
 

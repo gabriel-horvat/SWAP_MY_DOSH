@@ -20,11 +20,12 @@ end
 puts "user created!"
 
 locations_array = [["Tirana, Albania"], ["Vienna, Austria"], ["Minsk, Belarus"], ["Brussels, Belgium"], ["Sofia, Bulgaria"], ["Zagreb, Croatia"], ["Nicosia, Cyprus"], ["Prague, Czech Republic"], ["Copenhagen, Denmark"], ["Tallinn, Estonia"], ["Tórshavn, Faroe Islands"], ["Helsinki, Finland"], ["Paris, France"], ["Berlin, Germany"], ["Athens, Greece"], ["Budapest, Hungary"], ["Reykjavik, Iceland"], ["Dublin, Ireland"], ["Rome, Italy"], ["Saint Helier, Jersey"], ["Riga, Latvia"], ["Vaduz, Liechtenstein"], ["Vilnius, Lithuania"], ["Luxembourg, Luxembourg"], ["Skopje, Macedonia"], ["Valletta, Malta"], ["Chișinău, Moldova"], ["Monaco, Monaco"], ["Podgorica, Montenegro"], ["Amsterdam, Netherlands"], ["Oslo, Norway"], ["Warsaw, Poland"], ["Lisbon, Portugal"], ["Bucharest, Romania"], ["Moscow, Russia"], ["Belgrade, Serbia"], ["Bratislava, Slovakia"], ["Ljubljana, Slovenia"], ["Madrid, Spain"], ["Stockholm, Sweden"], ["Bern, Switzerland"], ["Kiev, Ukraine"], ["London, United Kingdom"]]
+currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'], ['JPY'], ['KRW'], ['MYA'], ['MXN'], ['NZD'], ['NOK'], ['SGD'], ['ZAR'], ['SEK'], ['CHF'], ['AED'], ['VDN'], ['RUB'], ['PLN']]
 
 50.times do |i|
   puts "Creating request ##{i}"
   Request.create!(
-  request_currency: Faker::Currency.code,
+  request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
   location: locations_array.sample[0],
