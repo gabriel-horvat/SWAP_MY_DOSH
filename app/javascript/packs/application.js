@@ -9,9 +9,9 @@ import { autocomplete } from "../components/autocomplete.js"
 autocomplete()
 
 
-// flatpickr(".datepicker", {
+ flatpickr(".datepicker", {
 
-// });
+ });
 
 // flatpickr("#request_start_date", {
 //   altInput: true,
