@@ -54,7 +54,7 @@
         <div class="container-form">
           <div class="form-input">
         <h2> Which currency are you looking for? </h2>
-                <div class="form-control gray-background">
+                <div class="">
         <%= f.select :wanted_currency, options_for_select(cur_array.each { |x| x }), class:"form-control gray-background" %>
                 </div>
             </div>
@@ -70,7 +70,7 @@
        <section id="location" class="deactivated">
         <div class="container-form">
             <div class="form-input">
-        <h2> Where do you want to swap?</h2>
+        <h2> Where do you want to swap your dosh?</h2>
         <%= f.text_field :location, placeholder: "Location", class:"form-control search-stretch input-field gray-background" %>
         <%#= f.input :location %>
             </div>
@@ -88,14 +88,16 @@
         <div class="form-input">
            <h2> When do you want to swap?</h2>
            <div class="row">
+              <div class="form-date">
 
-                <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker form-control"} %>
-                <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker form-control"} %>
+                <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker form-control gray-background form-date-input"} %>
+                <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker form-control gray-background form-date-input"} %>
+              </div>
 
             </div>
           </div>
 
-      <div class="flex-buttons">
+      <div class="flex-buttons" id="time-form-buttons">
         <div class="btn btn-primary btn-form-next previous">BACK
         </div>
         <%= f.submit "NEXT", class: "btn btn-success btn-form-next next" %>

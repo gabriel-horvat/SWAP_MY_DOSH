@@ -69,6 +69,11 @@ p {
   margin-top: 3px;
 }
 
+.form-date {
+  margin-left: 15px;
+  width: 90%;
+}
+
 
 .gray-background {
       background-color: #f1f1f1;
@@ -93,4 +98,19 @@ p {
 
 #first-page-form {
    margin-left: 156px;
+}
+
+#time-form-buttons {
+    margin-top: 390px;
+}
+
+.form-date-input {
+  display: flex;
+  align-items: center;
+}
+
+
+.previous {
+  background: rgb(210,210,210);
+  border: none !important;
 }
