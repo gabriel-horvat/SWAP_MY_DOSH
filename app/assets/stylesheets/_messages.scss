@@ -2,8 +2,6 @@
 
 .chat-container {
   margin-top: 25px;
-  margin-right: 20px;
-  margin-left: 20px;
   border-radius: 5px;
   -webkit-box-shadow: 0px 9px 20px -2px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 9px 20px -2px rgba(0,0,0,0.75);
@@ -16,7 +14,10 @@ box-shadow: 2px 3px 9px 0px #cccccc61;
 }
 
 .acceptance {
-  float: right;
+ padding: 3px;
+ border-radius: 3px;
+ width: 225px;
+ margin-left: 25px;
 }
 
 .messages {
@@ -37,7 +38,6 @@ box-shadow: 2px 3px 9px 0px #cccccc61;
   margin-top: 10px;
   margin-bottom: 10px;
   min-width: 200px;
-
   &.right {
     flex-direction: row-reverse;
     .message-content {
@@ -49,7 +49,7 @@ box-shadow: 2px 3px 9px 0px #cccccc61;
   }
 }
 .message-content {
-  background-color: $light-gray;
+  background-color: #3ECF8E;
   border-radius: 3px;
   margin: 0 10px;
   padding: 11px 10px 8px 10px;
@@ -69,10 +69,29 @@ box-shadow: 2px 3px 9px 0px #cccccc61;
 
 
 
-.btnn {
-  letter-spacing: 5px;
+.btnn-green{
+  letter-spacing: 2px;
   padding: 5px;
   border-radius: 5px;
+  border: solid;
+
+  color: white; ;
+  font-weight: lighter;
+  border-color: #3ECF8E ;
+  background-color: #3ECF8E;
+  box-shadow: 0px 2px 5px #888888;
+}
+
+.btnn-blue {
+  letter-spacing: 2px;
+  padding: 5px;
+  border-radius: 5px;
+  border:solid;
+  margin-right: 15px;
+  color: grey; ;
+  font-weight: lighter;
+  border-color: grey ;
+  background-color: white;
 
 }
 
@@ -129,7 +148,17 @@ box-shadow: 2px 3px 9px 0px #cccccc61;
   }
 }
 
-
+.swap-information {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin-left: 10px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.swapping-dates2 {
+  margin-right: 15px;
+}
 
 .submit-button {
   padding: 5px 15px;
@@ -150,6 +179,7 @@ box-shadow: 2px 3px 9px 0px #cccccc61;
   display: flex;
   justify-content: space-around;
   margin: 0 ;
+  margin-left: 45px;
   .button {
     height: 40px;
     background-color: whitesmoke;
@@ -180,18 +210,22 @@ input.form-control {
   }
 }
 .chat-header {
-  display: flex;
-  justify-content: space-between;
+  align-items: center;
   background-color: white;
-  box-shadow: 0 1px 1px #777;
   margin-bottom: 2px;
   border-radius: 5px;
   color: black;
   padding: 10px 20px;
   margin-top: 10px;
+  box-shadow: 0px 0px 5px #888888;
   h4 {
-    margin: 0;
+    padding-left: 20px;
   }
+}
+
+.flex-header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .content-container {
@@ -200,8 +234,12 @@ input.form-control {
 }
 
 .confirmation-message {
-  font-size: 10px;
+  font-size: 15px;
   text-align: center;
+  a {
+    color: #3ECF8E;
+    font-size: 12px;
+  }
 }
 
 .message-form {
@@ -215,27 +253,7 @@ input.form-control {
   margin-top: 3px;
 }
 
-.acceptance-question {
 
-}
-
-.acceptance-feedback {
-
-}
-  ul {
-    list-style: none;
-  }
-
-    nav ul {
-    height:500px;
-    width:100%;
-
-  }
-
-  nav ul {
-    overflow:hidden;
-    overflow-y:scroll;
-  }
 
   .flex-chat {
     display: flex;

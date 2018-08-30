@@ -5,6 +5,7 @@
   <div class="card-profile">
     <% if offer.request.user.photo.nil? %>
     <div class="card-photo"></div>
+
     <% else %>
     <div><%= cl_image_tag offer.request.user.photo, class:"card-photo" %></div>
     <% end %>
