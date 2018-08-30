@@ -110,147 +110,149 @@ puts "destroyed all"
   description: Faker::HarryPotter.quote
   )
 
+currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'], ['JPY'], ['KRW'], ['MYA'], ['MXN'], ['NZD'], ['NOK'], ['SGD'], ['ZAR'], ['SEK'], ['CHF'], ['AED'], ['VDN'], ['RUB'], ['PLN']]
+
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 1)
+  user: User.find_by(id: 1)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 2)
+  user: User.find_by(id: 2)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 3)
+  user: User.find_by(id: 3)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 4)
+  user: User.find_by(id: 4)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 5)
+  user: User.find_by(id: 5)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: l"Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 6)
+  user: User.find_by(id: 6)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 7)
+  user: User.find_by(id: 7)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 8)
+  user: User.find_by(id: 8)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 9)
+  user: User.find_by(id: 9)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 10)
+  user: User.find_by(id: 10)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 11)
+  user: User.find_by(id: 11)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 12)
+  user: User.find_by(id: 12)
   )
 
   Request.create!(
   request_currency: currency_array.sample[0],
   wanted_currency: "EUR",
   request_amount: Faker::Number.number(3),
-  location: "Berlin, Germany",
+  location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
   end_date: Faker::Date.forward(100),
   status: "pending",
-  user: User.where("id = ?", 13)
+  user: User.find_by(id: 13)
   )
 
 
@@ -270,7 +272,6 @@ end
 puts "user created!"
 
 locations_array = [["Tirana, Albania"], ["Vienna, Austria"], ["Minsk, Belarus"], ["Brussels, Belgium"], ["Sofia, Bulgaria"], ["Zagreb, Croatia"], ["Nicosia, Cyprus"], ["Prague, Czech Republic"], ["Copenhagen, Denmark"], ["Tallinn, Estonia"], ["Tórshavn, Faroe Islands"], ["Helsinki, Finland"], ["Paris, France"], ["Berlin, Germany"], ["Athens, Greece"], ["Budapest, Hungary"], ["Reykjavik, Iceland"], ["Dublin, Ireland"], ["Rome, Italy"], ["Saint Helier, Jersey"], ["Riga, Latvia"], ["Vaduz, Liechtenstein"], ["Vilnius, Lithuania"], ["Luxembourg, Luxembourg"], ["Skopje, Macedonia"], ["Valletta, Malta"], ["Chișinău, Moldova"], ["Monaco, Monaco"], ["Podgorica, Montenegro"], ["Amsterdam, Netherlands"], ["Oslo, Norway"], ["Warsaw, Poland"], ["Lisbon, Portugal"], ["Bucharest, Romania"], ["Moscow, Russia"], ["Belgrade, Serbia"], ["Bratislava, Slovakia"], ["Ljubljana, Slovenia"], ["Madrid, Spain"], ["Stockholm, Sweden"], ["Bern, Switzerland"], ["Kiev, Ukraine"], ["London, United Kingdom"]]
-currency_array = [['AUD'], ['USD'], ['GBP'], ['CNY'], ['HKD'], ['CAD'], ['DKK'], ['JPY'], ['KRW'], ['MYA'], ['MXN'], ['NZD'], ['NOK'], ['SGD'], ['ZAR'], ['SEK'], ['CHF'], ['AED'], ['VDN'], ['RUB'], ['PLN']]
 
 50.times do |i|
   puts "Creating request ##{i}"
