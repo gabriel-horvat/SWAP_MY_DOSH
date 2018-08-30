@@ -39,13 +39,21 @@
           <%= simple_form_for [ @offer.request, @offer, Message.new ], remote: true do |f| %>
           <div class="flex-chat">
           <%= f.text_area :content, id: "input-content" %>
-              <%= f.submit '>', :class => 'submit-button btn btn-success', id: "send" %>
+              <%= f.submit 'SEND', :class => 'submit-button btn btn-success', id: "send" %>
           </div>
           <br>
 
             <div class="chat-buttons">
-              <%= link_to 'DECLINE', request_offer_decline_path(@offer.request_id, @offer.id), class: "btn btn-primary",id: "DECLINE", method: :post %>
-              <%= link_to 'CONFIRM', request_offer_confirm_path(@offer.request_id, @offer.id), class: "btn btn-success", id: "CONFIRM", method: :post  %>
+              <%= link_to request_offer_decline_path(@offer.request_id, @offer.id), method: :post do %>
+              <%= image_tag 'x.png', class: "btn btn-primary", id: "decline"  %>
+              <% end %>
+
+
+          <%= link_to request_offer_confirm_path(@offer.request_id, @offer.id), method: :post do %>
+              <%= image_tag 'tick.png', class: "btn btn-success", id: "confirm"  %>
+              <% end %>
+
+
             </div>
             <% end %>
           </div>

@@ -160,7 +160,9 @@ textarea {
    display: block;
     margin-left: 0;
     margin-right: 0;
-    width: 75%;
+    width: 60%;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
 }
 
 #input-content {
