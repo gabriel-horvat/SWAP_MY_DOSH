@@ -22,7 +22,7 @@ class RequestsController < ApplicationController
   end
 
   def new
-    @request = Request.new
+    @request = Request.new(start_date: Date.today)
   end
 
   def create
