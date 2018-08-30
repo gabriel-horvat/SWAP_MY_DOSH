@@ -1,25 +1,49 @@
 <h1> Your Completed Swaps </h1>
 
 <div class="card-container">
-<%= @completed_swaps.each do |offer|  %>
-  <div class="swap-card">
-    <div class="partner-name">
-      <%= offer.user == current_user ? offer.request.user.name : offer.user.name %>
-    </div>
-    <div class="offer-date">
-      <%= offer.request.start_date %> <%= offer.request.end_date %>
-    </div>
-    <div class="offer-location">
-      <%= offer.request.location %>
-    </div>
-    <div class="offer-amount">
-      <%=offer.request.request_amount%>
-    </div>
-    <div class="offer-rating">
-     <% offer.request.reviews.each do |review| %>
-     <%= review.rating %>
-     <% end %>
-    </div>
+  <div class="card-profile">
+    <% @completed_swaps.each do |offer|  %>
+    <% if offer.request.user.photo.nil? %>
+    <div class="card-photo"></div>
+    <% else %>
+    <div><%= cl_image_tag offer.request.user.photo, class:"card-photo" %></div>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="request-details">
+
+
+
+
+
+    <div class="swap-card">
+      <div class="partner-name">
+        <strong><%= offer.user == current_user ? offer.request.user.name : offer.user.name %></strong>
+      </div>
+      <div class="offer-rating">
+        <% offer.request.reviews.each do |review| %>
+          <% review.rating.times do  %>
+            <i class="fas fa-star" style="color:#EAE01C;"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="offer-date">
+        <i class="far fa-calendar-alt"></i>
+        <strong><%= offer.request.start_date.strftime('%d. %b. %Y') %> <%= offer.request.end_date.strftime('%d. %b. %Y') %></strong>
+      </div>
+      <div class="offer-location">
+        <strong><%= offer.request.location %></strong>
+      </div>
+      <div class="swap-currencies">
+        <div><strong><%= offer.request.request_currency %> <i class="fas fa-caret-right"></i> <%= offer.request.wanted_currency %></strong></div>
+      </div>
+
+
+      <div class="offer-amount">
+      <strong> <%= offer.request.request_currency %> <%=  offer.request.request_amount%></strong>
+      </div>
+
+    </div>
+    <% end %>
+  </div>
 </div>
