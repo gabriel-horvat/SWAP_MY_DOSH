@@ -17,7 +17,7 @@
         </div>
         <div class="swap-currencies">
 
-          <div> <strong><%= request.request_currency %></strong> <i class="fas fa-caret-right"></i> <strong><%= request.wanted_currency %></strong></div>
+          <div> <strong><%= request.request_currency %></strong> <i class="fas fa-caret-right"></i> <strong><%= convert_currency_to_emoji(request.wanted_currency) %></strong></div>
         </div>
         <div class="swap-dates">
           <i class="far fa-calendar-alt"></i>
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="swap-amount">
-        <%= request.request_currency %> <%= request.request_amount %>
+        <%= convert_currency_to_emoji(request.request_currency) %><%= request.request_currency %> <%= request.request_amount %>
       </div>
     </div>
     <%# <div class="badgescard">
