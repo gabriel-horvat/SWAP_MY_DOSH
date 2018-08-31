@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
 
   def index
     if params[:new_request].present?
-      @requests = Request.search_by_requests(params[:new_request][:location]).where(request_currency: params[:new_request][:wanted_currency]).order('created_at DESC') #.where(wanted_currency: params[:new_request][:requested_currency])
+      @requests = Request.search_by_requests(params[:new_request][:location]).where("request_currency ILIKE ?", "%#{params[:new_request][:wanted_currency]}%").order('created_at DESC') #.where(wanted_currency: params[:new_request][:requested_currency])
     # elsif params[:location].present? && params[:start_date].present?
     #   set_request(params[:location])
     #   @requests = dates_filter(@requests).order('created_at DESC')
