@@ -1,14 +1,11 @@
 <h1> Your Completed Swaps </h1>
 
-
-
 <% @completed_swaps.each do |offer| %>
   <% if offer.user.id == current_user.id %>
     <%= render 'shared/chat_card', offer: offer  %>
   <% elsif offer.request.user.id == current_user.id %>
     <%= render 'shared/chat_card', offer: offer  %>
-  <% end %>
-<% end %>
+  <% else %>
     <div class="swap-card">
       <div class="partner-name">
         <strong><%= offer.user == current_user ? offer.request.user.name : offer.user.name %></strong>
@@ -28,16 +25,15 @@
         <strong><%= offer.request.location %></strong>
       </div>
       <div class="swap-currencies">
-        <div><strong><%=convert_currency_to_emoji(offer.request.request_currency)%> <%=offer.request.request_currency%> <i class="fas fa-caret-right"></i> <%= convert_currency_to_emoji(offer.request.wanted_currency) %> <%= offer.request.wanted_currency %></strong></div>
+        <div><strong><%=convert_currency_to_emoji(offer.request.request_currency)%> <%=offer.request.request_currency%> <i class="fas fa-caret-right"></i> <%= convert_currency_to_emoji(offer.request.wanted_currency) %> <%= offer.request.wanted_currency %></strong>
+        </div>
       </div>
 
 
       <div class="offer-amount">
-      <strong> <%= convert_currency_to_emoji(offer.request.request_currency) %> <%=offer.request.request_currency%> <%=  offer.request.request_amount%></strong>
+        <strong> <%= convert_currency_to_emoji(offer.request.request_currency) %> <%=offer.request.request_currency%> <%=  offer.request.request_amount%></strong>
       </div>
-
     </div>
-    <% end %>
-  </div>
-</div>
+  <% end %>
+<% end %>
 

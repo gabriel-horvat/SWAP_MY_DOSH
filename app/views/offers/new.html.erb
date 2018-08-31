@@ -28,8 +28,8 @@
 
           <div class="swap-dates-profile">
             <i class="far fa-calendar-alt"></i>
-            <%= @request.start_date.strftime("%d %b %Y")%> -
-            <%= @request.end_date.strftime("%d %b %Y")%>
+            <%= @request.start_date&.strftime("%d %b %Y")%> -
+            <%= @request.end_date&.strftime("%d %b %Y")%>
           </div>
 
          <!--  <div class="swap-currencies-profile">
