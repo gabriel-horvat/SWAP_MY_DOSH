@@ -7,19 +7,21 @@
           <div class="flex-header">
           <h4><%= @offer.user == current_user ? @offer.request.user.name : @offer.user.name %></h4>
           <div class="chat-buttons">
-            <%= link_to "Decline Swap", request_offer_decline_path(@offer.request_id, @offer.id), method: :post, class: "btnn-blue previous"%>
+            <%= link_to "Decline Swap", request_offer_decline_path(@offer.request_id, @offer.id), method: :post, class: "btnn-blue "%>
             <%= link_to "Confirm Swap", request_offer_confirm_path(@offer.request_id, @offer.id), method: :post, class: "btnn-green" %>
           </div>
           </div>
           <div class="swap-information">
             <div class="swapping-currencies">
               <%= @offer.request.request_currency %>
-              <%= @offer.request.request_amount %> to
+              <%= @offer.request.request_amount %> <i class="fas fa-caret-right"></i>
               <%= @offer.request.wanted_currency %>
-            </div>
+            </div><br>
+
             <div class="swapping-dates">
+              <i class="far fa-calendar-alt"></i>
               <%= @offer.request.start_date %>
-            </div>
+            </div> -
             <div class="swapping-dates2">
               <%= @offer.request.end_date %>
             </div>
