@@ -125,11 +125,11 @@ ol {
 }
 
 #send {
+  letter-spacing: 2px;
   width: 100px;
   border-radius: 5px;
   margin-right: 4px;
-
-
+  font-weight: bold;
 }
 
 .simple_form select {
@@ -146,6 +146,7 @@ h1{
   font-weight:700;
 }
 .back-arrow {
+  z-index: 99;
   font-size: 40px;
   position: absolute;
 }

@@ -10,13 +10,6 @@
       <div class="partner-name">
         <strong><%= offer.user == current_user ? offer.request.user.name : offer.user.name %></strong>
       </div>
-      <div class="offer-rating">
-        <% offer.request.reviews.each do |review| %>
-          <% review.rating.times do  %>
-            <i class="fas fa-star" style="color:#EAE01C;"></i>
-          <% end %>
-        <% end %>
-      </div>
       <div class="offer-date">
         <i class="far fa-calendar-alt"></i>
         <strong><%= offer.request.start_date.strftime('%d. %b. %Y') %> <%= offer.request.end_date.strftime('%d. %b. %Y') %></strong>

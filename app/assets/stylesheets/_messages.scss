@@ -31,7 +31,7 @@ box-shadow: 2px 3px 9px 0px #cccccc61;
   border-bottom-width: 0;
   max-height: calc(100vh - 70px - 45px - 61px - 30px);
   overflow: scroll;
-  height: 59vh;
+  height: 53vh;
 }
 
 .message {
@@ -80,6 +80,7 @@ box-shadow: 2px 3px 9px 0px #cccccc61;
   border-color: #3ECF8E ;
   background-color: #3ECF8E;
   box-shadow: 0px 2px 5px #888888;
+  text-align: center;
 }
 
 a:hover {
@@ -87,6 +88,7 @@ a:hover {
   color: white;
 }
 .btnn-blue {
+  text-align: center;
   letter-spacing: 2px;
   padding: 5px;
   border-radius: 5px;
@@ -106,9 +108,16 @@ a:hover {
   margin-left: 10px;
   font-size: 15px;
   margin-top: 10px;
+  flex-direction: column;
 }
+
+.swapping-dates {
+  margin-right: 5px;
+}
+
 .swapping-dates2 {
   margin-right: 15px;
+  margin-left: 5px;
 }
 
 .submit-button {
@@ -166,7 +175,7 @@ input.form-control {
   background-color: white;
   margin-bottom: 2px;
   color: black;
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin-top: 0px;
   box-shadow: 0px 0px 5px #888888;
   h4 {
@@ -259,5 +268,10 @@ input.form-control {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
+}
+
+.swapping-dates-container {
+  display: flex;
+  flex: 0 0 55%;
 }
 

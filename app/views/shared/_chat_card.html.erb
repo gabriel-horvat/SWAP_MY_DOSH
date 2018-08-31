@@ -11,25 +11,28 @@
     <% end %>
   </div>
   <div class="request-details">
-
-
     <%if offer.messages.present? %>
      <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
-    <%end%>
+    <% end %>
 
-<!--      <div class="offer-rating">
-      <%# if offer.request.reviews.present? %>
-        <#% offer.request.reviews.each do |review| %>
-          <%# review.rating.times do  %>
-            <i class="fas fa-star" style="color:#EAE01C;"></i>
-            <%# end %>
-          <%# end %>
-        <%# end %>
-      </div>
- -->
+    <% if  %>
+
+    <% end %>
+   <% if offer.status == 'completed' %>
+     <div class="offer-rating">
+       <% stars = offer.request.reviews.last.rating || 0 %>
+       <% stars.times do  %>
+         <i class="fas fa-star" style="color:#EAE01C;"></i>
+       <% end %>
+       <% (5 - stars).times do  %>
+         <i class="fas fa-star" style="color:#45454542;"></i>
+       <% end %>
+     </div>
+   <% end %>
+
 
      <div class="<% if  offer.status == 'sent' %> offer-sent<% elsif offer.status == 'confirmed' %> offer-confirmed <% elsif offer.status == 'completed' %> offer-completed <% else %> pending <% end %>">
-      <%= offer.status %>
+      <%= offer.status == 'completed' ? "" : offer.status %>
      </div>
 
 
@@ -40,7 +43,9 @@
       <div><%=offer.request.request_currency%> <i class="fas fa-caret-right"></i><%=offer.request.wanted_currency%></div>
     </div>
 
-  <%= link_to "", new_request_review_path(offer.request), class: "complete-button fas fa-check" %>
+    <% if offer.status == "confirmed"  %>
+      <%= link_to "Review", new_request_review_path(offer.request), class: "btnn-blue complete-button" %>
+    <% end %>
   </div>
 
 </div>
