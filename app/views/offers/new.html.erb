@@ -61,15 +61,15 @@
     <div class="reviews-container">
       <h2 id="swapper"> Reviews</h2>
         <div class="reviews">
-            <ul class="scrolling-wrapper">
+            <div class="scrolling-wrapper">
               <%@request.reviews.each do |review| %>
                 <div class="review-container">
-                  <li>
+
                   <%= render 'shared/review_card', review: review  %>
-                  </li>
+
                 </div>
               <% end %>
-            </ul>
+            </div>
         </div>
     </div>
   </div>

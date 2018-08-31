@@ -5,6 +5,6 @@
       <% review.rating.times do %>
         <i class="fas fa-star" style="color:#EAE01C;"></i>
       <% end %>
-    <p class="word-break"><%= review.content %></p>
+    <p class="word-break"><%= review.content.truncate(25) %></p>
   </div>
 </div>
