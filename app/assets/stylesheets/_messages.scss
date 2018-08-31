@@ -75,7 +75,7 @@ box-shadow: 2px 3px 9px 0px #cccccc61;
   border-radius: 5px;
   border: solid;
   color: white; ;
-  font-weight: lighter;
+  font-weight: bolder;
   border-color: #3ECF8E ;
   background-color: #3ECF8E;
   box-shadow: 0px 2px 5px #888888;
@@ -89,10 +89,10 @@ a:hover {
   letter-spacing: 2px;
   padding: 5px;
   border-radius: 5px;
-  border:solid;
+  border:1px solid;
   margin-right: 15px;
   color: grey; ;
-  font-weight: lighter;
+  font-weight: bolder;
   border-color: grey ;
   background-color: white;
 
@@ -185,8 +185,9 @@ input.form-control {
 }
 
 .confirmation-message {
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
+  font-weight:bolder;
   a {
     color: #3ECF8E;
     font-size: 12px;
