@@ -1,7 +1,30 @@
-<h1> Review your Experience </h1>
+<div class="class wrapper">
+<!--   <div class="class container-form"> -->
+    <h1> How was the Swap? </h1>
 
-<%= simple_form_for [@request, @review]  do |f| %>
-<%= f.select :rating, [1,2,3,4,5] %>
-<%= f.text_area :content %>
-<%= f.submit "Review" %>
-<% end %>
+    <div class="form-input">
+
+      <h4>Rate your experience:</h4>
+      <div class="gray-background-rating" >
+        <div class="rating-number">
+   <%= simple_form_for [@request, @review]  do |f| %>
+      <%= f.select :rating, [1,2,3,4,5],class:"search-stretch input-field" %>
+
+      </div>
+       </div>
+    </div>
+
+    <h4>Give a personal feedback:</h4>
+    <div class=" review-content">
+      <%= f.text_area :content, class:"form-control search-stretch input-field gray-background-rating" %>
+    </div>
+
+    <br>
+    <div class="button-rating">
+    <%= f.submit "Review",class: "submit-button btn btn-success rating" %>
+    <% end %>
+    </div>
+
+<!--   </div> -->
+</div>
+
