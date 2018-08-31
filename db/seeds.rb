@@ -180,7 +180,7 @@ currency_array = [['🇪🇺EUR'], ['🇦🇺AUD'], ['🇺🇸USD'], ['🇬🇧G
 
   Request.create!(
   request_currency: "🇪🇺EUR",
-  wanted_currency: currency_array.sample[0],
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -191,7 +191,7 @@ currency_array = [['🇪🇺EUR'], ['🇦🇺AUD'], ['🇺🇸USD'], ['🇬🇧G
 
   Request.create!(
   request_currency: "🇪🇺EUR",
-  wanted_currency: currency_array.sample[0],
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -202,7 +202,7 @@ currency_array = [['🇪🇺EUR'], ['🇦🇺AUD'], ['🇺🇸USD'], ['🇬🇧G
 
   Request.create!(
   request_currency: "🇪🇺EUR",
-  wanted_currency: currency_array.sample[0],
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -213,7 +213,7 @@ currency_array = [['🇪🇺EUR'], ['🇦🇺AUD'], ['🇺🇸USD'], ['🇬🇧G
 
   Request.create!(
   request_currency: "🇪🇺EUR",
-  wanted_currency: currency_array.sample[0],
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -224,7 +224,7 @@ currency_array = [['🇪🇺EUR'], ['🇦🇺AUD'], ['🇺🇸USD'], ['🇬🇧G
 
   Request.create!(
   request_currency: "🇪🇺EUR",
-  wanted_currency: currency_array.sample[0],
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),
@@ -235,7 +235,7 @@ currency_array = [['🇪🇺EUR'], ['🇦🇺AUD'], ['🇺🇸USD'], ['🇬🇧G
 
   Request.create!(
   request_currency: "🇪🇺EUR",
-  wanted_currency: currency_array.sample[0],
+  wanted_currency: "🇦🇺AUD",
   request_amount: Faker::Number.number(3),
   location: ("Berlin, Germany"),
   start_date: Faker::Date.backward(14),

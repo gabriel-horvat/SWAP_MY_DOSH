@@ -24,7 +24,7 @@ module CurrencyHelper
      when 'RUB' then '🇷🇺RUB'
      when 'PLN' then '🇵🇱PLN'
      else
-       '💰'
+       ''
      end
   end
 end
