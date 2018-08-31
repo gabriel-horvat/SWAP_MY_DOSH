@@ -7,7 +7,7 @@
     box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.75);
     margin: 21px;
     position: relative;
-    height: 120px;
+    height: 140px;
     animation: animatop 0.9s cubic-bezier(0.425, 1.140, 0.470, 1.125) forwards;
     // max-width: 300px;
     // overflow-wrap: break-word;
@@ -19,10 +19,16 @@
 }
 
 .request-details {
-    flex-grow: 1;
-    // padding: 5px;
-    padding-left: 10px;
-    // width: 60%
+  flex-grow: 1;
+  // padding: 5px;
+  padding-left: 10px;
+  // width: 60%
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0px 8px 8px 0px;
 }
 
 .card-profile {}
@@ -33,9 +39,10 @@
     padding-right: 0px;
     margin: 0px;
     border-radius: 8px 0px 0px 8px;
-    height: 120px;
-    width: 120px;
-    crop: fit;
+    crop: fill;
+    height: 140px;
+    width: 140px;
+    overflow: hidden;
     //display: flex;
     //justify-content: center;
 }
@@ -66,23 +73,25 @@
 }
 
 .user-location {
-    padding-top: 5px;
-    padding-bottom: 20px;
-    color: navy;
-    position: absolute;
-    top: 25px;
+  padding-top: 16px;
+  padding-bottom: 20px;
+  color: #454545;
+  position: absolute;
+  top: 28px;
+  font-size: 16px;
 }
 
 .swap-currencies {
-    font-size: 14px;
-    color: gray;
-    position: absolute;
-    bottom: 5px;
+  font-size: 14px;
+  color: #454545;
+  position: absolute;
+  bottom: 26px;
 }
 
 .swap-dates {
-    font-size: 12px;
-    color: gray;
+  font-size: 14px;
+  color: #454545;
+  padding-top: 16px;
 }
 
 .swap-amount {
@@ -120,7 +129,7 @@
 
 }
 .offer-completed {
-  color: blue;
+  color: #5ACA7C;
   border-radius: 100%;
   width: 80px;
  height:15px;
@@ -140,8 +149,12 @@
   position: absolute;
   bottom: 5px;
   right: 10px;
-  border: solid;
-  border-color: #5ACA7C;
+  // border: solid;
+  // border-color: #5ACA7C;
+}
+
+.card-user-photo {
+  width: 120px;
 }
 
 // @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
