@@ -13,8 +13,8 @@
         <strong><%= request.location %></strong>
       </div>
       <div class="swap-currencies">
-        <div>Swapping <strong><%= convert_currency_to_emoji(request.request_currency) %> <%=request.request_currency%></strong></div>
-        <div><i class="fas fa-caret-right"> </i> <strong><%= convert_currency_to_emoji(request.wanted_currency) %> <%=request.wanted_currency%></strong></div>
+        <div>Swapping <strong><%#= convert_currency_to_emoji(request.request_currency) %> <%=request.request_currency%></strong></div>
+        <div><i class="fas fa-caret-right"> </i> <strong><%#= convert_currency_to_emoji(request.wanted_currency) %> <%=request.wanted_currency%></strong></div>
       </div>
       <div class="swap-dates">
         <strong><%= request.start_date.strftime('%d. %b. %Y') %></strong>
@@ -25,7 +25,7 @@
         <%= link_to "", request_path(request.id), method: :delete, data: {confirm: "Are you sure?"}, class: "fas fa-trash-alt" %>
     </div>
     <div class="swap-amount">
-      <%= convert_currency_to_emoji(request.request_currency) %> <%=request.request_currency%> <%= request.request_amount %>
+      <%#= convert_currency_to_emoji(request.request_currency) %> <%=request.request_currency%> <%= request.request_amount %>
     </div>
   </div>
 <% end %>
