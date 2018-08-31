@@ -132,10 +132,19 @@ ol {
 
 }
 
+.simple_form select {
+  &#select {
+    width: 500px;
+  }
+}
+
 h1{
   margin-left:10px;
 }
 
+#swap-btn {
+  font-weight:700;
+}
 .back-arrow {
   font-size: 40px;
   position: absolute;
@@ -170,49 +179,53 @@ h1{
   }
 
 
-  .swap-amount-profile {
-    font-size: 30px;
-    display: flex;
-    align-items: baseline;
-    position: absolute;
-    bottom: 53px;
-    right: 110px;
-    color: #5ACA7C;
-    font-weight: bolder;
-  }
+.swap-amount-profile {
+  font-size: 30px;
+  display: flex;
+  align-items: baseline;
+  position: absolute;
+  bottom: 53px;
+  right: 110px;
+  color: #5ACA7C;
+  font-weight: bolder;
+}
 
-  .swap-dates-profile {
-    font-size: 16px;
-    font-weight: bold;
-    color: gray;
-    position: absolute;
-    bottom: 122px;
-    padding-left: 71px;
-  }
+.swap-dates-profile {
+  font-size: 16px;
+  font-weight: bold;
+  color: gray;
+  position: absolute;
+  bottom: 122px;
+  padding-left: 71px;
+}
 
-  .user-location-profile {
-    padding-top: 5px;
-    padding-bottom: 20px;
-    color: navy;
-    position: absolute;
-    bottom: 135px;
-    font-size: 17px;
-    padding-left: 104px;
-    text-align: center;
-  }
+.user-location-profile {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  color: navy;
+  position: absolute;
+  bottom: 135px;
+  font-size: 17px;
+  padding-left: 104px;
+  text-align: center;
+}
 
-  .user-description-profile {
-    position: absolute;
-    bottom: 185px;
-    text-align: center;
-    padding-left: 26px;
-    padding-right: 26px;
-  }
+.user-description-profile {
+  position: absolute;
+  bottom: 185px;
+  text-align: center;
+  padding-left: 26px;
+  padding-right: 26px;
+}
 
-  .user-location-profile {
-    color: black;
-  }
+.user-location-profile {
+  color: black;
+}
 
-  .font-size-30px {
-    font-size: 30px !important;
-  }
+.font-size-30px {
+  font-size: 30px !important;
+}
+
+h1 {
+  font-family: 'Fjalla One', sans-serif;
+}
