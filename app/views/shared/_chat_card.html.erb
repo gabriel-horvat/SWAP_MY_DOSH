@@ -13,7 +13,7 @@
   <div class="request-details">
 
 
-    <%if !@offers.messages.nil? %>
+    <%if offer.messages.present? %>
      <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
     <%end%>
 
@@ -25,18 +25,12 @@
       <%= offer.request.location %>
     </div>
     <div class="swap-currencies">
-      <div> <%#= convert_currency_to_emoji(offer.request.request_currency) %><%=offer.request.request_currency%> <i class="fas fa-caret-right"></i> <%#=convert_currency_to_emoji(offer.request.wanted_currency) %><%=offer.request.wanted_currency%></div>
+      <div><%=offer.request.request_currency%> <i class="fas fa-caret-right"></i><%=offer.request.wanted_currency%></div>
     </div>
-   <!--  <div class="swap-dates">
-      <i class="far fa-calendar-alt"></i>
-      <%= offer.request.start_date.strftime('%d. %b. %Y') %>      - <%= offer.request.end_date.strftime('%d. %b. %Y')%>
-    </div> -->
+
   <%= link_to "", new_request_review_path(offer.request), class: "complete-button fas fa-check" %>
   </div>
 
-  <!-- <div class="swap-amount">
-    <%= convert_currency_to_emoji(offer.request.request_currency) %> <%= offer.request.request_amount %>
-  </div> -->
 </div>
 <div>
 </div>
