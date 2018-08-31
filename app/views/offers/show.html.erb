@@ -38,7 +38,13 @@
                       <%= link_to "Accept Swap", request_offer_confirmed_path(@offer.request_id, @offer.id), id: "accept", class: "confirmation-message confirm-button header" %>
                       <%= link_to "Keep Negotiating", request_offer_continue_path(@offer.request_id, @offer.id), id: "negotiate", class: "confirmation-message decline-button header"%>
                   <% elsif current_user.status == "sender"  %>
-                    <p class="confirmation-message">Waiting for Confirmation...</p>
+                    <p class="confirmation-message">Waiting for Confirmation
+                    </p>
+                    <div class="spinner">
+                      <div class="bounce1"></div>
+                      <div class="bounce2"></div>
+                      <div class="bounce3"></div>
+                    </div>
                   <% end %>
                 <% end %>
               </div>
