@@ -17,9 +17,21 @@
      <div class="<% if offer.messages.last.read? %> user-name <% else %> user-name-unread <% end %>"><%= offer.request.user.name %></div>
     <%end%>
 
+<!--      <div class="offer-rating">
+      <%# if offer.request.reviews.present? %>
+        <#% offer.request.reviews.each do |review| %>
+          <%# review.rating.times do  %>
+            <i class="fas fa-star" style="color:#EAE01C;"></i>
+            <%# end %>
+          <%# end %>
+        <%# end %>
+      </div>
+ -->
+
      <div class="<% if  offer.status == 'sent' %> offer-sent<% elsif offer.status == 'confirmed' %> offer-confirmed <% elsif offer.status == 'completed' %> offer-completed <% else %> pending <% end %>">
       <%= offer.status %>
      </div>
+
 
     <div class="user-location">
       <%= offer.request.location %>
