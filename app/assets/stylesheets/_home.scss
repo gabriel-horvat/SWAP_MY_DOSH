@@ -164,7 +164,7 @@ h1{
     /* letter-spacing: 1px; */
     margin-top: 4px;
     padding-left: 83px;
-    bottom: 212px;
+    bottom: 190px;
     position: absolute;
     justify-content: center;
   }
@@ -176,13 +176,14 @@ h1{
     align-items: baseline;
     position: absolute;
     bottom: 53px;
-    right: 83px;
+    right: 110px;
     color: #5ACA7C;
     font-weight: bolder;
   }
 
   .swap-dates-profile {
     font-size: 16px;
+    font-weight: bold;
     color: gray;
     position: absolute;
     bottom: 122px;
@@ -197,11 +198,12 @@ h1{
     bottom: 135px;
     font-size: 17px;
     padding-left: 104px;
+    text-align: center;
   }
 
   .user-description-profile {
     position: absolute;
-    bottom: 190px;
+    bottom: 90px;
     text-align: center;
     padding-left: 26px;
     padding-right: 26px;
