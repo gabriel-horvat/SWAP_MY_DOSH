@@ -7,7 +7,7 @@
     <% if offer.request.user.photo.nil? %>
     <div class="card-photo"></div>
     <% else %>
-    <div><%= cl_image_tag offer.request.user.photo, class:"card-photo" %></div>
+    <div><%=cl_image_tag offer.user == current_user ?  offer.request.user.photo : offer.user.photo, class:"card-photo" %></div>
     <% end %>
   </div>
 
