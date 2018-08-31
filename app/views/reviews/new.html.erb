@@ -8,9 +8,8 @@
       <div class="gray-background-rating" >
         <div class="rating-number">
    <%= simple_form_for [@request, @review]  do |f| %>
-      <%= f.select :rating, [1,2,3,4,5],class:"search-stretch input-field" %>
-
-      </div>
+      <%= f.select :rating, [1,2,3,4,5], :prompt => "Rating", class:"search-stretch input-field" %>
+        </div>
        </div>
     </div>
 

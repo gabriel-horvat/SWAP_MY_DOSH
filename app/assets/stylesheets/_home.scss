@@ -132,10 +132,19 @@ ol {
 
 }
 
+.simple_form select {
+  &#select {
+    width: 500px;
+  }
+}
+
 h1{
   margin-left:10px;
 }
 
+#swap-btn {
+  font-weight:700;
+}
 .back-arrow {
   font-size: 40px;
   position: absolute;
@@ -212,3 +221,7 @@ h1{
   .user-location-profile {
     color: black;
   }
+
+h1 {
+  font-family: 'Fjalla One', sans-serif;
+}
