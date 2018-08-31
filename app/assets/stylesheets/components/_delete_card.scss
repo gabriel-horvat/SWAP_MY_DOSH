@@ -18,26 +18,26 @@
 //     box-shadow: 10px 10px 30px -5px rgba(0, 0, 0, 0.75);
 // }
 
-.request-details {
-    flex-grow: 1;
-    // padding: 5px;
-    padding-left: 10px;
-    // width: 60%
-}
+// .request-details {
+//     flex-grow: 1;
+//     // padding: 5px;
+//     padding-left: 10px;
+//     // width: 60%
+// }
 
 .card-profile {}
 
-.card-photo {
-    padding-left: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    margin: 0px;
-    border-radius: 8px 0px 0px 8px;
-    height: 120px;
-    width: 120px;
-    // display: flex;
-    // justify-content: center;
-}
+// .card-photo {
+//     padding-left: 0px;
+//     padding-bottom: 0px;
+//     padding-right: 0px;
+//     margin: 0px;
+//     border-radius: 8px 0px 0px 8px;
+//     height: 120px;
+//     width: 120px;
+//     // display: flex;
+//     // justify-content: center;
+// }
 
 .user-name {
     display: flex;
@@ -46,34 +46,34 @@
     margin-top: 0px;
     align-items: flex-start;
     font-size: 14px;
-    color: gray;
+    color: rgb(69, 69, 69);
     position: absolute;
     top: 5px;
 }
 
 
 
-.user-location {
-    padding-top: 5px;
-    padding-bottom: 30px;
-    color: navy;
-    position: absolute;
-    top: 25px;
-    font-size:17px;
-}
+// .user-location {
+//     padding-top: 5px;
+//     padding-bottom: 30px;
+//     color: navy;
+//     position: absolute;
+//     top: 25px;
+//     font-size:17px;
+// }
 
 .swap-currencies {
     font-size: 14px;
-    color: gray;
+    color: rgb(69, 69, 69);
     position: absolute;
     bottom: 30px;
 }
 
-.swap-dates {
-    font-size: 12px;
-    color: gray;
-    padding-top:5px;
-}
+// .swap-dates {
+//     font-size: 12px;
+//     color: rgb(69, 69, 69);
+//     padding-top:5px;
+// }
 
 .swap-amount {
     display: flex;
